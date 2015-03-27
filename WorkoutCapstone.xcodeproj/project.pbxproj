@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF5370F71AC604A200BA7A47 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5370F61AC604A200BA7A47 /* Workout.m */; };
+		FF5370FA1AC604B200BA7A47 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5370F91AC604B200BA7A47 /* Exercise.m */; };
+		FF5370FD1AC604C300BA7A47 /* Analytics.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5370FC1AC604C300BA7A47 /* Analytics.m */; };
+		FF5371001AC604CF00BA7A47 /* Goals.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5370FF1AC604CF00BA7A47 /* Goals.m */; };
 		FFC6225B1AC4A2DA00EDB26B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC6225A1AC4A2DA00EDB26B /* main.m */; };
 		FFC6225E1AC4A2DB00EDB26B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC6225D1AC4A2DB00EDB26B /* AppDelegate.m */; };
 		FFC622611AC4A2DB00EDB26B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC622601AC4A2DB00EDB26B /* ViewController.m */; };
@@ -46,6 +50,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF5370F51AC604A200BA7A47 /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
+		FF5370F61AC604A200BA7A47 /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
+		FF5370F81AC604B200BA7A47 /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercise.h; sourceTree = "<group>"; };
+		FF5370F91AC604B200BA7A47 /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
+		FF5370FB1AC604C300BA7A47 /* Analytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Analytics.h; sourceTree = "<group>"; };
+		FF5370FC1AC604C300BA7A47 /* Analytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Analytics.m; sourceTree = "<group>"; };
+		FF5370FE1AC604CF00BA7A47 /* Goals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goals.h; sourceTree = "<group>"; };
+		FF5370FF1AC604CF00BA7A47 /* Goals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goals.m; sourceTree = "<group>"; };
 		FFC622551AC4A2DA00EDB26B /* WorkoutCapstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutCapstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC622591AC4A2DA00EDB26B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFC6225A1AC4A2DA00EDB26B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -117,6 +129,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF5370F11AC5F53E00BA7A47 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FFC622A51AC4AA6600EDB26B /* ModelController.h */,
+				FFC622A61AC4AA6600EDB26B /* ModelController.m */,
+				FF5370F51AC604A200BA7A47 /* Workout.h */,
+				FF5370F61AC604A200BA7A47 /* Workout.m */,
+				FF5370F81AC604B200BA7A47 /* Exercise.h */,
+				FF5370F91AC604B200BA7A47 /* Exercise.m */,
+				FF5370FB1AC604C300BA7A47 /* Analytics.h */,
+				FF5370FC1AC604C300BA7A47 /* Analytics.m */,
+				FF5370FE1AC604CF00BA7A47 /* Goals.h */,
+				FF5370FF1AC604CF00BA7A47 /* Goals.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		FFC6224C1AC4A2DA00EDB26B = {
 			isa = PBXGroup;
 			children = (
@@ -146,8 +175,7 @@
 				FFC622601AC4A2DB00EDB26B /* ViewController.m */,
 				FFC622A21AC4AA5100EDB26B /* NetworkController.h */,
 				FFC622A31AC4AA5100EDB26B /* NetworkController.m */,
-				FFC622A51AC4AA6600EDB26B /* ModelController.h */,
-				FFC622A61AC4AA6600EDB26B /* ModelController.m */,
+				FF5370F11AC5F53E00BA7A47 /* Model */,
 				FFC622621AC4A2DB00EDB26B /* Main.storyboard */,
 				FFC622651AC4A2DB00EDB26B /* Images.xcassets */,
 				FFC622671AC4A2DB00EDB26B /* LaunchScreen.xib */,
@@ -317,8 +345,12 @@
 				FFC622A41AC4AA5100EDB26B /* NetworkController.m in Sources */,
 				FFC622611AC4A2DB00EDB26B /* ViewController.m in Sources */,
 				FFC622A71AC4AA6600EDB26B /* ModelController.m in Sources */,
+				FF5371001AC604CF00BA7A47 /* Goals.m in Sources */,
 				FFC6225E1AC4A2DB00EDB26B /* AppDelegate.m in Sources */,
 				FFC6225B1AC4A2DA00EDB26B /* main.m in Sources */,
+				FF5370FA1AC604B200BA7A47 /* Exercise.m in Sources */,
+				FF5370FD1AC604C300BA7A47 /* Analytics.m in Sources */,
+				FF5370F71AC604A200BA7A47 /* Workout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +557,7 @@
 				FFC6227A1AC4A2DB00EDB26B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FFC6227B1AC4A2DB00EDB26B /* Build configuration list for PBXNativeTarget "WorkoutCapstoneTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +566,7 @@
 				FFC6227D1AC4A2DB00EDB26B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
