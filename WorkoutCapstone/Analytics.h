@@ -8,12 +8,12 @@
 
 #import <Parse/Parse.h>
 
-static NSString *workoutCompletionKey = @"workoutCompletionKey";
-static NSString *workoutEnergyRateKey = @"workoutEnergyRateKey";
+static NSString *workoutCompletionKey = @"workoutCompletion";
+static NSString *workoutEnergyRateKey = @"workoutEnergyRate";
 
 @interface Analytics : PFObject
 
-@property (nonatomic, assign) BOOL workoutCompletion;
-@property (nonatomic, assign) NSInteger *workoutEnergyRate;
+@property (nonatomic, assign) NSArray * workouts;
+//@property (nonatomic, assign) NSArray *workoutEnergyRate;
 
 @end

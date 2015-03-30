@@ -8,10 +8,10 @@
 
 #import <Parse/Parse.h>
 
-static NSString *exerciseNameKey = @"exerciseNameKey";
-static NSString *exerciseWeightKey = @"exerciseWeightKey";
-static NSString *exerciseTimeKey = @"exerciseTimeKey";
-static NSString *exerciseDetailsKey = @"exerciseDetailsKey";
+static NSString *exerciseNameKey = @"exerciseName";
+static NSString *exerciseWeightKey = @"exerciseWeight";
+static NSString *exerciseTimeKey = @"exerciseTime";
+static NSString *exerciseDetailsKey = @"exerciseDetails";
 
 @interface Exercise : PFObject
 

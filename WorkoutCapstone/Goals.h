@@ -12,7 +12,7 @@
 
 @interface Goals : PFObject
 
-@property (nonatomic, strong) Workout *numberOfWorkouts;
+@property (nonatomic, strong) NSArray *numberOfWorkouts;
 @property (nonatomic, strong) Analytics *workoutCompletionSuccessRate;
 
 @end

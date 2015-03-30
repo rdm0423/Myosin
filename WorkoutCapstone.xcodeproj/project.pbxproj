@@ -11,6 +11,8 @@
 		FF5370FA1AC604B200BA7A47 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5370F91AC604B200BA7A47 /* Exercise.m */; };
 		FF5370FD1AC604C300BA7A47 /* Analytics.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5370FC1AC604C300BA7A47 /* Analytics.m */; };
 		FF5371001AC604CF00BA7A47 /* Goals.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5370FF1AC604CF00BA7A47 /* Goals.m */; };
+		FFBAD4FA1AC9F4AE00B79D54 /* HomePageCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBAD4F81AC9F4AE00B79D54 /* HomePageCollectionViewController.m */; };
+		FFBAD4FB1AC9F4AE00B79D54 /* HomePageCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBAD4F91AC9F4AE00B79D54 /* HomePageCollectionViewController.xib */; };
 		FFC6225B1AC4A2DA00EDB26B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC6225A1AC4A2DA00EDB26B /* main.m */; };
 		FFC6225E1AC4A2DB00EDB26B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC6225D1AC4A2DB00EDB26B /* AppDelegate.m */; };
 		FFC622611AC4A2DB00EDB26B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC622601AC4A2DB00EDB26B /* ViewController.m */; };
@@ -58,6 +60,9 @@
 		FF5370FC1AC604C300BA7A47 /* Analytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Analytics.m; sourceTree = "<group>"; };
 		FF5370FE1AC604CF00BA7A47 /* Goals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goals.h; sourceTree = "<group>"; };
 		FF5370FF1AC604CF00BA7A47 /* Goals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goals.m; sourceTree = "<group>"; };
+		FFBAD4F71AC9F4AE00B79D54 /* HomePageCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageCollectionViewController.h; sourceTree = "<group>"; };
+		FFBAD4F81AC9F4AE00B79D54 /* HomePageCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageCollectionViewController.m; sourceTree = "<group>"; };
+		FFBAD4F91AC9F4AE00B79D54 /* HomePageCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageCollectionViewController.xib; sourceTree = "<group>"; };
 		FFC622551AC4A2DA00EDB26B /* WorkoutCapstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutCapstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC622591AC4A2DA00EDB26B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFC6225A1AC4A2DA00EDB26B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -173,6 +178,9 @@
 				FFC6225D1AC4A2DB00EDB26B /* AppDelegate.m */,
 				FFC6225F1AC4A2DB00EDB26B /* ViewController.h */,
 				FFC622601AC4A2DB00EDB26B /* ViewController.m */,
+				FFBAD4F71AC9F4AE00B79D54 /* HomePageCollectionViewController.h */,
+				FFBAD4F81AC9F4AE00B79D54 /* HomePageCollectionViewController.m */,
+				FFBAD4F91AC9F4AE00B79D54 /* HomePageCollectionViewController.xib */,
 				FFC622A21AC4AA5100EDB26B /* NetworkController.h */,
 				FFC622A31AC4AA5100EDB26B /* NetworkController.m */,
 				FF5370F11AC5F53E00BA7A47 /* Model */,
@@ -324,6 +332,7 @@
 			files = (
 				FFC622641AC4A2DB00EDB26B /* Main.storyboard in Resources */,
 				FFC622691AC4A2DB00EDB26B /* LaunchScreen.xib in Resources */,
+				FFBAD4FB1AC9F4AE00B79D54 /* HomePageCollectionViewController.xib in Resources */,
 				FFC622661AC4A2DB00EDB26B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +357,7 @@
 				FF5371001AC604CF00BA7A47 /* Goals.m in Sources */,
 				FFC6225E1AC4A2DB00EDB26B /* AppDelegate.m in Sources */,
 				FFC6225B1AC4A2DA00EDB26B /* main.m in Sources */,
+				FFBAD4FA1AC9F4AE00B79D54 /* HomePageCollectionViewController.m in Sources */,
 				FF5370FA1AC604B200BA7A47 /* Exercise.m in Sources */,
 				FF5370FD1AC604C300BA7A47 /* Analytics.m in Sources */,
 				FF5370F71AC604A200BA7A47 /* Workout.m in Sources */,

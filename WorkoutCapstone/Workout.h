@@ -9,14 +9,14 @@
 #import <Parse/Parse.h>
 #import "Exercise.h"
 
-static NSString *workoutNameKey = @"workoutNameKey";
-static NSString *workoutSetsKey = @"workoutSetsKey";
-static NSString *workoutRepsKey = @"workoutRepsKey";
-static NSString *workoutFocusAreaKey = @"workoutFocusAreaKey";
-static NSString *workoutCircuitModeKey = @"workoutCircuitModeKey";
-static NSString *workoutRestKey = @"workoutRestKey";
-static NSString *postWorkoutNoteKey = @"postWorkoutNoteKey";
-static NSString *workoutCompletedKey = @"workoutCompletedKey";
+static NSString *workoutNameKey = @"workoutName";
+static NSString *workoutSetsKey = @"workoutSets";
+static NSString *workoutRepsKey = @"workoutReps";
+static NSString *workoutFocusAreaKey = @"workoutFocusArea";
+static NSString *workoutCircuitModeKey = @"workoutCircuitMode";
+static NSString *workoutRestKey = @"workoutRest";
+static NSString *postWorkoutNoteKey = @"postWorkoutNote";
+static NSString *workoutCompletedKey = @"workoutCompleted";
 static NSString *workoutDateKey = @"workoutDateKey";
 
 @interface Workout : PFObject
