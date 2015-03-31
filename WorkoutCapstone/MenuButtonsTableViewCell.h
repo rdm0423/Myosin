@@ -13,5 +13,8 @@
 @property (nonatomic, strong) UIButton *createWorkoutButton;
 @property (nonatomic, strong) UIButton *performanceButton;
 @property (nonatomic, strong) UIButton *settingsButton;
+@property (nonatomic, strong) UILabel *createWorkoutLabel;
+@property (nonatomic, strong) UILabel *performanceStatsLabel;
+@property (nonatomic, strong) UILabel *settingLabel;
 
 @end

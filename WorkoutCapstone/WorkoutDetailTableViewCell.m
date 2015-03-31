@@ -23,8 +23,8 @@
         self.detailWorkoutLabel = [UILabel new];
         
         // customize Label
-        self.detailWorkoutLabel.text = @"Workout Title to Go Here";
-        [self.detailWorkoutLabel setFont:[UIFont boldSystemFontOfSize:26.0]];
+        self.detailWorkoutLabel.text = @"Workout Details Here";
+        [self.detailWorkoutLabel setFont:[UIFont boldSystemFontOfSize:16.0]];
         [self.detailWorkoutLabel setTextAlignment:NSTextAlignmentCenter];
         [self.detailWorkoutLabel setTextColor:[UIColor blackColor]];
         [self.detailWorkoutLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
