@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>73D7F410-7A64-4FB0-BA91-4848CD27B886</string>
+	<key>IDESourceControlProjectName</key>
+	<string>WorkoutCapstone</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2B7846F8DA01B1C1BF77A722D1256422D43B1DED</key>
+		<string>https://github.com/rdm0423/WorkoutCapstone.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>WorkoutCapstone.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2B7846F8DA01B1C1BF77A722D1256422D43B1DED</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/rdm0423/WorkoutCapstone.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2B7846F8DA01B1C1BF77A722D1256422D43B1DED</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2B7846F8DA01B1C1BF77A722D1256422D43B1DED</string>
+			<key>IDESourceControlWCCName</key>
+			<string>WorkoutCapstone</string>
+		</dict>
+	</array>
+</dict>
+</plist>
