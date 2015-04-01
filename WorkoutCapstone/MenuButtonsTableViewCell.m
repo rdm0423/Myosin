@@ -19,12 +19,13 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
-        // create label
+        // create Buttons
         self.createWorkoutButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//        self.createWorkoutButton.frame = CGSizeMake(44, 44);
         self.performanceButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         self.settingsButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         
-        // create buttons
+        // create Labels
         self.createWorkoutLabel = [UILabel new];
         self.performanceStatsLabel = [UILabel new];
         self.settingLabel = [UILabel new];

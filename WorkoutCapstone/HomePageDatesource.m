@@ -23,9 +23,19 @@
 - (void)createCells {
     self.cells = [[NSMutableArray alloc] init];
     
-    self.titleCell = [TitleTableViewCell new];
-//    self.titleCell
-
+    self.titleCell = [[TitleTableViewCell alloc] init];
+    [self.cells addObject:self.titleCell];
+    
+    self.workoutCell = [WorkoutTableViewCell new];
+    [self.cells addObject:self.workoutCell];
+    
+    self.workoutDetailCell = [WorkoutDetailTableViewCell new];
+    [self.cells addObject:self.workoutDetailCell];
+    
+    self.menuButtonsCell = [MenuButtonsTableViewCell new];
+    [self.cells addObject:self.menuButtonsCell];
+    
+    
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -42,14 +52,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
-    
+    return self.cells[indexPath.row];
 }
 
 #pragma mark - sets the tableview links to ViewControllers
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
 }
 
 #pragma mark - custom menu cell height
@@ -60,6 +68,10 @@
     } else {
         return 54;
     }
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    return NO;
 }
 
 @end
