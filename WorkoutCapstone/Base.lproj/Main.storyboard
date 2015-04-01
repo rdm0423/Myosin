@@ -57,6 +57,9 @@
                                 <state key="normal" image="add">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="createWorkoutButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Mlj-ku-Kjd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOd-NP-6x5">
                                 <rect key="frame" x="282" y="516" width="37" height="30"/>
@@ -66,6 +69,9 @@
                                 <state key="normal" image="performance">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="performanceButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0ai-Sp-6u6"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Workout" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Veg-gG-AiO">
                                 <rect key="frame" x="62" y="554" width="87" height="21"/>
@@ -101,6 +107,9 @@
                                             <constraint firstAttribute="height" constant="197" id="nOh-Yb-hiN"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="tempblue"/>
+                                        <connections>
+                                            <action selector="workoutTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="srU-GQ-mPL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -119,6 +128,9 @@
                                 <state key="normal" image="settings">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="settingsButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6PN-wT-4Jd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -157,6 +169,14 @@
                             <constraint firstItem="wVl-Cr-Mdy" firstAttribute="firstBaseline" secondItem="gOd-NP-6x5" secondAttribute="firstBaseline" id="yMD-1f-Q6X"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="createWorkoutViewButton" destination="wuB-9m-Vwv" id="tT1-cs-WU8"/>
+                        <outlet property="performanceViewButton" destination="gOd-NP-6x5" id="nrs-85-guA"/>
+                        <outlet property="previousWorkoutDateLabel" destination="iKl-a5-gEI" id="2ev-Yd-TSx"/>
+                        <outlet property="settingsViewButton" destination="wVl-Cr-Mdy" id="XX4-Dc-aQS"/>
+                        <outlet property="workoutDetailsLabel" destination="DZN-cW-3Np" id="7sd-lY-0lh"/>
+                        <outlet property="workoutNameLabel" destination="XMW-Qz-hu7" id="F5W-he-uvn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
