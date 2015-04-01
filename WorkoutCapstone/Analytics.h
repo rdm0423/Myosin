@@ -14,6 +14,6 @@ static NSString *workoutEnergyRateKey = @"workoutEnergyRate";
 @interface Analytics : PFObject
 
 @property (nonatomic, assign) NSArray * workouts;
-//@property (nonatomic, assign) NSArray *workoutEnergyRate;
+@property (nonatomic, assign) NSArray *workoutEnergyRate;
 
 @end

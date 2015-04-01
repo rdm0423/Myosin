@@ -13,14 +13,6 @@
 		FF5371001AC604CF00BA7A47 /* Goals.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5370FF1AC604CF00BA7A47 /* Goals.m */; };
 		FF93DBBC1ACB2CA400CEFC24 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF93DBBB1ACB2CA400CEFC24 /* HomePageViewController.m */; };
 		FF93DBBF1ACB2CF800CEFC24 /* HomePageDatesource.m in Sources */ = {isa = PBXBuildFile; fileRef = FF93DBBE1ACB2CF800CEFC24 /* HomePageDatesource.m */; };
-		FF93DBC31ACB2D4900CEFC24 /* TitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF93DBC11ACB2D4900CEFC24 /* TitleTableViewCell.m */; };
-		FF93DBC41ACB2D4900CEFC24 /* TitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF93DBC21ACB2D4900CEFC24 /* TitleTableViewCell.xib */; };
-		FF93DBC81ACB2D6600CEFC24 /* WorkoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF93DBC61ACB2D6600CEFC24 /* WorkoutTableViewCell.m */; };
-		FF93DBC91ACB2D6600CEFC24 /* WorkoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF93DBC71ACB2D6600CEFC24 /* WorkoutTableViewCell.xib */; };
-		FF93DBCD1ACB2DCD00CEFC24 /* WorkoutDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF93DBCB1ACB2DCD00CEFC24 /* WorkoutDetailTableViewCell.m */; };
-		FF93DBCE1ACB2DCD00CEFC24 /* WorkoutDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF93DBCC1ACB2DCD00CEFC24 /* WorkoutDetailTableViewCell.xib */; };
-		FF93DBD21ACB2DE000CEFC24 /* MenuButtonsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF93DBD01ACB2DE000CEFC24 /* MenuButtonsTableViewCell.m */; };
-		FF93DBD31ACB2DE000CEFC24 /* MenuButtonsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF93DBD11ACB2DE000CEFC24 /* MenuButtonsTableViewCell.xib */; };
 		FFC6225B1AC4A2DA00EDB26B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC6225A1AC4A2DA00EDB26B /* main.m */; };
 		FFC6225E1AC4A2DB00EDB26B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC6225D1AC4A2DB00EDB26B /* AppDelegate.m */; };
 		FFC622611AC4A2DB00EDB26B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC622601AC4A2DB00EDB26B /* ViewController.m */; };
@@ -72,18 +64,6 @@
 		FF93DBBB1ACB2CA400CEFC24 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
 		FF93DBBD1ACB2CF800CEFC24 /* HomePageDatesource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageDatesource.h; sourceTree = "<group>"; };
 		FF93DBBE1ACB2CF800CEFC24 /* HomePageDatesource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageDatesource.m; sourceTree = "<group>"; };
-		FF93DBC01ACB2D4900CEFC24 /* TitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleTableViewCell.h; sourceTree = "<group>"; };
-		FF93DBC11ACB2D4900CEFC24 /* TitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleTableViewCell.m; sourceTree = "<group>"; };
-		FF93DBC21ACB2D4900CEFC24 /* TitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleTableViewCell.xib; sourceTree = "<group>"; };
-		FF93DBC51ACB2D6600CEFC24 /* WorkoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutTableViewCell.h; sourceTree = "<group>"; };
-		FF93DBC61ACB2D6600CEFC24 /* WorkoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutTableViewCell.m; sourceTree = "<group>"; };
-		FF93DBC71ACB2D6600CEFC24 /* WorkoutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkoutTableViewCell.xib; sourceTree = "<group>"; };
-		FF93DBCA1ACB2DCD00CEFC24 /* WorkoutDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutDetailTableViewCell.h; sourceTree = "<group>"; };
-		FF93DBCB1ACB2DCD00CEFC24 /* WorkoutDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutDetailTableViewCell.m; sourceTree = "<group>"; };
-		FF93DBCC1ACB2DCD00CEFC24 /* WorkoutDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkoutDetailTableViewCell.xib; sourceTree = "<group>"; };
-		FF93DBCF1ACB2DE000CEFC24 /* MenuButtonsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuButtonsTableViewCell.h; sourceTree = "<group>"; };
-		FF93DBD01ACB2DE000CEFC24 /* MenuButtonsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuButtonsTableViewCell.m; sourceTree = "<group>"; };
-		FF93DBD11ACB2DE000CEFC24 /* MenuButtonsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuButtonsTableViewCell.xib; sourceTree = "<group>"; };
 		FFC622551AC4A2DA00EDB26B /* WorkoutCapstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutCapstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC622591AC4A2DA00EDB26B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFC6225A1AC4A2DA00EDB26B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -172,32 +152,12 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		FF93DBD41ACB329600CEFC24 /* HomePage Cells */ = {
-			isa = PBXGroup;
-			children = (
-				FF93DBC01ACB2D4900CEFC24 /* TitleTableViewCell.h */,
-				FF93DBC11ACB2D4900CEFC24 /* TitleTableViewCell.m */,
-				FF93DBC21ACB2D4900CEFC24 /* TitleTableViewCell.xib */,
-				FF93DBC51ACB2D6600CEFC24 /* WorkoutTableViewCell.h */,
-				FF93DBC61ACB2D6600CEFC24 /* WorkoutTableViewCell.m */,
-				FF93DBC71ACB2D6600CEFC24 /* WorkoutTableViewCell.xib */,
-				FF93DBCA1ACB2DCD00CEFC24 /* WorkoutDetailTableViewCell.h */,
-				FF93DBCB1ACB2DCD00CEFC24 /* WorkoutDetailTableViewCell.m */,
-				FF93DBCC1ACB2DCD00CEFC24 /* WorkoutDetailTableViewCell.xib */,
-				FF93DBCF1ACB2DE000CEFC24 /* MenuButtonsTableViewCell.h */,
-				FF93DBD01ACB2DE000CEFC24 /* MenuButtonsTableViewCell.m */,
-				FF93DBD11ACB2DE000CEFC24 /* MenuButtonsTableViewCell.xib */,
-			);
-			name = "HomePage Cells";
-			sourceTree = "<group>";
-		};
 		FF93DBD51ACB32A000CEFC24 /* HomePageViewController */ = {
 			isa = PBXGroup;
 			children = (
 				FF93DBBA1ACB2CA400CEFC24 /* HomePageViewController.h */,
 				FF93DBBB1ACB2CA400CEFC24 /* HomePageViewController.m */,
 				FF93DBD61ACB32B900CEFC24 /* Datasource */,
-				FF93DBD41ACB329600CEFC24 /* HomePage Cells */,
 			);
 			name = HomePageViewController;
 			sourceTree = "<group>";
@@ -388,10 +348,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF93DBD31ACB2DE000CEFC24 /* MenuButtonsTableViewCell.xib in Resources */,
-				FF93DBC91ACB2D6600CEFC24 /* WorkoutTableViewCell.xib in Resources */,
-				FF93DBC41ACB2D4900CEFC24 /* TitleTableViewCell.xib in Resources */,
-				FF93DBCE1ACB2DCD00CEFC24 /* WorkoutDetailTableViewCell.xib in Resources */,
 				FFC622641AC4A2DB00EDB26B /* Main.storyboard in Resources */,
 				FFC622691AC4A2DB00EDB26B /* LaunchScreen.xib in Resources */,
 				FFC622661AC4A2DB00EDB26B /* Images.xcassets in Resources */,
@@ -412,11 +368,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF93DBC31ACB2D4900CEFC24 /* TitleTableViewCell.m in Sources */,
-				FF93DBC81ACB2D6600CEFC24 /* WorkoutTableViewCell.m in Sources */,
 				FFC622A41AC4AA5100EDB26B /* NetworkController.m in Sources */,
 				FFC622611AC4A2DB00EDB26B /* ViewController.m in Sources */,
-				FF93DBCD1ACB2DCD00CEFC24 /* WorkoutDetailTableViewCell.m in Sources */,
 				FF93DBBC1ACB2CA400CEFC24 /* HomePageViewController.m in Sources */,
 				FF93DBBF1ACB2CF800CEFC24 /* HomePageDatesource.m in Sources */,
 				FFC622A71AC4AA6600EDB26B /* ModelController.m in Sources */,
@@ -425,7 +378,6 @@
 				FFC6225B1AC4A2DA00EDB26B /* main.m in Sources */,
 				FF5370FA1AC604B200BA7A47 /* Exercise.m in Sources */,
 				FF5370FD1AC604C300BA7A47 /* Analytics.m in Sources */,
-				FF93DBD21ACB2DE000CEFC24 /* MenuButtonsTableViewCell.m in Sources */,
 				FF5370F71AC604A200BA7A47 /* Workout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

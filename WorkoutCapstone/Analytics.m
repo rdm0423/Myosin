@@ -10,7 +10,7 @@
 
 @implementation Analytics
 
-@dynamic workoutCompletion;
+@dynamic workouts;
 @dynamic workoutEnergyRate;
 
 @end

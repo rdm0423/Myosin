@@ -7,12 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-@import UIKit;
-#import "TitleTableViewCell.h"
-#import "WorkoutTableViewCell.h"
-#import "WorkoutDetailTableViewCell.h"
-#import "MenuButtonsTableViewCell.h"
 
-@interface HomePageDatesource : NSObject <UITableViewDataSource>
+
+@interface HomePageDatesource : NSObject 
 
 @end
