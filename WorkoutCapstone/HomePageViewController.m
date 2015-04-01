@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *performanceViewButton;
 @property (weak, nonatomic) IBOutlet UIButton *settingsViewButton;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 

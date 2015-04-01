@@ -59,6 +59,7 @@
                                 </state>
                                 <connections>
                                     <action selector="createWorkoutButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Mlj-ku-Kjd"/>
+                                    <segue destination="RUf-Sl-MnY" kind="show" id="G3D-du-Tat"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOd-NP-6x5">
@@ -71,6 +72,7 @@
                                 </state>
                                 <connections>
                                     <action selector="performanceButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0ai-Sp-6u6"/>
+                                    <segue destination="YdK-J3-Sq9" kind="presentation" id="ndI-Ly-nCZ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Workout" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Veg-gG-AiO">
@@ -130,6 +132,7 @@
                                 </state>
                                 <connections>
                                     <action selector="settingsButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6PN-wT-4Jd"/>
+                                    <segue destination="DJa-sN-YEM" kind="presentation" id="YzF-ML-IRA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -173,6 +176,7 @@
                         <outlet property="createWorkoutViewButton" destination="wuB-9m-Vwv" id="tT1-cs-WU8"/>
                         <outlet property="performanceViewButton" destination="gOd-NP-6x5" id="nrs-85-guA"/>
                         <outlet property="previousWorkoutDateLabel" destination="iKl-a5-gEI" id="2ev-Yd-TSx"/>
+                        <outlet property="scrollView" destination="N5e-Mq-em3" id="xwf-gO-ckD"/>
                         <outlet property="settingsViewButton" destination="wVl-Cr-Mdy" id="XX4-Dc-aQS"/>
                         <outlet property="workoutDetailsLabel" destination="DZN-cW-3Np" id="7sd-lY-0lh"/>
                         <outlet property="workoutNameLabel" destination="XMW-Qz-hu7" id="F5W-he-uvn"/>
@@ -180,6 +184,113 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Create Workout View Controller-->
+        <scene sceneID="qqz-Vd-BJX">
+            <objects>
+                <viewController id="RUf-Sl-MnY" customClass="CreateWorkoutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JuN-y2-3HH"/>
+                        <viewControllerLayoutGuide type="bottom" id="k4E-oV-DAf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DOl-dY-1iE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DWD-eP-Lxy">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Create Workout" id="48S-1v-LHM">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="7Rk-Un-ZFc"/>
+                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="AWQ-yA-70E"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NEe-fd-dJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-71" y="1062"/>
+        </scene>
+        <!--Performance View Controller-->
+        <scene sceneID="U8Q-pL-dnt">
+            <objects>
+                <viewController id="YdK-J3-Sq9" customClass="PerformanceViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p7M-ji-2pg"/>
+                        <viewControllerLayoutGuide type="bottom" id="89a-zF-Iei"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KBc-se-Hx9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tsG-JR-7hQ">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Performance" id="UEs-kr-pts">
+                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="h7g-Tv-QaS"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vf5-S6-6vJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="600" y="1062"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="urd-m6-aX9">
+            <objects>
+                <viewController id="DJa-sN-YEM" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fLq-Wb-zTr"/>
+                        <viewControllerLayoutGuide type="bottom" id="NSJ-lB-0dU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e5Y-ng-7yd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sTk-Us-GVx">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Settings" id="240-v9-ac3">
+                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Ro5-Px-yK0"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ql8-gG-3cp">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UZ4-0e-Cuj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1254" y="1062"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cby-Qi-YeU">
+            <objects>
+                <viewController id="3tI-qT-UUk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vSU-YL-fiQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="tfX-E6-XSa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DBn-pY-6cm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lBG-fh-7Yz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1254" y="362"/>
         </scene>
     </scenes>
     <resources>

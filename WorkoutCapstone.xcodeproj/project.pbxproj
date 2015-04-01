@@ -39,6 +39,10 @@
 		FFC622A01AC4A5C000EDB26B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC6229F1AC4A5C000EDB26B /* libsqlite3.dylib */; };
 		FFC622A41AC4AA5100EDB26B /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC622A31AC4AA5100EDB26B /* NetworkController.m */; };
 		FFC622A71AC4AA6600EDB26B /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC622A61AC4AA6600EDB26B /* ModelController.m */; };
+		FFF817801ACC9D2A008E27E2 /* CreateWorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF8177F1ACC9D2A008E27E2 /* CreateWorkoutViewController.m */; };
+		FFF817831ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF817821ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.m */; };
+		FFF817861ACC9D51008E27E2 /* PerformanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF817851ACC9D51008E27E2 /* PerformanceViewController.m */; };
+		FFF817891ACC9D6A008E27E2 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF817881ACC9D6A008E27E2 /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +102,14 @@
 		FFC622A31AC4AA5100EDB26B /* NetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkController.m; sourceTree = "<group>"; };
 		FFC622A51AC4AA6600EDB26B /* ModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
 		FFC622A61AC4AA6600EDB26B /* ModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
+		FFF8177E1ACC9D2A008E27E2 /* CreateWorkoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateWorkoutViewController.h; sourceTree = "<group>"; };
+		FFF8177F1ACC9D2A008E27E2 /* CreateWorkoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateWorkoutViewController.m; sourceTree = "<group>"; };
+		FFF817811ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateWorkoutDetailViewController.h; sourceTree = "<group>"; };
+		FFF817821ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateWorkoutDetailViewController.m; sourceTree = "<group>"; };
+		FFF817841ACC9D51008E27E2 /* PerformanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerformanceViewController.h; sourceTree = "<group>"; };
+		FFF817851ACC9D51008E27E2 /* PerformanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerformanceViewController.m; sourceTree = "<group>"; };
+		FFF817871ACC9D6A008E27E2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		FFF817881ACC9D6A008E27E2 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +213,7 @@
 				FF93DBD51ACB32A000CEFC24 /* HomePageViewController */,
 				FFC622A21AC4AA5100EDB26B /* NetworkController.h */,
 				FFC622A31AC4AA5100EDB26B /* NetworkController.m */,
+				FFF8178A1ACC9D7B008E27E2 /* Menu View Controllers */,
 				FF5370F11AC5F53E00BA7A47 /* Model */,
 				FFC622621AC4A2DB00EDB26B /* Main.storyboard */,
 				FFC622651AC4A2DB00EDB26B /* Images.xcassets */,
@@ -265,6 +278,29 @@
 				FFC6228B1AC4A52000EDB26B /* AudioToolbox.framework */,
 			);
 			name = Parse;
+			sourceTree = "<group>";
+		};
+		FFF8178A1ACC9D7B008E27E2 /* Menu View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FFF8177E1ACC9D2A008E27E2 /* CreateWorkoutViewController.h */,
+				FFF8177F1ACC9D2A008E27E2 /* CreateWorkoutViewController.m */,
+				FFF8178B1ACC9D8A008E27E2 /* CreateWorkout Detail */,
+				FFF817841ACC9D51008E27E2 /* PerformanceViewController.h */,
+				FFF817851ACC9D51008E27E2 /* PerformanceViewController.m */,
+				FFF817871ACC9D6A008E27E2 /* SettingsViewController.h */,
+				FFF817881ACC9D6A008E27E2 /* SettingsViewController.m */,
+			);
+			name = "Menu View Controllers";
+			sourceTree = "<group>";
+		};
+		FFF8178B1ACC9D8A008E27E2 /* CreateWorkout Detail */ = {
+			isa = PBXGroup;
+			children = (
+				FFF817811ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.h */,
+				FFF817821ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.m */,
+			);
+			name = "CreateWorkout Detail";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,15 +404,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFF817831ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.m in Sources */,
 				FFC622A41AC4AA5100EDB26B /* NetworkController.m in Sources */,
 				FFC622611AC4A2DB00EDB26B /* ViewController.m in Sources */,
 				FF93DBBC1ACB2CA400CEFC24 /* HomePageViewController.m in Sources */,
 				FF93DBBF1ACB2CF800CEFC24 /* HomePageDatesource.m in Sources */,
 				FFC622A71AC4AA6600EDB26B /* ModelController.m in Sources */,
 				FF5371001AC604CF00BA7A47 /* Goals.m in Sources */,
+				FFF817801ACC9D2A008E27E2 /* CreateWorkoutViewController.m in Sources */,
 				FFC6225E1AC4A2DB00EDB26B /* AppDelegate.m in Sources */,
 				FFC6225B1AC4A2DA00EDB26B /* main.m in Sources */,
 				FF5370FA1AC604B200BA7A47 /* Exercise.m in Sources */,
+				FFF817861ACC9D51008E27E2 /* PerformanceViewController.m in Sources */,
+				FFF817891ACC9D6A008E27E2 /* SettingsViewController.m in Sources */,
 				FF5370FD1AC604C300BA7A47 /* Analytics.m in Sources */,
 				FF5370F71AC604A200BA7A47 /* Workout.m in Sources */,
 			);
