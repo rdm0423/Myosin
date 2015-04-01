@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "HomePageDatesource.h"
 
-@interface HomePageViewController : UIViewController <UITableViewDelegate>
+@interface HomePageViewController : UIViewController 
 
 @end
