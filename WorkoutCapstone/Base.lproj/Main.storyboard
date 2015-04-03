@@ -202,7 +202,11 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Create Workout" id="48S-1v-LHM">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="7Rk-Un-ZFc"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="7Rk-Un-ZFc">
+                                            <connections>
+                                                <action selector="cancel:" destination="RUf-Sl-MnY" id="b9X-Kd-xef"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -252,6 +256,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="addExercisesButton:" destination="RUf-Sl-MnY" eventType="touchUpInside" id="6WX-1v-ZUf"/>
                                     <segue destination="qhN-Ta-Ea9" kind="show" id="uhN-gh-qa0"/>
                                 </connections>
                             </button>
@@ -264,6 +269,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="repsPicker" destination="gDg-Rc-Qx1" id="W8X-Fu-iaD"/>
+                        <outlet property="restTimeSegmentedControl" destination="pll-cU-9Pq" id="7qV-c2-fAA"/>
+                        <outlet property="setsPicker" destination="Via-7y-Urr" id="zpy-Fb-Bac"/>
+                        <outlet property="workoutFocusAreaPicker" destination="fmD-HI-SPg" id="kqv-Lq-ZeN"/>
+                        <outlet property="workoutName" destination="AC4-Qu-Qyt" id="CK0-sT-Teg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NEe-fd-dJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

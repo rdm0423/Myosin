@@ -9,6 +9,11 @@
 #import "CreateWorkoutViewController.h"
 
 @interface CreateWorkoutViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *workoutName;
+@property (weak, nonatomic) IBOutlet UIPickerView *workoutFocusAreaPicker;
+@property (weak, nonatomic) IBOutlet UIPickerView *setsPicker;
+@property (weak, nonatomic) IBOutlet UIPickerView *repsPicker;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *restTimeSegmentedControl;
 
 @end
 
@@ -17,6 +22,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+- (IBAction)cancel:(id)sender {
+    
+}
+
+- (IBAction)addExercisesButton:(id)sender {
+    
 }
 
 - (void)didReceiveMemoryWarning {
