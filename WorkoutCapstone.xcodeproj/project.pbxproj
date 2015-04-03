@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FF0CDEAC1ACF309300BA2FA6 /* AddExercisesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEAB1ACF309300BA2FA6 /* AddExercisesViewController.m */; };
+		FF0CDEAF1ACF464000BA2FA6 /* WorkoutModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEAE1ACF464000BA2FA6 /* WorkoutModeViewController.m */; };
 		FF5370F71AC604A200BA7A47 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5370F61AC604A200BA7A47 /* Workout.m */; };
 		FF5370FA1AC604B200BA7A47 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5370F91AC604B200BA7A47 /* Exercise.m */; };
 		FF5370FD1AC604C300BA7A47 /* Analytics.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5370FC1AC604C300BA7A47 /* Analytics.m */; };
@@ -59,6 +60,8 @@
 /* Begin PBXFileReference section */
 		FF0CDEAA1ACF309300BA2FA6 /* AddExercisesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddExercisesViewController.h; sourceTree = "<group>"; };
 		FF0CDEAB1ACF309300BA2FA6 /* AddExercisesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddExercisesViewController.m; sourceTree = "<group>"; };
+		FF0CDEAD1ACF464000BA2FA6 /* WorkoutModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutModeViewController.h; sourceTree = "<group>"; };
+		FF0CDEAE1ACF464000BA2FA6 /* WorkoutModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutModeViewController.m; sourceTree = "<group>"; };
 		FF5370F51AC604A200BA7A47 /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
 		FF5370F61AC604A200BA7A47 /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
 		FF5370F81AC604B200BA7A47 /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercise.h; sourceTree = "<group>"; };
@@ -292,6 +295,8 @@
 				FFF817851ACC9D51008E27E2 /* PerformanceViewController.m */,
 				FFF817871ACC9D6A008E27E2 /* SettingsViewController.h */,
 				FFF817881ACC9D6A008E27E2 /* SettingsViewController.m */,
+				FF0CDEAD1ACF464000BA2FA6 /* WorkoutModeViewController.h */,
+				FF0CDEAE1ACF464000BA2FA6 /* WorkoutModeViewController.m */,
 				FFF8178B1ACC9D8A008E27E2 /* CreateWorkout Detail */,
 			);
 			name = "Menu View Controllers";
@@ -417,6 +422,7 @@
 				FFC622A71AC4AA6600EDB26B /* ModelController.m in Sources */,
 				FF5371001AC604CF00BA7A47 /* Goals.m in Sources */,
 				FFF817801ACC9D2A008E27E2 /* CreateWorkoutViewController.m in Sources */,
+				FF0CDEAF1ACF464000BA2FA6 /* WorkoutModeViewController.m in Sources */,
 				FFC6225E1AC4A2DB00EDB26B /* AppDelegate.m in Sources */,
 				FFC6225B1AC4A2DA00EDB26B /* main.m in Sources */,
 				FF0CDEAC1ACF309300BA2FA6 /* AddExercisesViewController.m in Sources */,
