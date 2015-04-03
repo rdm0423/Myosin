@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import "ViewController.h"
+#import "HomePageViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // [Optional] Power your app with Local Datastore. For more info, go to
     // https://parse.com/docs/ios_guide#localdatastore/iOS
@@ -59,16 +60,8 @@
         }
     }
     
-    
-    
-    //// sets window bounds and root view controller
-    
-//    ViewController *viewController = [ViewController new];
-//    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
-//    self.window.rootViewController = navigationController;
-//    
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    [self.window makeKeyAndVisible];
     
     return YES;
 }
