@@ -25,7 +25,7 @@
 }
 
 - (IBAction)cancel:(id)sender {
-    
+    [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)addExercisesButton:(id)sender {
