@@ -7,6 +7,7 @@
 //
 
 #import "ModelController.h"
+#import "Workout.h"
 
 @implementation ModelController
 
@@ -19,5 +20,15 @@
 //    return sharedInstance;
 
 //}
+
+-(void)addWorkout withName:(NSString *)name withSets:()
+{
+    
+}
+
+-(void)addExerciseWithName:(NSString *)name toWorkout:(Workout *)workout
+{
+    
+}
 
 @end
