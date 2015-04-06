@@ -7,18 +7,23 @@
 //
 
 #import "HomePageViewController.h"
+#import "HomePageDatesource.h"
+#import "HomePageTableViewCell.h"
 
-@interface HomePageViewController () 
+@interface HomePageViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *workoutNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *workoutDetailsLabel;
-@property (weak, nonatomic) IBOutlet UILabel *previousWorkoutDateLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
+
+//@property (weak, nonatomic) IBOutlet UIImageView *workoutImage;
+//@property (weak, nonatomic) IBOutlet UILabel *workoutNameLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *focusAreaLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *previousCompletedLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *createWorkoutViewButton;
 @property (weak, nonatomic) IBOutlet UIButton *performanceViewButton;
 @property (weak, nonatomic) IBOutlet UIButton *settingsViewButton;
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 
 @end
 
@@ -27,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Myosin";
+//    self.title = @"Myosin";
     
     PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
     testObject[@"foo"] = @"bar";

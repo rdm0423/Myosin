@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FF0CDEAC1ACF309300BA2FA6 /* AddExercisesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEAB1ACF309300BA2FA6 /* AddExercisesViewController.m */; };
 		FF0CDEAF1ACF464000BA2FA6 /* WorkoutModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEAE1ACF464000BA2FA6 /* WorkoutModeViewController.m */; };
+		FF0CDEE71AD32A6C00BA2FA6 /* HomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEE61AD32A6C00BA2FA6 /* HomePageTableViewCell.m */; };
 		FF5370F71AC604A200BA7A47 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5370F61AC604A200BA7A47 /* Workout.m */; };
 		FF5370FA1AC604B200BA7A47 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5370F91AC604B200BA7A47 /* Exercise.m */; };
 		FF5370FD1AC604C300BA7A47 /* Analytics.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5370FC1AC604C300BA7A47 /* Analytics.m */; };
@@ -62,6 +63,8 @@
 		FF0CDEAB1ACF309300BA2FA6 /* AddExercisesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddExercisesViewController.m; sourceTree = "<group>"; };
 		FF0CDEAD1ACF464000BA2FA6 /* WorkoutModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutModeViewController.h; sourceTree = "<group>"; };
 		FF0CDEAE1ACF464000BA2FA6 /* WorkoutModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutModeViewController.m; sourceTree = "<group>"; };
+		FF0CDEE51AD32A6C00BA2FA6 /* HomePageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageTableViewCell.h; sourceTree = "<group>"; };
+		FF0CDEE61AD32A6C00BA2FA6 /* HomePageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageTableViewCell.m; sourceTree = "<group>"; };
 		FF5370F51AC604A200BA7A47 /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
 		FF5370F61AC604A200BA7A47 /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
 		FF5370F81AC604B200BA7A47 /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercise.h; sourceTree = "<group>"; };
@@ -153,6 +156,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF0CDEE81AD32B8200BA2FA6 /* Custom Home Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FF0CDEE51AD32A6C00BA2FA6 /* HomePageTableViewCell.h */,
+				FF0CDEE61AD32A6C00BA2FA6 /* HomePageTableViewCell.m */,
+			);
+			name = "Custom Home Cell";
+			sourceTree = "<group>";
+		};
 		FF5370F11AC5F53E00BA7A47 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +197,7 @@
 			children = (
 				FF93DBBD1ACB2CF800CEFC24 /* HomePageDatesource.h */,
 				FF93DBBE1ACB2CF800CEFC24 /* HomePageDatesource.m */,
+				FF0CDEE81AD32B8200BA2FA6 /* Custom Home Cell */,
 			);
 			name = Datasource;
 			sourceTree = "<group>";
@@ -431,6 +444,7 @@
 				FFF817891ACC9D6A008E27E2 /* SettingsViewController.m in Sources */,
 				FF5370FD1AC604C300BA7A47 /* Analytics.m in Sources */,
 				FF5370F71AC604A200BA7A47 /* Workout.m in Sources */,
+				FF0CDEE71AD32A6C00BA2FA6 /* HomePageTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
