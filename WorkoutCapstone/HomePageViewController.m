@@ -10,14 +10,11 @@
 #import "HomePageDatesource.h"
 #import "HomePageTableViewCell.h"
 
-@interface HomePageViewController ()
+@interface HomePageViewController () <UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (nonatomic, strong) HomePageDatesource *datasource;
 
-//@property (weak, nonatomic) IBOutlet UIImageView *workoutImage;
-//@property (weak, nonatomic) IBOutlet UILabel *workoutNameLabel;
-//@property (weak, nonatomic) IBOutlet UILabel *focusAreaLabel;
-//@property (weak, nonatomic) IBOutlet UILabel *previousCompletedLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *createWorkoutViewButton;
 @property (weak, nonatomic) IBOutlet UIButton *performanceViewButton;

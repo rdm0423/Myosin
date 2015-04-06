@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+@import UIKit;
 
 
-@interface HomePageDatesource : NSObject 
+@interface HomePageDatesource : NSObject <UITableViewDataSource>
+
+- (void)registerTableView:(UITableView *)tableView;
 
 @end
