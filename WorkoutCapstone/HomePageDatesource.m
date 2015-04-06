@@ -47,11 +47,17 @@
 # warning get right array form for getting in the workout information
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    HomePageTableViewCell *cell = [self.tableview dequeueReusableCellWithIdentifier:@"homeCell"];
-    cell.workoutImageView.image = [UIImage imageNamed:@""];
-    cell.workoutNameLabel.text = [self workoutArray][indexPath.row];
-    cell.focusAreaLabel.text = [self workoutArray][indexPath.row];
-    cell.previousCompletedLabel.text = [self workoutArray][indexPath.row];
+    HomePageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"homeCell"];
+    
+    // customize image
+    cell.workoutImageView.image = [UIImage imageNamed:@"tempblue"];
+    cell.workoutImageView.layer.cornerRadius = 8.0f;
+    cell.workoutImageView.clipsToBounds = YES;
+    
+    
+    cell.workoutNameLabel.text = @"name";
+    cell.focusAreaLabel.text = @"area";
+    cell.previousCompletedLabel.text = @"completed";
     
     return cell;
     

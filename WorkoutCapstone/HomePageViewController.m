@@ -30,10 +30,17 @@
     [super viewDidLoad];
     
 //    self.title = @"Myosin";
-    
+    // Parse
     PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
     testObject[@"foo"] = @"bar";
     [testObject saveInBackground];
+    
+    // Tableview
+//    self.tableview = [[UITableView alloc] initWithFrame:self.view.bounds];
+    self.datasource = [HomePageDatesource new];
+    self.tableview.dataSource = self.datasource;
+    self.tableview.delegate = self;
+    [self.view addSubview:self.tableview];
     
     
 }
@@ -54,7 +61,9 @@
     
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
