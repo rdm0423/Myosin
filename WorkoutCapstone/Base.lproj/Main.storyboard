@@ -237,7 +237,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8P-Kn-iqF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Reps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8P-Kn-iqF">
                                 <rect key="frame" x="405" y="323" width="40" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -259,18 +259,6 @@
                                     <segue destination="qhN-Ta-Ea9" kind="show" id="uhN-gh-qa0"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Via-7y-Urr">
-                                <rect key="frame" x="-129" y="335" width="600" height="162"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="600" id="ctd-S6-emG"/>
-                                </constraints>
-                            </pickerView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDg-Rc-Qx1">
-                                <rect key="frame" x="125" y="335" width="600" height="162"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="600" id="iNa-ah-iTL"/>
-                                </constraints>
-                            </pickerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pll-cU-9Pq">
                                 <rect key="frame" x="317" y="504" width="130" height="29"/>
                                 <constraints>
@@ -281,39 +269,43 @@
                                     <segment title="45"/>
                                     <segment title="60"/>
                                 </segments>
+                                <connections>
+                                    <action selector="restTimeSegmentedSelected:" destination="RUf-Sl-MnY" eventType="valueChanged" id="IRj-Vw-0kC"/>
+                                </connections>
                             </segmentedControl>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Via-7y-Urr">
+                                <rect key="frame" x="0.0" y="337" width="600" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="ctd-S6-emG"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UG9-BH-KbQ" firstAttribute="top" secondItem="JuN-y2-3HH" secondAttribute="bottom" constant="487" id="0Dr-BX-cpB"/>
-                            <constraint firstItem="gDg-Rc-Qx1" firstAttribute="top" secondItem="H9C-Ad-uQd" secondAttribute="bottom" constant="-9" id="2ha-Ms-0mV"/>
                             <constraint firstItem="AC4-Qu-Qyt" firstAttribute="top" secondItem="JuN-y2-3HH" secondAttribute="bottom" constant="66" id="4zm-wa-epk"/>
                             <constraint firstItem="fmD-HI-SPg" firstAttribute="centerX" secondItem="Jbx-fT-nNK" secondAttribute="centerX" id="5bc-He-chG"/>
                             <constraint firstItem="H9C-Ad-uQd" firstAttribute="leading" secondItem="DOl-dY-1iE" secondAttribute="leadingMargin" constant="138" id="7Bj-P5-G7W"/>
                             <constraint firstItem="uaj-KO-xdB" firstAttribute="top" secondItem="JuN-y2-3HH" secondAttribute="bottom" constant="530" id="9Kr-vj-nFI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pll-cU-9Pq" secondAttribute="trailing" constant="137" id="E5a-VO-tUG"/>
                             <constraint firstItem="Jbx-fT-nNK" firstAttribute="top" secondItem="AC4-Qu-Qyt" secondAttribute="bottom" constant="20" id="I7i-xo-jSo"/>
-                            <constraint firstItem="Via-7y-Urr" firstAttribute="centerX" secondItem="H9C-Ad-uQd" secondAttribute="centerX" constant="-0.5" id="LfQ-yB-pPm"/>
+                            <constraint firstItem="Via-7y-Urr" firstAttribute="centerX" secondItem="H9C-Ad-uQd" secondAttribute="centerX" constant="128.5" id="LfQ-yB-pPm"/>
                             <constraint firstItem="fmD-HI-SPg" firstAttribute="top" secondItem="Jbx-fT-nNK" secondAttribute="bottom" constant="-9" id="N6h-Tc-paS"/>
                             <constraint firstItem="UG9-BH-KbQ" firstAttribute="centerY" secondItem="pll-cU-9Pq" secondAttribute="centerY" constant="-0.5" id="O9X-er-0nw"/>
-                            <constraint firstItem="gDg-Rc-Qx1" firstAttribute="centerX" secondItem="U8P-Kn-iqF" secondAttribute="centerX" id="Pm6-rh-qyv"/>
                             <constraint firstItem="U8P-Kn-iqF" firstAttribute="leading" secondItem="H9C-Ad-uQd" secondAttribute="trailing" constant="216" id="QlO-qk-Rdz"/>
                             <constraint firstItem="Jbx-fT-nNK" firstAttribute="centerX" secondItem="AC4-Qu-Qyt" secondAttribute="centerX" constant="-0.5" id="TXc-2e-cnQ"/>
-                            <constraint firstItem="gDg-Rc-Qx1" firstAttribute="top" secondItem="U8P-Kn-iqF" secondAttribute="bottom" constant="-9" id="X1S-UI-MPk"/>
-                            <constraint firstItem="Via-7y-Urr" firstAttribute="top" secondItem="H9C-Ad-uQd" secondAttribute="bottom" constant="-9" id="aRw-P9-gzW"/>
+                            <constraint firstItem="Via-7y-Urr" firstAttribute="top" secondItem="H9C-Ad-uQd" secondAttribute="bottom" constant="-7" id="aRw-P9-gzW"/>
                             <constraint firstItem="UG9-BH-KbQ" firstAttribute="leading" secondItem="DOl-dY-1iE" secondAttribute="leadingMargin" constant="138" id="lHK-3O-8tw"/>
                             <constraint firstAttribute="centerX" secondItem="AC4-Qu-Qyt" secondAttribute="centerX" constant="-0.5" id="lJD-Tc-GIS"/>
                             <constraint firstAttribute="centerX" secondItem="uaj-KO-xdB" secondAttribute="centerX" id="llN-LS-eiO"/>
                             <constraint firstItem="pll-cU-9Pq" firstAttribute="leading" secondItem="UG9-BH-KbQ" secondAttribute="trailing" constant="45" id="pAs-fv-lpz"/>
                             <constraint firstItem="H9C-Ad-uQd" firstAttribute="top" secondItem="JuN-y2-3HH" secondAttribute="bottom" constant="303" id="uXf-XF-Uie"/>
                             <constraint firstAttribute="trailingMargin" secondItem="U8P-Kn-iqF" secondAttribute="trailing" constant="139" id="uyL-N2-Qz0"/>
-                            <constraint firstItem="gDg-Rc-Qx1" firstAttribute="centerX" secondItem="H9C-Ad-uQd" secondAttribute="centerX" constant="253.5" id="wNF-jo-w6m"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="repsPicker" destination="gDg-Rc-Qx1" id="W8X-Fu-iaD"/>
                         <outlet property="restTimeSegmentedControl" destination="pll-cU-9Pq" id="7qV-c2-fAA"/>
-                        <outlet property="setsPicker" destination="Via-7y-Urr" id="zpy-Fb-Bac"/>
+                        <outlet property="setsRepsPicker" destination="Via-7y-Urr" id="EgG-dZ-HmG"/>
                         <outlet property="workoutFocusAreaPicker" destination="fmD-HI-SPg" id="kqv-Lq-ZeN"/>
                         <outlet property="workoutName" destination="AC4-Qu-Qyt" id="CK0-sT-Teg"/>
                     </connections>
