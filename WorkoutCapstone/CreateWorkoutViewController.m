@@ -58,6 +58,14 @@
 
 
 - (IBAction)restTimeSegmentedSelected:(id)sender {
+    
+    if (self.restTimeSegmentedControl.selectedSegmentIndex == 0) {
+        
+    } else if (self.restTimeSegmentedControl.selectedSegmentIndex == 1) {
+        
+    } else if (self.restTimeSegmentedControl.selectedSegmentIndex ==2) {
+        
+    }
 }
 
 - (IBAction)cancel:(id)sender {
