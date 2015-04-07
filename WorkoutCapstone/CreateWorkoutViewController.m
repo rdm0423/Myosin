@@ -8,15 +8,22 @@
 
 #import "CreateWorkoutViewController.h"
 
-@interface CreateWorkoutViewController ()
+@interface CreateWorkoutViewController () <UITextFieldDelegate, UIPickerViewDelegate>
 {
     NSArray *_workoutFocusAreaData;
     NSArray *_setsRepsPickerData;
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *workoutName;
+@property (weak, nonatomic) IBOutlet UITextField *workoutFocusAreaTextField;
+@property (weak, nonatomic) IBOutlet UITextField *workoutSetsTextField;
+@property (weak, nonatomic) IBOutlet UITextField *workoutRepsTextField;
+
+
+
 @property (weak, nonatomic) IBOutlet UIPickerView *workoutFocusAreaPicker;
 @property (weak, nonatomic) IBOutlet UIPickerView *setsRepsPicker;
+
 @property (weak, nonatomic) IBOutlet UISegmentedControl *restTimeSegmentedControl;
 
 
