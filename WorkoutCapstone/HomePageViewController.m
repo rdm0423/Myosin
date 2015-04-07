@@ -45,6 +45,11 @@
     
 }
 
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 84;
+}
+
 - (IBAction)workoutTapped:(id)sender {
     
 }
