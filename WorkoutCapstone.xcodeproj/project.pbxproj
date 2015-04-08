@@ -17,7 +17,9 @@
 		FF93DBBC1ACB2CA400CEFC24 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF93DBBB1ACB2CA400CEFC24 /* HomePageViewController.m */; };
 		FF93DBBF1ACB2CF800CEFC24 /* HomePageDatesource.m in Sources */ = {isa = PBXBuildFile; fileRef = FF93DBBE1ACB2CF800CEFC24 /* HomePageDatesource.m */; };
 		FFB8AB531AD5BC2D00BE6DE1 /* exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = FFB8AB521AD5BC2D00BE6DE1 /* exercises.json */; };
-		FFB8AB561AD5BDE800BE6DE1 /* ExerciseGetterController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8AB551AD5BDE800BE6DE1 /* ExerciseGetterController.m */; };
+		FFB8AB561AD5BDE800BE6DE1 /* ImportWorkoutsToCoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8AB551AD5BDE800BE6DE1 /* ImportWorkoutsToCoreDataController.m */; };
+		FFB8AB591AD5C67700BE6DE1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFB8AB571AD5C67700BE6DE1 /* Model.xcdatamodeld */; };
+		FFB8AB5C1AD5C69600BE6DE1 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8AB5B1AD5C69600BE6DE1 /* Stack.m */; };
 		FFC6225B1AC4A2DA00EDB26B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC6225A1AC4A2DA00EDB26B /* main.m */; };
 		FFC6225E1AC4A2DB00EDB26B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC6225D1AC4A2DB00EDB26B /* AppDelegate.m */; };
 		FFC622611AC4A2DB00EDB26B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC622601AC4A2DB00EDB26B /* ViewController.m */; };
@@ -80,8 +82,11 @@
 		FF93DBBD1ACB2CF800CEFC24 /* HomePageDatesource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageDatesource.h; sourceTree = "<group>"; };
 		FF93DBBE1ACB2CF800CEFC24 /* HomePageDatesource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageDatesource.m; sourceTree = "<group>"; };
 		FFB8AB521AD5BC2D00BE6DE1 /* exercises.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = exercises.json; sourceTree = "<group>"; };
-		FFB8AB541AD5BDE800BE6DE1 /* ExerciseGetterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseGetterController.h; sourceTree = "<group>"; };
-		FFB8AB551AD5BDE800BE6DE1 /* ExerciseGetterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseGetterController.m; sourceTree = "<group>"; };
+		FFB8AB541AD5BDE800BE6DE1 /* ImportWorkoutsToCoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportWorkoutsToCoreDataController.h; sourceTree = "<group>"; };
+		FFB8AB551AD5BDE800BE6DE1 /* ImportWorkoutsToCoreDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportWorkoutsToCoreDataController.m; sourceTree = "<group>"; };
+		FFB8AB581AD5C67700BE6DE1 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		FFB8AB5A1AD5C69600BE6DE1 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		FFB8AB5B1AD5C69600BE6DE1 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 		FFC622551AC4A2DA00EDB26B /* WorkoutCapstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutCapstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC622591AC4A2DA00EDB26B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFC6225A1AC4A2DA00EDB26B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -174,10 +179,11 @@
 			isa = PBXGroup;
 			children = (
 				FFB8AB521AD5BC2D00BE6DE1 /* exercises.json */,
-				FFB8AB541AD5BDE800BE6DE1 /* ExerciseGetterController.h */,
-				FFB8AB551AD5BDE800BE6DE1 /* ExerciseGetterController.m */,
+				FFB8AB541AD5BDE800BE6DE1 /* ImportWorkoutsToCoreDataController.h */,
+				FFB8AB551AD5BDE800BE6DE1 /* ImportWorkoutsToCoreDataController.m */,
 				FFC622A51AC4AA6600EDB26B /* ModelController.h */,
 				FFC622A61AC4AA6600EDB26B /* ModelController.m */,
+				FFB8AB571AD5C67700BE6DE1 /* Model.xcdatamodeld */,
 				FF5370F51AC604A200BA7A47 /* Workout.h */,
 				FF5370F61AC604A200BA7A47 /* Workout.m */,
 				FF5370F81AC604B200BA7A47 /* Exercise.h */,
@@ -186,6 +192,7 @@
 				FF5370FC1AC604C300BA7A47 /* Analytics.m */,
 				FF5370FE1AC604CF00BA7A47 /* Goals.h */,
 				FF5370FF1AC604CF00BA7A47 /* Goals.m */,
+				FFB8AB5D1AD5C69A00BE6DE1 /* Stack */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -208,6 +215,15 @@
 				FF0CDEE81AD32B8200BA2FA6 /* Custom Home Cell */,
 			);
 			name = Datasource;
+			sourceTree = "<group>";
+		};
+		FFB8AB5D1AD5C69A00BE6DE1 /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+				FFB8AB5A1AD5C69600BE6DE1 /* Stack.h */,
+				FFB8AB5B1AD5C69600BE6DE1 /* Stack.m */,
+			);
+			name = Stack;
 			sourceTree = "<group>";
 		};
 		FFC6224C1AC4A2DA00EDB26B = {
@@ -443,13 +459,15 @@
 				FF93DBBF1ACB2CF800CEFC24 /* HomePageDatesource.m in Sources */,
 				FFC622A71AC4AA6600EDB26B /* ModelController.m in Sources */,
 				FF5371001AC604CF00BA7A47 /* Goals.m in Sources */,
+				FFB8AB591AD5C67700BE6DE1 /* Model.xcdatamodeld in Sources */,
 				FFF817801ACC9D2A008E27E2 /* CreateWorkoutViewController.m in Sources */,
 				FF0CDEAF1ACF464000BA2FA6 /* WorkoutModeViewController.m in Sources */,
 				FFC6225E1AC4A2DB00EDB26B /* AppDelegate.m in Sources */,
-				FFB8AB561AD5BDE800BE6DE1 /* ExerciseGetterController.m in Sources */,
+				FFB8AB561AD5BDE800BE6DE1 /* ImportWorkoutsToCoreDataController.m in Sources */,
 				FFC6225B1AC4A2DA00EDB26B /* main.m in Sources */,
 				FF0CDEAC1ACF309300BA2FA6 /* AddExercisesViewController.m in Sources */,
 				FF5370FA1AC604B200BA7A47 /* Exercise.m in Sources */,
+				FFB8AB5C1AD5C69600BE6DE1 /* Stack.m in Sources */,
 				FFF817861ACC9D51008E27E2 /* PerformanceViewController.m in Sources */,
 				FFF817891ACC9D6A008E27E2 /* SettingsViewController.m in Sources */,
 				FF5370FD1AC604C300BA7A47 /* Analytics.m in Sources */,
@@ -673,6 +691,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FFB8AB571AD5C67700BE6DE1 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FFB8AB581AD5C67700BE6DE1 /* Model.xcdatamodel */,
+			);
+			currentVersion = FFB8AB581AD5C67700BE6DE1 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FFC6224D1AC4A2DA00EDB26B /* Project object */;
 }

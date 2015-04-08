@@ -114,6 +114,23 @@
     }
     // ...
     
+#pragma Mark - Launch Count
+    // Launch Count - -------- Exercise Getter
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSInteger applicationLaunchCount = [userDefaults integerForKey:@"LaunchCount"];
+    if (!applicationLaunchCount) {
+        // code for processing json
+        
+        NSLog(@"First launch");
+    } else {
+        // code for already has downloaded
+        
+        NSString *string = [NSString stringWithFormat:@"%ld", (long)applicationLaunchCount];
+        
+        NSLog(string);
+    }
+    [userDefaults setInteger:applicationLaunchCount + 1 forKey:@"LaunchCount"];
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
