@@ -15,4 +15,14 @@
 @dynamic exerciseTime;
 @dynamic exerciseDetails;
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+    self = [super init];
+    if (self) {
+        //
+    }
+    return self;
+}
+
+
 @end
