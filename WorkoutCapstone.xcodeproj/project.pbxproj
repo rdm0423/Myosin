@@ -10,16 +10,17 @@
 		FF0CDEAC1ACF309300BA2FA6 /* AddExercisesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEAB1ACF309300BA2FA6 /* AddExercisesViewController.m */; };
 		FF0CDEAF1ACF464000BA2FA6 /* WorkoutModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEAE1ACF464000BA2FA6 /* WorkoutModeViewController.m */; };
 		FF0CDEE71AD32A6C00BA2FA6 /* HomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEE61AD32A6C00BA2FA6 /* HomePageTableViewCell.m */; };
-		FF5370F71AC604A200BA7A47 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5370F61AC604A200BA7A47 /* Workout.m */; };
-		FF5370FA1AC604B200BA7A47 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5370F91AC604B200BA7A47 /* Exercise.m */; };
-		FF5370FD1AC604C300BA7A47 /* Analytics.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5370FC1AC604C300BA7A47 /* Analytics.m */; };
-		FF5371001AC604CF00BA7A47 /* Goals.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5370FF1AC604CF00BA7A47 /* Goals.m */; };
 		FF93DBBC1ACB2CA400CEFC24 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF93DBBB1ACB2CA400CEFC24 /* HomePageViewController.m */; };
 		FF93DBBF1ACB2CF800CEFC24 /* HomePageDatesource.m in Sources */ = {isa = PBXBuildFile; fileRef = FF93DBBE1ACB2CF800CEFC24 /* HomePageDatesource.m */; };
 		FFB8AB531AD5BC2D00BE6DE1 /* exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = FFB8AB521AD5BC2D00BE6DE1 /* exercises.json */; };
 		FFB8AB561AD5BDE800BE6DE1 /* ImportWorkoutsToCoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8AB551AD5BDE800BE6DE1 /* ImportWorkoutsToCoreDataController.m */; };
 		FFB8AB591AD5C67700BE6DE1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFB8AB571AD5C67700BE6DE1 /* Model.xcdatamodeld */; };
 		FFB8AB5C1AD5C69600BE6DE1 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8AB5B1AD5C69600BE6DE1 /* Stack.m */; };
+		FFB8AB601AD5E17100BE6DE1 /* ExercisePlanned.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8AB5F1AD5E17100BE6DE1 /* ExercisePlanned.m */; };
+		FFB8AB631AD5E17200BE6DE1 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8AB621AD5E17200BE6DE1 /* Workout.m */; };
+		FFB8AB661AD5E17200BE6DE1 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8AB651AD5E17200BE6DE1 /* Exercise.m */; };
+		FFB8AB691AD5E17200BE6DE1 /* GuideStep.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8AB681AD5E17200BE6DE1 /* GuideStep.m */; };
+		FFB8AB6B1AD5E17D00BE6DE1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB8AB6A1AD5E17D00BE6DE1 /* CoreData.framework */; };
 		FFC6225B1AC4A2DA00EDB26B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC6225A1AC4A2DA00EDB26B /* main.m */; };
 		FFC6225E1AC4A2DB00EDB26B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC6225D1AC4A2DB00EDB26B /* AppDelegate.m */; };
 		FFC622611AC4A2DB00EDB26B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC622601AC4A2DB00EDB26B /* ViewController.m */; };
@@ -69,14 +70,6 @@
 		FF0CDEAE1ACF464000BA2FA6 /* WorkoutModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutModeViewController.m; sourceTree = "<group>"; };
 		FF0CDEE51AD32A6C00BA2FA6 /* HomePageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageTableViewCell.h; sourceTree = "<group>"; };
 		FF0CDEE61AD32A6C00BA2FA6 /* HomePageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageTableViewCell.m; sourceTree = "<group>"; };
-		FF5370F51AC604A200BA7A47 /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
-		FF5370F61AC604A200BA7A47 /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
-		FF5370F81AC604B200BA7A47 /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercise.h; sourceTree = "<group>"; };
-		FF5370F91AC604B200BA7A47 /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
-		FF5370FB1AC604C300BA7A47 /* Analytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Analytics.h; sourceTree = "<group>"; };
-		FF5370FC1AC604C300BA7A47 /* Analytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Analytics.m; sourceTree = "<group>"; };
-		FF5370FE1AC604CF00BA7A47 /* Goals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goals.h; sourceTree = "<group>"; };
-		FF5370FF1AC604CF00BA7A47 /* Goals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goals.m; sourceTree = "<group>"; };
 		FF93DBBA1ACB2CA400CEFC24 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
 		FF93DBBB1ACB2CA400CEFC24 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
 		FF93DBBD1ACB2CF800CEFC24 /* HomePageDatesource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageDatesource.h; sourceTree = "<group>"; };
@@ -87,6 +80,15 @@
 		FFB8AB581AD5C67700BE6DE1 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		FFB8AB5A1AD5C69600BE6DE1 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
 		FFB8AB5B1AD5C69600BE6DE1 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		FFB8AB5E1AD5E17100BE6DE1 /* ExercisePlanned.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExercisePlanned.h; sourceTree = "<group>"; };
+		FFB8AB5F1AD5E17100BE6DE1 /* ExercisePlanned.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExercisePlanned.m; sourceTree = "<group>"; };
+		FFB8AB611AD5E17200BE6DE1 /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
+		FFB8AB621AD5E17200BE6DE1 /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
+		FFB8AB641AD5E17200BE6DE1 /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercise.h; sourceTree = "<group>"; };
+		FFB8AB651AD5E17200BE6DE1 /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
+		FFB8AB671AD5E17200BE6DE1 /* GuideStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideStep.h; sourceTree = "<group>"; };
+		FFB8AB681AD5E17200BE6DE1 /* GuideStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideStep.m; sourceTree = "<group>"; };
+		FFB8AB6A1AD5E17D00BE6DE1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FFC622551AC4A2DA00EDB26B /* WorkoutCapstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutCapstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC622591AC4A2DA00EDB26B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFC6225A1AC4A2DA00EDB26B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFB8AB6B1AD5E17D00BE6DE1 /* CoreData.framework in Frameworks */,
 				FFC622A01AC4A5C000EDB26B /* libsqlite3.dylib in Frameworks */,
 				FFC6229E1AC4A5A500EDB26B /* libz.dylib in Frameworks */,
 				FFC6229C1AC4A58F00EDB26B /* SystemConfiguration.framework in Frameworks */,
@@ -184,14 +187,14 @@
 				FFC622A51AC4AA6600EDB26B /* ModelController.h */,
 				FFC622A61AC4AA6600EDB26B /* ModelController.m */,
 				FFB8AB571AD5C67700BE6DE1 /* Model.xcdatamodeld */,
-				FF5370F51AC604A200BA7A47 /* Workout.h */,
-				FF5370F61AC604A200BA7A47 /* Workout.m */,
-				FF5370F81AC604B200BA7A47 /* Exercise.h */,
-				FF5370F91AC604B200BA7A47 /* Exercise.m */,
-				FF5370FB1AC604C300BA7A47 /* Analytics.h */,
-				FF5370FC1AC604C300BA7A47 /* Analytics.m */,
-				FF5370FE1AC604CF00BA7A47 /* Goals.h */,
-				FF5370FF1AC604CF00BA7A47 /* Goals.m */,
+				FFB8AB671AD5E17200BE6DE1 /* GuideStep.h */,
+				FFB8AB681AD5E17200BE6DE1 /* GuideStep.m */,
+				FFB8AB641AD5E17200BE6DE1 /* Exercise.h */,
+				FFB8AB651AD5E17200BE6DE1 /* Exercise.m */,
+				FFB8AB611AD5E17200BE6DE1 /* Workout.h */,
+				FFB8AB621AD5E17200BE6DE1 /* Workout.m */,
+				FFB8AB5E1AD5E17100BE6DE1 /* ExercisePlanned.h */,
+				FFB8AB5F1AD5E17100BE6DE1 /* ExercisePlanned.m */,
 				FFB8AB5D1AD5C69A00BE6DE1 /* Stack */,
 			);
 			name = Model;
@@ -229,6 +232,7 @@
 		FFC6224C1AC4A2DA00EDB26B = {
 			isa = PBXGroup;
 			children = (
+				FFB8AB6A1AD5E17D00BE6DE1 /* CoreData.framework */,
 				FFC622571AC4A2DA00EDB26B /* WorkoutCapstone */,
 				FFC622711AC4A2DB00EDB26B /* WorkoutCapstoneTests */,
 				FFC622561AC4A2DA00EDB26B /* Products */,
@@ -453,25 +457,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFF817831ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.m in Sources */,
+				FFB8AB661AD5E17200BE6DE1 /* Exercise.m in Sources */,
 				FFC622A41AC4AA5100EDB26B /* NetworkController.m in Sources */,
 				FFC622611AC4A2DB00EDB26B /* ViewController.m in Sources */,
 				FF93DBBC1ACB2CA400CEFC24 /* HomePageViewController.m in Sources */,
+				FFB8AB631AD5E17200BE6DE1 /* Workout.m in Sources */,
 				FF93DBBF1ACB2CF800CEFC24 /* HomePageDatesource.m in Sources */,
 				FFC622A71AC4AA6600EDB26B /* ModelController.m in Sources */,
-				FF5371001AC604CF00BA7A47 /* Goals.m in Sources */,
 				FFB8AB591AD5C67700BE6DE1 /* Model.xcdatamodeld in Sources */,
 				FFF817801ACC9D2A008E27E2 /* CreateWorkoutViewController.m in Sources */,
+				FFB8AB601AD5E17100BE6DE1 /* ExercisePlanned.m in Sources */,
 				FF0CDEAF1ACF464000BA2FA6 /* WorkoutModeViewController.m in Sources */,
 				FFC6225E1AC4A2DB00EDB26B /* AppDelegate.m in Sources */,
 				FFB8AB561AD5BDE800BE6DE1 /* ImportWorkoutsToCoreDataController.m in Sources */,
 				FFC6225B1AC4A2DA00EDB26B /* main.m in Sources */,
+				FFB8AB691AD5E17200BE6DE1 /* GuideStep.m in Sources */,
 				FF0CDEAC1ACF309300BA2FA6 /* AddExercisesViewController.m in Sources */,
-				FF5370FA1AC604B200BA7A47 /* Exercise.m in Sources */,
 				FFB8AB5C1AD5C69600BE6DE1 /* Stack.m in Sources */,
 				FFF817861ACC9D51008E27E2 /* PerformanceViewController.m in Sources */,
 				FFF817891ACC9D6A008E27E2 /* SettingsViewController.m in Sources */,
-				FF5370FD1AC604C300BA7A47 /* Analytics.m in Sources */,
-				FF5370F71AC604A200BA7A47 /* Workout.m in Sources */,
 				FF0CDEE71AD32A6C00BA2FA6 /* HomePageTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,25 +1,21 @@
 //
-//  Workout.m
+//  ExercisePlanned.m
 //  WorkoutCapstone
 //
 //  Created by Ross McIlwaine on 4/8/15.
 //  Copyright (c) 2015 Ross McIlwaine. All rights reserved.
 //
 
-#import "Workout.h"
 #import "ExercisePlanned.h"
 
 
-@implementation Workout
+@implementation ExercisePlanned
 
-@dynamic name;
-@dynamic sets;
+@dynamic dateCompleted;
+@dynamic weight;
 @dynamic reps;
-@dynamic focusArea;
-@dynamic restTime;
-@dynamic note;
 @dynamic completed;
-@dynamic date;
-@dynamic plannedExercises;
+@dynamic exercise;
+@dynamic workout;
 
 @end

@@ -10,4 +10,6 @@
 
 @interface ImportWorkoutsToCoreDataController : NSObject
 
++ (ImportWorkoutsToCoreDataController *)sharedInstance;
+
 @end

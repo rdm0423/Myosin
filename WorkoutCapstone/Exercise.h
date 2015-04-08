@@ -2,23 +2,45 @@
 //  Exercise.h
 //  WorkoutCapstone
 //
-//  Created by Ross McIlwaine on 3/27/15.
+//  Created by Ross McIlwaine on 4/8/15.
 //  Copyright (c) 2015 Ross McIlwaine. All rights reserved.
 //
 
-#import <Parse/Parse.h>
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-static NSString *exerciseNameKey = @"exerciseName";
-static NSString *exerciseWeightKey = @"exerciseWeight";
-static NSString *exerciseTimeKey = @"exerciseTime";
-static NSString *exerciseDetailsKey = @"exerciseDetails";
+static NSString * const NameKey = @"";
+static NSString * const MuscleWorkedKey = @"Main Muscle Worked";
+static NSString * const LevelKey = @"Level";
+static NSString * const PictureKey = @"pic_right";
+static NSString * const MechanicsTypeKey = @"Mechanics Type";
+static NSString * const EquipmentKey = @"Equipment";
+static NSString * const LinkKey = @"link";
+static NSString * const TypeKey = @"Type";
+static NSString * const GuideKey = @"guide";
 
-@interface Exercise : PFObject
+@class ExercisePlanned;
 
-@property (nonatomic, strong) NSString *exerciseName;
-@property (nonatomic, strong) NSString *exerciseWeight;
-@property (nonatomic, strong) NSString *exerciseTime;
-@property (nonatomic, strong) NSString *exerciseDetails;
+@interface Exercise : NSManagedObject
 
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * muscleWorked;
+@property (nonatomic, retain) NSString * level;
+@property (nonatomic, retain) NSString * equipment;
+@property (nonatomic, retain) NSString * type;
+@property (nonatomic, retain) NSString * guide;
+@property (nonatomic, retain) NSString * mechanicsType;
+@property (nonatomic, retain) NSString * picture;
+@property (nonatomic, retain) NSString * link;
+@property (nonatomic, retain) NSSet *guideSteps;
+@property (nonatomic, retain) ExercisePlanned *completedExercises;
+@end
+
+@interface Exercise (CoreDataGeneratedAccessors)
+
+- (void)addGuideStepsObject:(NSManagedObject *)value;
+- (void)removeGuideStepsObject:(NSManagedObject *)value;
+- (void)addGuideSteps:(NSSet *)values;
+- (void)removeGuideSteps:(NSSet *)values;
 
 @end

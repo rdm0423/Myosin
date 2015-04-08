@@ -2,35 +2,33 @@
 //  Workout.h
 //  WorkoutCapstone
 //
-//  Created by Ross McIlwaine on 3/27/15.
+//  Created by Ross McIlwaine on 4/8/15.
 //  Copyright (c) 2015 Ross McIlwaine. All rights reserved.
 //
 
-#import <Parse/Parse.h>
-#import "Exercise.h"
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-static NSString *workoutNameKey = @"workoutName";
-static NSString *workoutSetsKey = @"workoutSets";
-static NSString *workoutRepsKey = @"workoutReps";
-static NSString *workoutFocusAreaKey = @"workoutFocusArea";
-static NSString *workoutCircuitModeKey = @"workoutCircuitMode";
-static NSString *workoutRestKey = @"workoutRest";
-static NSString *postWorkoutNoteKey = @"postWorkoutNote";
-static NSString *workoutCompletedKey = @"workoutCompleted";
-static NSString *workoutDateKey = @"workoutDateKey";
+@class ExercisePlanned;
 
-@interface Workout : PFObject
+@interface Workout : NSManagedObject
 
-@property (nonatomic, strong) NSString *workoutName;
-@property (nonatomic, assign) NSInteger *workoutSets;
-@property (nonatomic, assign) NSInteger *workoutReps;
-@property (nonatomic, strong) NSArray *workoutFocusArea;
-@property (nonatomic, assign) BOOL workoutCircuitMode;
-@property (nonatomic, assign) NSInteger *workoutRest;
-@property (nonatomic, strong) NSString *postWorkoutNote;
-@property (nonatomic, assign) BOOL workoutCompleted;
-@property (nonatomic, strong) NSDate *workoutDate;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * sets;
+@property (nonatomic, retain) NSNumber * reps;
+@property (nonatomic, retain) NSString * focusArea;
+@property (nonatomic, retain) NSNumber * restTime;
+@property (nonatomic, retain) NSString * note;
+@property (nonatomic, retain) NSNumber * completed;
+@property (nonatomic, retain) NSDate * date;
+@property (nonatomic, retain) NSSet *plannedExercises;
+@end
 
-@property (nonatomic) Exercise *exercise;
+@interface Workout (CoreDataGeneratedAccessors)
+
+- (void)addPlannedExercisesObject:(ExercisePlanned *)value;
+- (void)removePlannedExercisesObject:(ExercisePlanned *)value;
+- (void)addPlannedExercises:(NSSet *)values;
+- (void)removePlannedExercises:(NSSet *)values;
 
 @end

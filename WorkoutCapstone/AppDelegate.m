@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "ViewController.h"
 #import "HomePageViewController.h"
+#import "ImportWorkoutsToCoreDataController.h"
 
 @interface AppDelegate ()
 
@@ -61,7 +62,9 @@
     }
     
 //    self.window.backgroundColor = [UIColor whiteColor];
-//    [self.window makeKeyAndVisible];
+//    [self.window makeKeyAndVisible]
+    
+    [ImportWorkoutsToCoreDataController sharedInstance];
     
     return YES;
 }
@@ -113,23 +116,6 @@
         [currentInstallation saveEventually];
     }
     // ...
-    
-#pragma Mark - Launch Count
-    // Launch Count - -------- Exercise Getter
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSInteger applicationLaunchCount = [userDefaults integerForKey:@"LaunchCount"];
-    if (!applicationLaunchCount) {
-        // code for processing json
-        
-        NSLog(@"First launch");
-    } else {
-        // code for already has downloaded
-        
-        NSString *string = [NSString stringWithFormat:@"%ld", (long)applicationLaunchCount];
-        
-        NSLog(string);
-    }
-    [userDefaults setInteger:applicationLaunchCount + 1 forKey:@"LaunchCount"];
     
 }
 
