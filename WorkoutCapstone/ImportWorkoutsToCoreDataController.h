@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ExerciseGetterController : NSObject
+@interface ImportWorkoutsToCoreDataController : NSObject
 
 @end

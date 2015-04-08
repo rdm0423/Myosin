@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="14C1514" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+    <entity name="Exercise" syncable="YES">
+        <attribute name="equipment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guide" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="level" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mechanicsType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="muscleWorked" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="picture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workoutLink" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Workout" syncable="YES"/>
+    <elements>
+        <element name="Workout" positionX="-63" positionY="-18" width="128" height="45"/>
+        <element name="Exercise" positionX="-54" positionY="-9" width="128" height="180"/>
+    </elements>
 </model>

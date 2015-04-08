@@ -6,8 +6,11 @@
 //  Copyright (c) 2015 Ross McIlwaine. All rights reserved.
 //
 
-#import "ExerciseGetterController.h"
+#import "ImportWorkoutsToCoreDataController.h"
 
-@implementation ExerciseGetterController
+@implementation ImportWorkoutsToCoreDataController
+
+
+
 
 @end
