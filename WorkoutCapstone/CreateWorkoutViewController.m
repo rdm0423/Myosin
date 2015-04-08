@@ -9,24 +9,17 @@
 #import "CreateWorkoutViewController.h"
 
 @interface CreateWorkoutViewController () <UITextFieldDelegate, UIPickerViewDelegate>
-{
-    NSArray *_workoutFocusAreaData;
-    NSArray *_setsRepsPickerData;
-}
 
 @property (weak, nonatomic) IBOutlet UITextField *workoutName;
 @property (weak, nonatomic) IBOutlet UITextField *workoutFocusAreaTextField;
 @property (weak, nonatomic) IBOutlet UITextField *workoutSetsTextField;
 @property (weak, nonatomic) IBOutlet UITextField *workoutRepsTextField;
 
-
-
-@property (weak, nonatomic) IBOutlet UIPickerView *workoutFocusAreaPicker;
-@property (weak, nonatomic) IBOutlet UIPickerView *setsRepsPicker;
+@property (nonatomic, strong) UIPickerView *workoutFocusAreaPicker;
+@property (nonatomic, strong) UIPickerView *setsPicker;
+@property (nonatomic, strong) UIPickerView *repsPicker;
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *restTimeSegmentedControl;
-
-
 
 @end
 
@@ -35,34 +28,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Initialize Data
-    _workoutFocusAreaData = @[@"Bicep", @"Back", @"Shoulder", @"Legs", @"Core", @"Tricep", @"Upper Body", @"Cardio"];
-    _setsRepsPickerData = @[@[@"1", @"1"],
-                            @[@"2", @"2"],
-                            @[@"3", @"3"],
-                            @[@"4", @"4"],
-                            @[@"5", @"5"],
-                            @[@"", @"6"],
-                            @[@"", @"7"],
-                            @[@"", @"8"],
-                            @[@"", @"9"],
-                            @[@"", @"10"],
-                            @[@"", @"11"],
-                            @[@"", @"12"]];
-                            
-    
-    // Connect data
+    // sets pickerview
+    self.workoutFocusAreaPicker = [UIPickerView new];
     self.workoutFocusAreaPicker.dataSource = self;
     self.workoutFocusAreaPicker.delegate = self;
-    self.setsRepsPicker.dataSource = self;
-    self.setsRepsPicker.delegate = self;
+    
+    self.setsPicker = [UIPickerView new];
+    self.setsPicker.dataSource = self;
+    self.setsPicker.delegate = self;
+    
+    self.repsPicker = [UIPickerView new];
+    self.repsPicker.dataSource = self;
+    self.repsPicker.delegate = self;
+    
+    
+    self.workoutFocusAreaTextField.inputView = self.workoutFocusAreaPicker;
+    self.workoutSetsTextField.inputView = self.setsPicker;
+    self.workoutRepsTextField.inputView = self.repsPicker;
+    
+
     
 }
-
-//- (NSArray *)workoutFocusAreaPickerAtIndexes:(NSIndexSet *)indexes {
-//    
-//}
-
 
 - (IBAction)restTimeSegmentedSelected:(id)sender {
     
@@ -83,28 +69,61 @@
     
 }
 
-
-// The data to return for the row and component (column) that's being passed in
-- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    return _workoutFocusAreaData[row];
-    return _setsRepsPickerData[component][row];
+// textfield picker
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    self.workoutFocusAreaTextField.text = [self focusAreaArray][[pickerView selectedRowInComponent:0]];
+    self.workoutSetsTextField.text = [self setsArray][[pickerView selectedRowInComponent:0]];
+    self.workoutRepsTextField.text = [self repsArray][[pickerView selectedRowInComponent:0]];
 }
 
-// returns the number of 'columns' to display.
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    if (self.workoutFocusAreaPicker) {
-        return 1;
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    
+    if (pickerView == self.workoutFocusAreaPicker) {
+        return [self focusAreaArray][row];
+    } else if (pickerView == self.setsPicker) {
+        return [self setsArray][row];
+    } else if (pickerView == self.repsPicker) {
+        return [self repsArray][row];
     } else {
-        return 2;
+        return nil;
     }
 }
 
-// returns the # of rows in each component..
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return _workoutFocusAreaData.count;
-    return _setsRepsPickerData.count;
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
 }
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    
+    if (pickerView == self.workoutFocusAreaPicker) {
+        return [self focusAreaArray].count;
+    } else if (pickerView == self.setsPicker) {
+        return [self setsArray].count;
+    } else if (pickerView == self.repsPicker) {
+        return [self repsArray].count;
+    } else {
+        return 0;
+    }
+}
+
+- (NSArray *)focusAreaArray {
+    return @[@"Bicep", @"Back", @"Shoulder", @"Legs", @"Core", @"Tricep", @"Upper Body", @"Cardio"];
+}
+
+- (NSArray *)setsArray {
+    return @[@"1", @"2", @"3", @"4", @"5", @"6"];
+}
+
+- (NSArray *)repsArray {
+    return @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18"];
+}
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
+}
+
 
 
 
