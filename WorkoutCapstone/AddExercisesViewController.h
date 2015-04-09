@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@import CoreData;
 
-@interface AddExercisesViewController : UIViewController
+@interface AddExercisesViewController : UIViewController <NSFetchedResultsControllerDelegate>
+
+@property (nonatomic,strong) NSManagedObjectContext* managedObjectContext;
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
 @end
