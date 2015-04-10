@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF0356AB1AD8401500C8CF13 /* LegalInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0356AA1AD8401500C8CF13 /* LegalInformationViewController.m */; };
+		FF0356AE1AD8402500C8CF13 /* SupportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0356AD1AD8402500C8CF13 /* SupportViewController.m */; };
+		FF0356B11AD8403600C8CF13 /* AdvancedSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0356B01AD8403600C8CF13 /* AdvancedSettingsViewController.m */; };
+		FF0356B41AD8404100C8CF13 /* FAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0356B31AD8404100C8CF13 /* FAQViewController.m */; };
 		FF0CDEAC1ACF309300BA2FA6 /* AddExercisesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEAB1ACF309300BA2FA6 /* AddExercisesViewController.m */; };
 		FF0CDEAF1ACF464000BA2FA6 /* WorkoutModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEAE1ACF464000BA2FA6 /* WorkoutModeViewController.m */; };
 		FF0CDEE71AD32A6C00BA2FA6 /* HomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEE61AD32A6C00BA2FA6 /* HomePageTableViewCell.m */; };
@@ -64,6 +68,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF0356A91AD8401500C8CF13 /* LegalInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegalInformationViewController.h; sourceTree = "<group>"; };
+		FF0356AA1AD8401500C8CF13 /* LegalInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegalInformationViewController.m; sourceTree = "<group>"; };
+		FF0356AC1AD8402500C8CF13 /* SupportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupportViewController.h; sourceTree = "<group>"; };
+		FF0356AD1AD8402500C8CF13 /* SupportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupportViewController.m; sourceTree = "<group>"; };
+		FF0356AF1AD8403600C8CF13 /* AdvancedSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvancedSettingsViewController.h; sourceTree = "<group>"; };
+		FF0356B01AD8403600C8CF13 /* AdvancedSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvancedSettingsViewController.m; sourceTree = "<group>"; };
+		FF0356B21AD8404100C8CF13 /* FAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQViewController.h; sourceTree = "<group>"; };
+		FF0356B31AD8404100C8CF13 /* FAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQViewController.m; sourceTree = "<group>"; };
 		FF0CDEAA1ACF309300BA2FA6 /* AddExercisesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddExercisesViewController.h; sourceTree = "<group>"; };
 		FF0CDEAB1ACF309300BA2FA6 /* AddExercisesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddExercisesViewController.m; sourceTree = "<group>"; };
 		FF0CDEAD1ACF464000BA2FA6 /* WorkoutModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutModeViewController.h; sourceTree = "<group>"; };
@@ -169,6 +181,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF0356A81AD83FED00C8CF13 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FFF817871ACC9D6A008E27E2 /* SettingsViewController.h */,
+				FFF817881ACC9D6A008E27E2 /* SettingsViewController.m */,
+				FF0356A91AD8401500C8CF13 /* LegalInformationViewController.h */,
+				FF0356AA1AD8401500C8CF13 /* LegalInformationViewController.m */,
+				FF0356AC1AD8402500C8CF13 /* SupportViewController.h */,
+				FF0356AD1AD8402500C8CF13 /* SupportViewController.m */,
+				FF0356AF1AD8403600C8CF13 /* AdvancedSettingsViewController.h */,
+				FF0356B01AD8403600C8CF13 /* AdvancedSettingsViewController.m */,
+				FF0356B21AD8404100C8CF13 /* FAQViewController.h */,
+				FF0356B31AD8404100C8CF13 /* FAQViewController.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		FF0CDEE81AD32B8200BA2FA6 /* Custom Home Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,8 +363,7 @@
 				FFF8177F1ACC9D2A008E27E2 /* CreateWorkoutViewController.m */,
 				FFF817841ACC9D51008E27E2 /* PerformanceViewController.h */,
 				FFF817851ACC9D51008E27E2 /* PerformanceViewController.m */,
-				FFF817871ACC9D6A008E27E2 /* SettingsViewController.h */,
-				FFF817881ACC9D6A008E27E2 /* SettingsViewController.m */,
+				FF0356A81AD83FED00C8CF13 /* Settings */,
 				FF0CDEAD1ACF464000BA2FA6 /* WorkoutModeViewController.h */,
 				FF0CDEAE1ACF464000BA2FA6 /* WorkoutModeViewController.m */,
 				FFF8178B1ACC9D8A008E27E2 /* CreateWorkout Detail */,
@@ -456,8 +484,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF0356B41AD8404100C8CF13 /* FAQViewController.m in Sources */,
 				FFF817831ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.m in Sources */,
 				FFB8AB661AD5E17200BE6DE1 /* Exercise.m in Sources */,
+				FF0356B11AD8403600C8CF13 /* AdvancedSettingsViewController.m in Sources */,
 				FFC622A41AC4AA5100EDB26B /* NetworkController.m in Sources */,
 				FFC622611AC4A2DB00EDB26B /* ViewController.m in Sources */,
 				FF93DBBC1ACB2CA400CEFC24 /* HomePageViewController.m in Sources */,
@@ -474,6 +504,8 @@
 				FFB8AB691AD5E17200BE6DE1 /* GuideStep.m in Sources */,
 				FF0CDEAC1ACF309300BA2FA6 /* AddExercisesViewController.m in Sources */,
 				FFB8AB5C1AD5C69600BE6DE1 /* Stack.m in Sources */,
+				FF0356AB1AD8401500C8CF13 /* LegalInformationViewController.m in Sources */,
+				FF0356AE1AD8402500C8CF13 /* SupportViewController.m in Sources */,
 				FFF817861ACC9D51008E27E2 /* PerformanceViewController.m in Sources */,
 				FFF817891ACC9D6A008E27E2 /* SettingsViewController.m in Sources */,
 				FF0CDEE71AD32A6C00BA2FA6 /* HomePageTableViewCell.m in Sources */,

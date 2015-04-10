@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsViewController : UIViewController
+@interface SettingsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) UITableViewCell *advancedSettingsCell;
+@property (nonatomic, strong) UITableViewCell *supportCell;
+@property (nonatomic, strong) UITableViewCell *legalCell;
+
+@property (nonatomic, strong) UITableViewCell *reminderCell;
+@property (nonatomic, strong) UITableViewCell *howToUseCell;
+@property (nonatomic, strong) UITableViewCell *versionCell;
+
+@property (nonatomic, strong) UILabel *versionLabel;
 
 @end

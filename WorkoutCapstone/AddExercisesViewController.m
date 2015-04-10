@@ -26,6 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableview.dataSource = self;
+    self.tableview.delegate = self;
+    
     
 }
 
@@ -140,7 +143,7 @@
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
-#warning change the entity for name
+    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"Exercise" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
