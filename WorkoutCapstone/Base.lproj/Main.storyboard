@@ -430,6 +430,7 @@
                     </view>
                     <connections>
                         <outlet property="searchDisplayController" destination="yxh-vb-J5c" id="hqu-x4-HqI"/>
+                        <outlet property="searchField" destination="99j-Ie-TsJ" id="sSU-OM-xbf"/>
                         <outlet property="tableview" destination="2qW-k3-Uan" id="gsr-ey-s1X"/>
                     </connections>
                 </viewController>
