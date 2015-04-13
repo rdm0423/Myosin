@@ -263,15 +263,9 @@
 		FFC6224C1AC4A2DA00EDB26B = {
 			isa = PBXGroup;
 			children = (
-				FFF1A9491ADC4EFA00A96245 /* Bolts.framework */,
-				FFF1A94A1ADC4EFA00A96245 /* Parse.framework */,
-				FFF1A94B1ADC4EFA00A96245 /* ParseCrashReporting.framework */,
-				FFF1A94C1ADC4EFA00A96245 /* ParseFacebookUtils.framework */,
-				FFF1A94D1ADC4EFA00A96245 /* ParseFacebookUtilsV4.framework */,
-				FFF1A94E1ADC4EFA00A96245 /* ParseUI.framework */,
-				FFB8AB6A1AD5E17D00BE6DE1 /* CoreData.framework */,
 				FFC622571AC4A2DA00EDB26B /* WorkoutCapstone */,
 				FFC622711AC4A2DB00EDB26B /* WorkoutCapstoneTests */,
+				FFF1A9551ADC4FFE00A96245 /* Frameworks */,
 				FFC622561AC4A2DA00EDB26B /* Products */,
 				FFF1A9471ADC4AE200A96245 /* parse-library-1 */,
 				FFC622A11AC4A66D00EDB26B /* Parse */,
@@ -349,6 +343,20 @@
 				FFC6228B1AC4A52000EDB26B /* AudioToolbox.framework */,
 			);
 			name = Parse;
+			sourceTree = "<group>";
+		};
+		FFF1A9551ADC4FFE00A96245 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FFF1A9491ADC4EFA00A96245 /* Bolts.framework */,
+				FFF1A94A1ADC4EFA00A96245 /* Parse.framework */,
+				FFF1A94B1ADC4EFA00A96245 /* ParseCrashReporting.framework */,
+				FFF1A94C1ADC4EFA00A96245 /* ParseFacebookUtils.framework */,
+				FFF1A94D1ADC4EFA00A96245 /* ParseFacebookUtilsV4.framework */,
+				FFF1A94E1ADC4EFA00A96245 /* ParseUI.framework */,
+				FFB8AB6A1AD5E17D00BE6DE1 /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FFF8178A1ACC9D7B008E27E2 /* Menu View Controllers */ = {

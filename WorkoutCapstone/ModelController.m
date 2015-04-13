@@ -11,24 +11,30 @@
 
 @implementation ModelController
 
-//+ (<#className#> *)sharedInstance {
-//    static <#className#> *sharedInstance = nil;
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//        sharedInstance = [<#className#> new];
-//    });
-//    return sharedInstance;
++ (ModelController *)sharedInstance {
+    static ModelController *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [ModelController new];
+    });
+    return sharedInstance;
+}
 
-//}
-
-//-(void)addWorkout withName:(NSString *)name withSets:()
-//{
-//    
-//}
-
--(void)addExerciseWithName:(NSString *)name toWorkout:(Workout *)workout
-{
+- (void)addWorkoutWithName:(NSString *)name withSets:(NSNumber *)sets withReps:(NSNumber *)reps withRest:(NSNumber *)restTime withFocusArea:(NSString *)focusArea {
+    PFObject *workoutAdded = [PFObject objectWithClassName:@"Workout"];
+    workoutAdded[@"name"] = name;
+    workoutAdded[@"sets"] = sets;
+    workoutAdded[@"reps"] = reps;
+    workoutAdded[@"focusArea"] = focusArea;
+    workoutAdded[@"restTime"] = restTime;
     
+}
+
+- (void)addExerciseWithName:(NSString *)name toWorkout:(Workout *)workout {
+    PFObject *exerciseAdded = [PFObject objectWithClassName:@"Excercise"];
+    exerciseAdded[@"name"] = name;
+    exerciseAdded[@"workout"] = workout;
+    [exerciseAdded saveInBackground];
 }
 
 @end
