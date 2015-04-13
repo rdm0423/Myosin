@@ -32,12 +32,6 @@
 		FFC622661AC4A2DB00EDB26B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFC622651AC4A2DB00EDB26B /* Images.xcassets */; };
 		FFC622691AC4A2DB00EDB26B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC622671AC4A2DB00EDB26B /* LaunchScreen.xib */; };
 		FFC622751AC4A2DB00EDB26B /* WorkoutCapstoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC622741AC4A2DB00EDB26B /* WorkoutCapstoneTests.m */; };
-		FFC622851AC4A4DC00EDB26B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC6227F1AC4A4DC00EDB26B /* Bolts.framework */; };
-		FFC622861AC4A4DC00EDB26B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC622801AC4A4DC00EDB26B /* Parse.framework */; };
-		FFC622871AC4A4DC00EDB26B /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC622811AC4A4DC00EDB26B /* ParseCrashReporting.framework */; };
-		FFC622881AC4A4DC00EDB26B /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC622821AC4A4DC00EDB26B /* ParseFacebookUtils.framework */; };
-		FFC622891AC4A4DC00EDB26B /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC622831AC4A4DC00EDB26B /* ParseFacebookUtilsV4.framework */; };
-		FFC6228A1AC4A4DC00EDB26B /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC622841AC4A4DC00EDB26B /* ParseUI.framework */; };
 		FFC6228C1AC4A52000EDB26B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC6228B1AC4A52000EDB26B /* AudioToolbox.framework */; };
 		FFC6228E1AC4A52D00EDB26B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC6228D1AC4A52D00EDB26B /* CFNetwork.framework */; };
 		FFC622901AC4A53600EDB26B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC6228F1AC4A53600EDB26B /* CoreGraphics.framework */; };
@@ -51,6 +45,13 @@
 		FFC622A01AC4A5C000EDB26B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC6229F1AC4A5C000EDB26B /* libsqlite3.dylib */; };
 		FFC622A41AC4AA5100EDB26B /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC622A31AC4AA5100EDB26B /* NetworkController.m */; };
 		FFC622A71AC4AA6600EDB26B /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC622A61AC4AA6600EDB26B /* ModelController.m */; };
+		FFF1A9481ADC4AE200A96245 /* parse-library-1 in Resources */ = {isa = PBXBuildFile; fileRef = FFF1A9471ADC4AE200A96245 /* parse-library-1 */; };
+		FFF1A94F1ADC4EFA00A96245 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF1A9491ADC4EFA00A96245 /* Bolts.framework */; };
+		FFF1A9501ADC4EFA00A96245 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF1A94A1ADC4EFA00A96245 /* Parse.framework */; };
+		FFF1A9511ADC4EFA00A96245 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF1A94B1ADC4EFA00A96245 /* ParseCrashReporting.framework */; };
+		FFF1A9521ADC4EFA00A96245 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF1A94C1ADC4EFA00A96245 /* ParseFacebookUtils.framework */; };
+		FFF1A9531ADC4EFA00A96245 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF1A94D1ADC4EFA00A96245 /* ParseFacebookUtilsV4.framework */; };
+		FFF1A9541ADC4EFA00A96245 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF1A94E1ADC4EFA00A96245 /* ParseUI.framework */; };
 		FFF817801ACC9D2A008E27E2 /* CreateWorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF8177F1ACC9D2A008E27E2 /* CreateWorkoutViewController.m */; };
 		FFF817831ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF817821ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.m */; };
 		FFF817861ACC9D51008E27E2 /* PerformanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF817851ACC9D51008E27E2 /* PerformanceViewController.m */; };
@@ -114,12 +115,6 @@
 		FFC6226E1AC4A2DB00EDB26B /* WorkoutCapstoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkoutCapstoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC622731AC4A2DB00EDB26B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFC622741AC4A2DB00EDB26B /* WorkoutCapstoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkoutCapstoneTests.m; sourceTree = "<group>"; };
-		FFC6227F1AC4A4DC00EDB26B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		FFC622801AC4A4DC00EDB26B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		FFC622811AC4A4DC00EDB26B /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
-		FFC622821AC4A4DC00EDB26B /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		FFC622831AC4A4DC00EDB26B /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
-		FFC622841AC4A4DC00EDB26B /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		FFC6228B1AC4A52000EDB26B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FFC6228D1AC4A52D00EDB26B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		FFC6228F1AC4A53600EDB26B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -135,6 +130,13 @@
 		FFC622A31AC4AA5100EDB26B /* NetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkController.m; sourceTree = "<group>"; };
 		FFC622A51AC4AA6600EDB26B /* ModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
 		FFC622A61AC4AA6600EDB26B /* ModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
+		FFF1A9471ADC4AE200A96245 /* parse-library-1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "parse-library-1"; sourceTree = "<group>"; };
+		FFF1A9491ADC4EFA00A96245 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1/Bolts.framework"; sourceTree = "<group>"; };
+		FFF1A94A1ADC4EFA00A96245 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1/Parse.framework"; sourceTree = "<group>"; };
+		FFF1A94B1ADC4EFA00A96245 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseCrashReporting.framework; path = "parse-library-1/ParseCrashReporting.framework"; sourceTree = "<group>"; };
+		FFF1A94C1ADC4EFA00A96245 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "parse-library-1/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
+		FFF1A94D1ADC4EFA00A96245 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "parse-library-1/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
+		FFF1A94E1ADC4EFA00A96245 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "parse-library-1/ParseUI.framework"; sourceTree = "<group>"; };
 		FFF8177E1ACC9D2A008E27E2 /* CreateWorkoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateWorkoutViewController.h; sourceTree = "<group>"; };
 		FFF8177F1ACC9D2A008E27E2 /* CreateWorkoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateWorkoutViewController.m; sourceTree = "<group>"; };
 		FFF817811ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateWorkoutDetailViewController.h; sourceTree = "<group>"; };
@@ -150,6 +152,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFF1A94F1ADC4EFA00A96245 /* Bolts.framework in Frameworks */,
+				FFF1A9501ADC4EFA00A96245 /* Parse.framework in Frameworks */,
+				FFF1A9511ADC4EFA00A96245 /* ParseCrashReporting.framework in Frameworks */,
+				FFF1A9521ADC4EFA00A96245 /* ParseFacebookUtils.framework in Frameworks */,
+				FFF1A9531ADC4EFA00A96245 /* ParseFacebookUtilsV4.framework in Frameworks */,
+				FFF1A9541ADC4EFA00A96245 /* ParseUI.framework in Frameworks */,
 				FFB8AB6B1AD5E17D00BE6DE1 /* CoreData.framework in Frameworks */,
 				FFC622A01AC4A5C000EDB26B /* libsqlite3.dylib in Frameworks */,
 				FFC6229E1AC4A5A500EDB26B /* libz.dylib in Frameworks */,
@@ -162,12 +170,6 @@
 				FFC622901AC4A53600EDB26B /* CoreGraphics.framework in Frameworks */,
 				FFC6228E1AC4A52D00EDB26B /* CFNetwork.framework in Frameworks */,
 				FFC6228C1AC4A52000EDB26B /* AudioToolbox.framework in Frameworks */,
-				FFC6228A1AC4A4DC00EDB26B /* ParseUI.framework in Frameworks */,
-				FFC622861AC4A4DC00EDB26B /* Parse.framework in Frameworks */,
-				FFC622871AC4A4DC00EDB26B /* ParseCrashReporting.framework in Frameworks */,
-				FFC622881AC4A4DC00EDB26B /* ParseFacebookUtils.framework in Frameworks */,
-				FFC622851AC4A4DC00EDB26B /* Bolts.framework in Frameworks */,
-				FFC622891AC4A4DC00EDB26B /* ParseFacebookUtilsV4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,11 +263,17 @@
 		FFC6224C1AC4A2DA00EDB26B = {
 			isa = PBXGroup;
 			children = (
+				FFF1A9491ADC4EFA00A96245 /* Bolts.framework */,
+				FFF1A94A1ADC4EFA00A96245 /* Parse.framework */,
+				FFF1A94B1ADC4EFA00A96245 /* ParseCrashReporting.framework */,
+				FFF1A94C1ADC4EFA00A96245 /* ParseFacebookUtils.framework */,
+				FFF1A94D1ADC4EFA00A96245 /* ParseFacebookUtilsV4.framework */,
+				FFF1A94E1ADC4EFA00A96245 /* ParseUI.framework */,
 				FFB8AB6A1AD5E17D00BE6DE1 /* CoreData.framework */,
 				FFC622571AC4A2DA00EDB26B /* WorkoutCapstone */,
 				FFC622711AC4A2DB00EDB26B /* WorkoutCapstoneTests */,
 				FFC622561AC4A2DA00EDB26B /* Products */,
-				FFC6227E1AC4A4DC00EDB26B /* parse-library-1 */,
+				FFF1A9471ADC4AE200A96245 /* parse-library-1 */,
 				FFC622A11AC4A66D00EDB26B /* Parse */,
 			);
 			sourceTree = "<group>";
@@ -323,19 +331,6 @@
 				FFC622731AC4A2DB00EDB26B /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		FFC6227E1AC4A4DC00EDB26B /* parse-library-1 */ = {
-			isa = PBXGroup;
-			children = (
-				FFC6227F1AC4A4DC00EDB26B /* Bolts.framework */,
-				FFC622801AC4A4DC00EDB26B /* Parse.framework */,
-				FFC622811AC4A4DC00EDB26B /* ParseCrashReporting.framework */,
-				FFC622821AC4A4DC00EDB26B /* ParseFacebookUtils.framework */,
-				FFC622831AC4A4DC00EDB26B /* ParseFacebookUtilsV4.framework */,
-				FFC622841AC4A4DC00EDB26B /* ParseUI.framework */,
-			);
-			path = "parse-library-1";
 			sourceTree = "<group>";
 		};
 		FFC622A11AC4A66D00EDB26B /* Parse */ = {
@@ -467,6 +462,7 @@
 				FFC622691AC4A2DB00EDB26B /* LaunchScreen.xib in Resources */,
 				FFC622661AC4A2DB00EDB26B /* Images.xcassets in Resources */,
 				FFB8AB531AD5BC2D00BE6DE1 /* exercises.json in Resources */,
+				FFF1A9481ADC4AE200A96245 /* parse-library-1 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

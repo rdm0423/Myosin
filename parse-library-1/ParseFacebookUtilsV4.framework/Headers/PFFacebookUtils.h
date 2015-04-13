@@ -36,6 +36,8 @@ PF_ASSUME_NONNULL_BEGIN
  as described here: https://developers.facebook.com/docs/getting-started/facebook-sdk-for-ios/
 
  @warning You must invoke this in order to use the Facebook functionality in Parse.
+ 
+ @param launchOptions The launchOptions as passed to [UIApplicationDelegate application:didFinishLaunchingWithOptions:].
  */
 + (void)initializeFacebookWithApplicationLaunchOptions:(NSDictionary *)launchOptions;
 
