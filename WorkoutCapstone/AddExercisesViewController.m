@@ -11,12 +11,15 @@
 #import "Exercise.h"
 #import "Stack.h"
 
-@interface AddExercisesViewController () <UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate, NSFetchedResultsControllerDelegate>
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@interface AddExercisesViewController () <UITableViewDataSource, UITableViewDelegate, UISearchControllerDelegate, UISearchBarDelegate, NSFetchedResultsControllerDelegate, UISearchResultsUpdating>
 
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong,nonatomic) UISearchController *searchController;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchField;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (nonatomic, strong) NSMutableArray *searchResults;
+@property (strong, nonatomic) NSFetchRequest *searchFetchRequest;
+@property (strong, nonatomic) NSArray *filteredList;
 
 @end
 
@@ -31,12 +34,13 @@
     self.tableview.delegate = self;
     [[self tableview] reloadData];
     
-    searchController = [[UISearchDisplayController alloc]
-                        initWithSearchBar:searchBar contentsController:self];
-    searchController.delegate = self;
-    searchController.searchResultsDataSource = self;
-    searchController.searchResultsDelegate = self;
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.searchController.delegate = self;
+    self.searchController.searchResultsUpdater = self;
+    self.searchController.searchBar.delegate = self;
+    self.definesPresentationContext = YES;
     
+    self.tableview.tableHeaderView = self.searchController.searchBar;
 }
 
 - (void)viewDidUnload
@@ -46,27 +50,112 @@
     self.fetchedResultsController = nil;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
+////- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+////{
+////    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+//}
 
 
 #pragma mark - Table view data source
 
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+//{
+//    // Return the number of sections.
+//    return 1;
+//}
+
+- (void)searchForText:(NSString *)searchText
+{
+    if (self.managedObjectContext)
+    {
+        NSString *predicateFormat = @"%K BEGINSWITH[cd] %@";
+        NSString *searchAttribute = @"name";
+        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateFormat, searchAttribute, searchText];
+        [self.searchFetchRequest setPredicate:predicate];
+        
+        NSError *error = nil;
+        self.filteredList = [self.managedObjectContext executeFetchRequest:self.searchFetchRequest error:&error];
+    }
+}
+
+- (NSFetchRequest *)searchFetchRequest
+{
+    if (_searchFetchRequest != nil)
+    {
+        return _searchFetchRequest;
+    }
+    
+    _searchFetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Excercise" inManagedObjectContext:self.managedObjectContext];
+    [_searchFetchRequest setEntity:entity];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
+    [_searchFetchRequest setSortDescriptors:sortDescriptors];
+    
+    return _searchFetchRequest;
+}
+
+-(void)updateSearchResultsForSearchController:(UISearchController *)searchController
+{
+    NSString *searchString = searchController.searchBar.text;
+    [self searchForText:searchString];
+    [self.tableview reloadData];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
-    return 1;
+    if (tableView == self.tableview)
+    {
+        return [[self.fetchedResultsController sections] count];
+    }
+    else
+    {
+        return 1;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    id  sectionInfo =
-    [[self.fetchedResultsController sections] objectAtIndex:section];
-    return [sectionInfo numberOfObjects];
+    if (tableView == self.tableview)
+    {
+        id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+        return [sectionInfo numberOfObjects];
+    }
+    else
+    {
+        return [self.filteredList count];
+    }
 }
+
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+{
+    if (tableView == self.tableview)
+    {
+        if (index > 0)
+        {
+            return [self.fetchedResultsController sectionForSectionIndexTitle:title atIndex:index-1];
+        }
+        else
+        {
+            self.tableview.contentOffset = CGPointZero;
+            return NSNotFound;
+        }
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//    // Return the number of rows in the section.
+//    id  sectionInfo =
+//    [[self.fetchedResultsController sections] objectAtIndex:section];
+//    return [sectionInfo numberOfObjects];
+//}
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     Exercise *info = [self.fetchedResultsController objectAtIndexPath:indexPath];
@@ -85,8 +174,22 @@
     }
     
     // Configure the cell...
-    [self configureCell:cell atIndexPath:indexPath];
+//    [self configureCell:cell atIndexPath:indexPath];
     
+    Exercise *info = nil;
+    if (tableView == self.tableview)
+    {
+        info = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    }
+    else
+    {
+        info = [self.filteredList objectAtIndex:indexPath.row];
+    }
+
+    cell.textLabel.text = info.name;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Muscle Target: %@, Level: %@",
+                                 info.muscleWorked, info.level];
+
     return cell;
 }
 
