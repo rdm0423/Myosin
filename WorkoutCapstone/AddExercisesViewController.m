@@ -11,24 +11,31 @@
 #import "Exercise.h"
 #import "Stack.h"
 
-@interface AddExercisesViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface AddExercisesViewController () <UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate, NSFetchedResultsControllerDelegate>
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchField;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (nonatomic, strong) NSMutableArray *searchResults;
 
 @end
 
 @implementation AddExercisesViewController
 
 @synthesize managedObjectContext;
-@synthesize fetchedResultsController = _fetchedResultsController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.tableview.dataSource = self;
     self.tableview.delegate = self;
+    [[self tableview] reloadData];
     
+    searchController = [[UISearchDisplayController alloc]
+                        initWithSearchBar:searchBar contentsController:self];
+    searchController.delegate = self;
+    searchController.searchResultsDataSource = self;
+    searchController.searchResultsDelegate = self;
     
 }
 
@@ -50,19 +57,19 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 5;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
     id  sectionInfo =
-    [[_fetchedResultsController sections] objectAtIndex:section];
+    [[self.fetchedResultsController sections] objectAtIndex:section];
     return [sectionInfo numberOfObjects];
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    Exercise *info = [_fetchedResultsController objectAtIndexPath:indexPath];
+    Exercise *info = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = info.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Muscle Target: %@, Level: %@",
                                  info.muscleWorked, info.level];
@@ -155,13 +162,16 @@
     
     [fetchRequest setFetchBatchSize:20];
     
+    NSLog(@"%@", [[[Stack sharedInstance] managedObjectContext] executeFetchRequest:fetchRequest error:nil]);
+    
     NSFetchedResultsController *theFetchedResultsController =
     [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                         managedObjectContext:[Stack sharedInstance].managedObjectContext sectionNameKeyPath:nil
                                                    cacheName:@"Root"];
     self.fetchedResultsController = theFetchedResultsController;
     _fetchedResultsController.delegate = self;
-    
+    [[self tableview] reloadData];
+
     return _fetchedResultsController;
     
 }
@@ -188,6 +198,7 @@
             
         case NSFetchedResultsChangeUpdate:
             [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            [[self tableview] reloadData];
             break;
             
         case NSFetchedResultsChangeMove:
@@ -203,6 +214,14 @@
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id )sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
     
     switch(type) {
+         case NSFetchedResultsChangeUpdate:
+            [self.tableview insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            [[self tableview] reloadData];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            [self.tableview insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
             
         case NSFetchedResultsChangeInsert:
             [self.tableview insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
@@ -219,6 +238,28 @@
     // The fetch controller has sent all current change notifications, so tell the table view to process all updates.
     [self.tableview endUpdates];
 }
+
+#pragma Mark - SearchDisplay 
+
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    
+//    if (tableView == self.tableview) {
+//        return ;
+//    }
+//    // If necessary (if self is the data source for other table views),
+//    // check whether tableView is searchController.searchResultsTableView.
+//    return ...;
+//}
+
+
+
+
+
+
+
+
+
+
 
 
 
