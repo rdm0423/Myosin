@@ -7,10 +7,21 @@
 //
 
 #import "HomePageViewController.h"
+#import "HomePageDatesource.h"
+#import "HomePageTableViewCell.h"
 
 @interface HomePageViewController () <UITableViewDelegate>
 
-@property (nonatomic, strong) UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (nonatomic, strong) HomePageDatesource *datasource;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *createWorkoutViewButton;
+@property (weak, nonatomic) IBOutlet UIButton *performanceViewButton;
+@property (weak, nonatomic) IBOutlet UIButton *settingsViewButton;
+
+
 
 @end
 
@@ -19,29 +30,56 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Myosin";
+//    self.title = @"Myosin";
+    // Parse
+    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    testObject[@"foo"] = @"bar";
+    [testObject saveInBackground];
     
-    // Create tableView
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    
-    // Disable/Enable selection cell highlight
-    self.tableView.allowsSelection = YES;
-    
-    // Removes seperator lines
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
-    // Datasource
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-    
-    // Background Color of TableView
-    self.tableView.backgroundColor = [UIColor colorWithRed:0.25 green:0.25 blue:0.25 alpha:1];
+    // Tableview
+//    self.tableview = [[UITableView alloc] initWithFrame:self.view.bounds];
+    self.datasource = [HomePageDatesource new];
+    self.tableview.dataSource = self.datasource;
+    self.tableview.delegate = self;
+    [self.view addSubview:self.tableview];
     
     
-    // Add to view
-    [self.view addSubview:self.tableView];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 84;
+}
+
+- (IBAction)workoutTapped:(id)sender {
     
+}
+
+- (IBAction)createWorkoutButtonPressed:(id)sender {
     
+}
+
+- (IBAction)performanceButtonPressed:(id)sender {
+    
+}
+
+- (IBAction)settingsButtonPressed:(id)sender {
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+// toolbar methods
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setToolbarHidden:NO animated:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController setToolbarHidden:YES animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

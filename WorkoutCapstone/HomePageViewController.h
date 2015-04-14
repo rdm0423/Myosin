@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "HomePageDatesource.h"
+@import Parse;
 
-@interface HomePageViewController : UIViewController <UITableViewDelegate>
+@interface HomePageViewController : UIViewController 
 
 @end

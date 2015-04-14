@@ -16,7 +16,7 @@
 /// @name Version
 ///--------------------------------------
 
-#define PARSE_VERSION @"1.7.0"
+#define PARSE_VERSION @"1.7.1"
 
 extern NSInteger const PARSE_API_VERSION;
 
@@ -374,16 +374,16 @@ typedef NS_ENUM(NSInteger, PFErrorCode) {
 /// @name Blocks
 ///--------------------------------------
 
-typedef void (^PFBooleanResultBlock)(BOOL succeeded, PF_NULLABLE_S NSError *error);
-typedef void (^PFIntegerResultBlock)(int number, PF_NULLABLE_S NSError *error);
-typedef void (^PFArrayResultBlock)(PF_NULLABLE_S NSArray *objects, PF_NULLABLE_S NSError *error);
-typedef void (^PFObjectResultBlock)(PF_NULLABLE_S PFObject *object, PF_NULLABLE_S NSError *error);
-typedef void (^PFSetResultBlock)(PF_NULLABLE_S NSSet *channels, PF_NULLABLE_S NSError *error);
-typedef void (^PFUserResultBlock)(PF_NULLABLE_S PFUser *user, PF_NULLABLE_S NSError *error);
-typedef void (^PFDataResultBlock)(PF_NULLABLE_S NSData *data, PF_NULLABLE_S NSError *error);
-typedef void (^PFDataStreamResultBlock)(PF_NULLABLE_S NSInputStream *stream, PF_NULLABLE_S NSError *error);
-typedef void (^PFStringResultBlock)(PF_NULLABLE_S NSString *string, PF_NULLABLE_S NSError *error);
-typedef void (^PFIdResultBlock)(PF_NULLABLE_S id object, PF_NULLABLE_S NSError *error);
+typedef void (^PFBooleanResultBlock)(BOOL succeeded, NSError *PF_NULLABLE_S error);
+typedef void (^PFIntegerResultBlock)(int number, NSError *PF_NULLABLE_S error);
+typedef void (^PFArrayResultBlock)(NSArray *PF_NULLABLE_S objects, NSError *PF_NULLABLE_S error);
+typedef void (^PFObjectResultBlock)(PFObject *PF_NULLABLE_S object,  NSError *PF_NULLABLE_S error);
+typedef void (^PFSetResultBlock)(NSSet *PF_NULLABLE_S channels, NSError *PF_NULLABLE_S error);
+typedef void (^PFUserResultBlock)(PFUser *PF_NULLABLE_S user, NSError *PF_NULLABLE_S error);
+typedef void (^PFDataResultBlock)(NSData *PF_NULLABLE_S data, NSError *PF_NULLABLE_S error);
+typedef void (^PFDataStreamResultBlock)(NSInputStream *PF_NULLABLE_S stream, NSError *PF_NULLABLE_S error);
+typedef void (^PFStringResultBlock)(NSString *PF_NULLABLE_S string, NSError *PF_NULLABLE_S error);
+typedef void (^PFIdResultBlock)(PF_NULLABLE_S id object, NSError *PF_NULLABLE_S error);
 typedef void (^PFProgressBlock)(int percentDone);
 
 ///--------------------------------------

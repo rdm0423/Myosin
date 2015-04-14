@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+@import Parse;
 
 @interface ModelController : NSObject
 
++ (ModelController *)sharedInstance;
 @end

@@ -7,25 +7,28 @@
 //
 
 #import "HomePageDatesource.h"
+#import "HomePageTableViewCell.h"
+
+//static NSString * const CellID = @"cell";
 
 @interface HomePageDatesource ()
 
-@property (nonatomic, strong) TitleTableViewCell *titleCell;
-@property (nonatomic, strong) WorkoutTableViewCell *workoutCell;
-@property (nonatomic, strong) WorkoutDetailTableViewCell *workoutDetailCell;
-@property (nonatomic, strong) MenuButtonsTableViewCell *menuButtonsCell;
-@property (nonatomic, strong) NSMutableArray *cells;
+@property (nonatomic, strong) UITableView *tableview;
+
 
 @end
 
 @implementation HomePageDatesource
 
 - (void)createCells {
-    self.cells = [[NSMutableArray alloc] init];
-    
-    self.titleCell = [TitleTableViewCell new];
-//    self.titleCell
 
+
+}
+
+- (void)registerTableView:(UITableView *)tableView {
+    self.tableview = tableView;
+    [tableView registerClass:[HomePageTableViewCell class] forCellReuseIdentifier:@"homeCell"];
+    
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -36,13 +39,27 @@
     
     return 1;
 }
-
+# warning set to auto count based on workouts
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return [self workoutArray].count;
 }
 
+# warning get right array form for getting in the workout information
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    HomePageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"homeCell"];
+    
+    // customize image
+    cell.workoutImageView.image = [UIImage imageNamed:@"tempblue"];
+    cell.workoutImageView.layer.cornerRadius = 8.0f;
+    cell.workoutImageView.clipsToBounds = YES;
+    
+    
+    cell.workoutNameLabel.text = @"name";
+    cell.focusAreaLabel.text = @"area";
+    cell.previousCompletedLabel.text = @"completed";
+    
+    return cell;
     
     
 }
@@ -52,14 +69,18 @@
     
 }
 
-#pragma mark - custom menu cell height
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (indexPath.row == 0) {
-        return 54;
-    } else {
-        return 54;
-    }
+- (NSArray *)workoutArray {
+    return @[@"Mike's Killer Biceps", @"Leg crunch", @"Cardio HIIT"];
 }
+
+#pragma mark - custom menu cell height
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    if (indexPath.row == 0) {
+//        return 54;
+//    } else {
+//        return 54;
+//    }
+//}
 
 @end
