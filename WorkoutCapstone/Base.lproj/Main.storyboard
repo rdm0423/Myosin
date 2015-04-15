@@ -90,6 +90,7 @@
                                             <outlet property="previousCompletedLabel" destination="fb3-GY-gWT" id="DR6-k2-OXu"/>
                                             <outlet property="workoutImageView" destination="lvU-yf-H68" id="Vi1-ch-uIh"/>
                                             <outlet property="workoutNameLabel" destination="dqa-PP-MYm" id="bdt-RJ-9Nx"/>
+                                            <segue destination="3tI-qT-UUk" kind="presentation" id="aFB-um-Eha"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -479,6 +480,20 @@
                     <view key="view" contentMode="scaleToFill" id="KBc-se-Hx9">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="56g-L2-pjq">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Stats" id="HJu-Xz-Hk7">
+                                        <barButtonItem key="leftBarButtonItem" image="deletecircle" id="qa2-VQ-FPD">
+                                            <connections>
+                                                <action selector="cancelButton:" destination="YdK-J3-Sq9" id="9jG-JA-mbB"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -523,6 +538,18 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="73q-N9-UO2">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Settings" id="dj5-Ih-Dbh">
+                                        <barButtonItem key="leftBarButtonItem" image="deletecircle" id="Xps-HE-Kcb">
+                                            <connections>
+                                                <action selector="cancelButton:" destination="DJa-sN-YEM" id="gmd-x4-dgs"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -550,25 +577,11 @@
                                 <rect key="frame" x="-2" y="125" width="605" height="417"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="8qr-8I-kBP" detailTextLabel="SlA-Vj-kHA" style="IBUITableViewCellStyleSubtitle" id="t1w-XP-zxS">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="t1w-XP-zxS">
                                         <rect key="frame" x="0.0" y="0.0" width="605" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t1w-XP-zxS" id="4Ky-J2-SDy">
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8qr-8I-kBP">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SlA-Vj-kHA">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -577,16 +590,22 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESv-jR-gSs">
-                                <rect key="frame" x="366" y="550" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="366" y="550" width="30" height="30"/>
+                                <state key="normal" title="+">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addWeightButton:" destination="3tI-qT-UUk" eventType="touchUpInside" id="fV5-2e-y05"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLG-gp-yps">
-                                <rect key="frame" x="188" y="550" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="204" y="550" width="30" height="30"/>
+                                <state key="normal" title="-">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="subtractWeightButton:" destination="3tI-qT-UUk" eventType="touchUpInside" id="SiV-eJ-GTm"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WEIGHT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6x-Z4-D9b">
                                 <rect key="frame" x="267" y="554" width="66" height="21"/>
@@ -615,7 +634,13 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Brm-ih-Q4N">
                                 <rect key="frame" x="1" y="0.0" width="600" height="44"/>
                                 <items>
-                                    <navigationItem title="Workout Name" id="PkF-M8-jBP"/>
+                                    <navigationItem title="Workout Name" id="PkF-M8-jBP">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dqO-Gl-HCI">
+                                            <connections>
+                                                <action selector="cancel:" destination="3tI-qT-UUk" id="LAF-Wi-SQn"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2z-pM-CDq">
@@ -651,7 +676,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="focusAreaLabel" destination="XOE-Hu-qq2" id="UA5-H3-S35"/>
+                        <outlet property="repsLabel" destination="Uv2-Uy-IxX" id="D2r-zi-XUn"/>
+                        <outlet property="setsLabel" destination="six-w0-HIe" id="dHT-rF-xOx"/>
                         <outlet property="tableview" destination="1aX-Pc-Tia" id="ev9-Hy-mp2"/>
+                        <outlet property="timerLabel" destination="w2z-pM-CDq" id="Q9K-31-0Uy"/>
+                        <outlet property="weightLabel" destination="N6x-Z4-D9b" id="Voc-NO-sLl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lBG-fh-7Yz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -680,6 +710,7 @@
     </scenes>
     <resources>
         <image name="add" width="25" height="25"/>
+        <image name="deletecircle" width="22" height="22"/>
         <image name="list" width="25" height="25"/>
         <image name="performance" width="25" height="25"/>
         <image name="settings" width="25" height="25"/>

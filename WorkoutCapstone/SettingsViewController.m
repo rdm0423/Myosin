@@ -11,6 +11,7 @@
 #import "SupportViewController.h"
 #import "AdvancedSettingsViewController.h"
 #import "FAQViewController.h"
+#import "RemindersViewController.h"
 
 
 @import WebKit;
@@ -42,6 +43,12 @@
     self.advancedSettingsCell = [UITableViewCell new];
     self.advancedSettingsCell.textLabel.text = @"Advanced Settings";
     self.advancedSettingsCell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    self.circuitModeCell = [UITableViewCell new];
+    self.circuitModeCell.textLabel.text = @"Circuit Mode";
+    UISwitch *toggle = [UISwitch new];
+    [cell addSubview:toggle];
+    self.circuitModeCell.accessoryView = toggle;
     
     self.reminderCell = [UITableViewCell new];
     self.reminderCell.textLabel.text = @"Reminders";
@@ -81,15 +88,15 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     switch(section) {
-            //        case 0:  return 1;  // section 0 has 2 rows
-        case 0:  return 2;  // section 1 has 2 row
-        case 1: return 2;  // section 2 has 2 row
+        case 0:  return 3;  // section 0 has 2 rows
+        case 1:  return 2;  // section 1 has 2 row
+        case 2: return 2;  // section 2 has 2 row
         default: return 0;
     };
 }
@@ -99,17 +106,18 @@
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     
     switch(indexPath.section) {
-            //        case 0:
-            //            switch(indexPath.row) {
-            //            case 0: return self.reminderCell;
-            //            case 1: return self.advancedSettingsCell;
-            //        }
         case 0:
+            switch(indexPath.row) {
+                case 0: return self.advancedSettingsCell;
+                case 1: return self.circuitModeCell;
+                case 2: return self.reminderCell;
+            }
+        case 1:
             switch(indexPath.row) {
                 case 0: return self.howToUseCell;
                 case 1: return self.supportCell;
             }
-        case 1:
+        case 2:
             switch (indexPath.row) {
                 case 0: return self.legalCell;
                 case 1: return self.versionCell;
@@ -122,6 +130,19 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            AdvancedSettingsViewController *advancedSettingVC = [AdvancedSettingsViewController new];
+            UINavigationController *advancedSettingNavController = [[UINavigationController alloc] initWithRootViewController:advancedSettingVC];
+            [self presentViewController:advancedSettingNavController animated:YES completion:nil];
+        } else if (indexPath.row == 2) {
+# warning code for toggle?
+            
+        } else if (indexPath.row == 3) {
+            RemindersViewController *reminderVC = [RemindersViewController new];
+            UINavigationController *reminderNavController = [[UINavigationController alloc] initWithRootViewController:reminderVC];
+            [self presentViewController:reminderNavController animated:YES completion:nil];
+        }
+    } else if (indexPath.section == 1) {
         if (indexPath.row == 0) {
             self.faqContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 44, self.view.frame.size.width, self.view.frame.size.height)];
             [self.view addSubview:self.faqContainerView];
@@ -144,7 +165,7 @@
 
             [self presentViewController:supportNavController animated:YES completion:nil];
         }
-    } else if (indexPath.section == 1) {
+    } else if (indexPath.section == 2) {
         if (indexPath.row == 0) {
             LegalInformationViewController *legalVC = [LegalInformationViewController new];
             UINavigationController *legalNavController = [[UINavigationController alloc] initWithRootViewController:legalVC];
@@ -158,9 +179,9 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     switch(section) {
-            //        case 0: return @"Settings";
-        case 0: return @"Help";
-        case 1: return @"About";
+        case 0: return @"General";
+        case 1: return @"Help";
+        case 2: return @"About";
     }
     return nil;
 }
@@ -170,6 +191,9 @@
 }
 
 
+- (IBAction)cancelButton:(id)sender {
+    [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 - (void)didReceiveMemoryWarning {

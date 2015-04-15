@@ -11,6 +11,11 @@
 @interface WorkoutModeViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *setsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *repsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *focusAreaLabel;
+@property (weak, nonatomic) IBOutlet UILabel *weightLabel;
 
 @end
 
@@ -20,6 +25,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
+
+
+
+
+
+- (IBAction)subtractWeightButton:(id)sender {
+}
+- (IBAction)addWeightButton:(id)sender {
+}
+
 
 - (IBAction)cancel:(id)sender {
     [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];

@@ -14,6 +14,13 @@
 		FF0CDEAC1ACF309300BA2FA6 /* AddExercisesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEAB1ACF309300BA2FA6 /* AddExercisesViewController.m */; };
 		FF0CDEAF1ACF464000BA2FA6 /* WorkoutModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEAE1ACF464000BA2FA6 /* WorkoutModeViewController.m */; };
 		FF0CDEE71AD32A6C00BA2FA6 /* HomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEE61AD32A6C00BA2FA6 /* HomePageTableViewCell.m */; };
+		FF90884C1ADE232300124C8B /* CustomDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9088431ADE232300124C8B /* CustomDatePickerView.m */; };
+		FF90884D1ADE232300124C8B /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9088451ADE232300124C8B /* Reminder.m */; };
+		FF90884E1ADE232300124C8B /* RemindersController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9088471ADE232300124C8B /* RemindersController.m */; };
+		FF90884F1ADE232300124C8B /* RemindersTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9088491ADE232300124C8B /* RemindersTableViewDataSource.m */; };
+		FF9088501ADE232300124C8B /* RemindersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF90884B1ADE232300124C8B /* RemindersViewController.m */; };
+		FF9088561ADE239900124C8B /* UIBarButtonItem+CustomButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9088531ADE239900124C8B /* UIBarButtonItem+CustomButtons.m */; };
+		FF9088571ADE239900124C8B /* UIColor+Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9088551ADE239900124C8B /* UIColor+Colors.m */; };
 		FF93DBBC1ACB2CA400CEFC24 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF93DBBB1ACB2CA400CEFC24 /* HomePageViewController.m */; };
 		FF93DBBF1ACB2CF800CEFC24 /* HomePageDatesource.m in Sources */ = {isa = PBXBuildFile; fileRef = FF93DBBE1ACB2CF800CEFC24 /* HomePageDatesource.m */; };
 		FFB8AB531AD5BC2D00BE6DE1 /* exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = FFB8AB521AD5BC2D00BE6DE1 /* exercises.json */; };
@@ -83,6 +90,20 @@
 		FF0CDEAE1ACF464000BA2FA6 /* WorkoutModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutModeViewController.m; sourceTree = "<group>"; };
 		FF0CDEE51AD32A6C00BA2FA6 /* HomePageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageTableViewCell.h; sourceTree = "<group>"; };
 		FF0CDEE61AD32A6C00BA2FA6 /* HomePageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageTableViewCell.m; sourceTree = "<group>"; };
+		FF9088421ADE232300124C8B /* CustomDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDatePickerView.h; sourceTree = "<group>"; };
+		FF9088431ADE232300124C8B /* CustomDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDatePickerView.m; sourceTree = "<group>"; };
+		FF9088441ADE232300124C8B /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
+		FF9088451ADE232300124C8B /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
+		FF9088461ADE232300124C8B /* RemindersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindersController.h; sourceTree = "<group>"; };
+		FF9088471ADE232300124C8B /* RemindersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindersController.m; sourceTree = "<group>"; };
+		FF9088481ADE232300124C8B /* RemindersTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindersTableViewDataSource.h; sourceTree = "<group>"; };
+		FF9088491ADE232300124C8B /* RemindersTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindersTableViewDataSource.m; sourceTree = "<group>"; };
+		FF90884A1ADE232300124C8B /* RemindersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindersViewController.h; sourceTree = "<group>"; };
+		FF90884B1ADE232300124C8B /* RemindersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindersViewController.m; sourceTree = "<group>"; };
+		FF9088521ADE239900124C8B /* UIBarButtonItem+CustomButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+CustomButtons.h"; sourceTree = "<group>"; };
+		FF9088531ADE239900124C8B /* UIBarButtonItem+CustomButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+CustomButtons.m"; sourceTree = "<group>"; };
+		FF9088541ADE239900124C8B /* UIColor+Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Colors.h"; sourceTree = "<group>"; };
+		FF9088551ADE239900124C8B /* UIColor+Colors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Colors.m"; sourceTree = "<group>"; };
 		FF93DBBA1ACB2CA400CEFC24 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
 		FF93DBBB1ACB2CA400CEFC24 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
 		FF93DBBD1ACB2CF800CEFC24 /* HomePageDatesource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageDatesource.h; sourceTree = "<group>"; };
@@ -196,6 +217,7 @@
 				FF0356B01AD8403600C8CF13 /* AdvancedSettingsViewController.m */,
 				FF0356B21AD8404100C8CF13 /* FAQViewController.h */,
 				FF0356B31AD8404100C8CF13 /* FAQViewController.m */,
+				FF9088511ADE232900124C8B /* Reminders */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -231,6 +253,23 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		FF9088511ADE232900124C8B /* Reminders */ = {
+			isa = PBXGroup;
+			children = (
+				FF9088421ADE232300124C8B /* CustomDatePickerView.h */,
+				FF9088431ADE232300124C8B /* CustomDatePickerView.m */,
+				FF9088441ADE232300124C8B /* Reminder.h */,
+				FF9088451ADE232300124C8B /* Reminder.m */,
+				FF9088461ADE232300124C8B /* RemindersController.h */,
+				FF9088471ADE232300124C8B /* RemindersController.m */,
+				FF9088481ADE232300124C8B /* RemindersTableViewDataSource.h */,
+				FF9088491ADE232300124C8B /* RemindersTableViewDataSource.m */,
+				FF90884A1ADE232300124C8B /* RemindersViewController.h */,
+				FF90884B1ADE232300124C8B /* RemindersViewController.m */,
+			);
+			name = Reminders;
+			sourceTree = "<group>";
+		};
 		FF93DBD51ACB32A000CEFC24 /* HomePageViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +302,10 @@
 		FFC6224C1AC4A2DA00EDB26B = {
 			isa = PBXGroup;
 			children = (
+				FF9088521ADE239900124C8B /* UIBarButtonItem+CustomButtons.h */,
+				FF9088531ADE239900124C8B /* UIBarButtonItem+CustomButtons.m */,
+				FF9088541ADE239900124C8B /* UIColor+Colors.h */,
+				FF9088551ADE239900124C8B /* UIColor+Colors.m */,
 				FFC622571AC4A2DA00EDB26B /* WorkoutCapstone */,
 				FFC622711AC4A2DB00EDB26B /* WorkoutCapstoneTests */,
 				FFF1A9551ADC4FFE00A96245 /* Frameworks */,
@@ -366,9 +409,9 @@
 				FFF8177F1ACC9D2A008E27E2 /* CreateWorkoutViewController.m */,
 				FFF817841ACC9D51008E27E2 /* PerformanceViewController.h */,
 				FFF817851ACC9D51008E27E2 /* PerformanceViewController.m */,
-				FF0356A81AD83FED00C8CF13 /* Settings */,
 				FF0CDEAD1ACF464000BA2FA6 /* WorkoutModeViewController.h */,
 				FF0CDEAE1ACF464000BA2FA6 /* WorkoutModeViewController.m */,
+				FF0356A81AD83FED00C8CF13 /* Settings */,
 				FFF8178B1ACC9D8A008E27E2 /* CreateWorkout Detail */,
 			);
 			name = "Menu View Controllers";
@@ -492,10 +535,14 @@
 				FFF817831ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.m in Sources */,
 				FFB8AB661AD5E17200BE6DE1 /* Exercise.m in Sources */,
 				FF0356B11AD8403600C8CF13 /* AdvancedSettingsViewController.m in Sources */,
+				FF90884D1ADE232300124C8B /* Reminder.m in Sources */,
+				FF9088571ADE239900124C8B /* UIColor+Colors.m in Sources */,
 				FFC622A41AC4AA5100EDB26B /* NetworkController.m in Sources */,
+				FF9088561ADE239900124C8B /* UIBarButtonItem+CustomButtons.m in Sources */,
 				FFC622611AC4A2DB00EDB26B /* ViewController.m in Sources */,
 				FF93DBBC1ACB2CA400CEFC24 /* HomePageViewController.m in Sources */,
 				FFB8AB631AD5E17200BE6DE1 /* Workout.m in Sources */,
+				FF90884E1ADE232300124C8B /* RemindersController.m in Sources */,
 				FF93DBBF1ACB2CF800CEFC24 /* HomePageDatesource.m in Sources */,
 				FFC622A71AC4AA6600EDB26B /* ModelController.m in Sources */,
 				FFB8AB591AD5C67700BE6DE1 /* Model.xcdatamodeld in Sources */,
@@ -504,11 +551,14 @@
 				FF0CDEAF1ACF464000BA2FA6 /* WorkoutModeViewController.m in Sources */,
 				FFC6225E1AC4A2DB00EDB26B /* AppDelegate.m in Sources */,
 				FFB8AB561AD5BDE800BE6DE1 /* ImportWorkoutsToCoreDataController.m in Sources */,
+				FF9088501ADE232300124C8B /* RemindersViewController.m in Sources */,
 				FFC6225B1AC4A2DA00EDB26B /* main.m in Sources */,
+				FF90884C1ADE232300124C8B /* CustomDatePickerView.m in Sources */,
 				FFB8AB691AD5E17200BE6DE1 /* GuideStep.m in Sources */,
 				FF0CDEAC1ACF309300BA2FA6 /* AddExercisesViewController.m in Sources */,
 				FFB8AB5C1AD5C69600BE6DE1 /* Stack.m in Sources */,
 				FF0356AB1AD8401500C8CF13 /* LegalInformationViewController.m in Sources */,
+				FF90884F1ADE232300124C8B /* RemindersTableViewDataSource.m in Sources */,
 				FF0356AE1AD8402500C8CF13 /* SupportViewController.m in Sources */,
 				FFF817861ACC9D51008E27E2 /* PerformanceViewController.m in Sources */,
 				FFF817891ACC9D6A008E27E2 /* SettingsViewController.m in Sources */,
