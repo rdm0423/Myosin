@@ -47,7 +47,7 @@
     self.circuitModeCell = [UITableViewCell new];
     self.circuitModeCell.textLabel.text = @"Circuit Mode";
     UISwitch *toggle = [UISwitch new];
-    [cell addSubview:toggle];
+//    [cell addSubview:toggle];
     self.circuitModeCell.accessoryView = toggle;
     
     self.reminderCell = [UITableViewCell new];
