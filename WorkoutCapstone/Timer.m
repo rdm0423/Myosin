@@ -87,13 +87,13 @@ NSString * const SecondTickNotification = @"SecondTick";
     NSInteger currentSeconds = self.seconds;
     NSInteger fireSeconds = currentMinutes + currentSeconds;
     
-    UILocalNotification *localNotification = [UILocalNotification new];
-    NSDate *fireDate = [[NSDate date] dateByAddingTimeInterval:fireSeconds];
-    localNotification.fireDate = fireDate;
-    localNotification.timeZone = [NSTimeZone defaultTimeZone];
-    
-    
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+//    UILocalNotification *localNotification = [UILocalNotification new];
+//    NSDate *fireDate = [[NSDate date] dateByAddingTimeInterval:fireSeconds];
+//    localNotification.fireDate = fireDate;
+//    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+//    
+//    
+//    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
 }
 

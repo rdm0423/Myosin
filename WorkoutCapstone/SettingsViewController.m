@@ -24,6 +24,8 @@
 
 @end
 
+static NSString * const circuitModeKey = @"circuitKey";
+
 @implementation SettingsViewController
 
 - (void)viewDidLoad {
@@ -46,8 +48,11 @@
     
     self.circuitModeCell = [UITableViewCell new];
     self.circuitModeCell.textLabel.text = @"Circuit Mode";
+    self.circuitModeCell.detailTextLabel.text = @"Do each exercise once as Set";
     UISwitch *toggle = [UISwitch new];
-//    [cell addSubview:toggle];
+    [toggle addTarget:self action:@selector(circuitModeToggle) forControlEvents:UIControlEventValueChanged];
+    BOOL circuitStyle = [[NSUserDefaults standardUserDefaults] boolForKey:circuitModeKey];
+    [toggle setOn:circuitStyle];
     self.circuitModeCell.accessoryView = toggle;
     
     self.reminderCell = [UITableViewCell new];
@@ -184,6 +189,11 @@
         case 2: return @"About";
     }
     return nil;
+}
+
+- (void)circuitModeToggle {
+    
+    
 }
 
 - (void)dismissFAQView {
