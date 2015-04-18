@@ -34,6 +34,7 @@
     self.tableview.dataSource = self;
     self.tableview.delegate = self;
     self.searchBar.delegate = self;
+    [self searchForText:@""];
 //    self.cellSelected = [NSMutableArray array];
     
 }
@@ -49,11 +50,16 @@
     
     // search how to make a predicate if string = 0 and do an if/else to show the whole list of data
     
-    NSString *predicateFormat = @"%K BEGINSWITH[cd] %@";
-    NSString *searchAttribute = @"name";
-    
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateFormat, searchAttribute, searchText];
-    [self.searchFetchRequest setPredicate:predicate];
+    if (searchText.length > 0) {
+        NSString *predicateFormat = @"%K BEGINSWITH[cd] %@";
+        NSString *searchAttribute = @"name";
+        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateFormat, searchAttribute, searchText];
+        [self.searchFetchRequest setPredicate:predicate];
+    } else {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"TRUEPREDICATE"];
+        [self.searchFetchRequest setPredicate:predicate];
+    }
     
     NSError *error = nil;
     self.filteredList = [self.managedObjectContext executeFetchRequest:self.searchFetchRequest error:&error];
@@ -108,11 +114,14 @@
     cell.accessoryType = UITableViewCellAccessoryDetailButton;
     
     NSURL *pictureURL = [NSURL URLWithString:info.picture];
-    [[NSURLSession sharedSession] dataTaskWithURL:pictureURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        UIImage *downloadImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:pictureURL]];
-        
-        
-    }];
+    cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+//    [[[NSURLSession sharedSession] dataTaskWithURL:pictureURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//        UIImage *downloadImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:pictureURL]];
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            cell.imageView.image = downloadImage;
+//            [cell setNeedsLayout];
+//        });
+//    }] resume];
 
     return cell;
 }
