@@ -71,9 +71,13 @@
 
 // textfield picker
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    self.workoutFocusAreaTextField.text = [self focusAreaArray][[pickerView selectedRowInComponent:0]];
-    self.workoutSetsTextField.text = [self setsArray][[pickerView selectedRowInComponent:0]];
-    self.workoutRepsTextField.text = [self repsArray][[pickerView selectedRowInComponent:0]];
+    if (pickerView == self.workoutFocusAreaPicker) {
+        self.workoutFocusAreaTextField.text = [self focusAreaArray][[pickerView selectedRowInComponent:0]];
+    } else if (pickerView == self.setsPicker) {
+        self.workoutSetsTextField.text = [self setsArray][[pickerView selectedRowInComponent:0]];
+    } else {
+        self.workoutRepsTextField.text = [self repsArray][[pickerView selectedRowInComponent:0]];
+    }
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
