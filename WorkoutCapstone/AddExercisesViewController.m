@@ -8,10 +8,11 @@
 
 #import "AddExercisesViewController.h"
 #import "ImportWorkoutsToCoreDataController.h"
+#import "ExerciseDetailViewController.h"
 #import "Exercise.h"
 #import "Stack.h"
 
-@interface AddExercisesViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@interface AddExercisesViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIPopoverPresentationControllerDelegate, NSURLSessionDownloadDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
@@ -19,6 +20,7 @@
 @property (strong, nonatomic) NSFetchRequest *searchFetchRequest;
 @property (strong, nonatomic) NSArray *filteredList;
 @property (nonatomic, strong) UIView *containerView;
+@property (nonatomic, strong) NSIndexPath *selectedIndexPath;
 //@property (nonatomic, strong) NSMutableArray *cellSelected;
 
 @end
@@ -103,7 +105,14 @@
     cell.textLabel.text = info.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Muscle Target: %@  Level: %@",
                                  info.muscleWorked, info.level];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.accessoryType = UITableViewCellAccessoryDetailButton;
+    
+    NSURL *pictureURL = [NSURL URLWithString:info.picture];
+    [[NSURLSession sharedSession] dataTaskWithURL:pictureURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        UIImage *downloadImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:pictureURL]];
+        
+        
+    }];
 
     return cell;
 }
@@ -116,22 +125,42 @@
 
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"Detail"]) {
+        ExerciseDetailViewController *controller = segue.destinationViewController;
+        controller.preferredContentSize = CGSizeMake(300, 400);
+        controller.popoverPresentationController.delegate = self;
+        Exercise *info = [self.filteredList objectAtIndex:self.selectedIndexPath.row];
+        controller.exercise = info;
+        UITableViewCell *cell = [self.tableview cellForRowAtIndexPath:self.selectedIndexPath];
+        controller.popoverPresentationController.sourceView = cell;
+        controller.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionRight;
+        controller.popoverPresentationController.sourceRect = CGRectMake(cell.frame.size.width - 40, 0, 240, cell.frame.size.height);
+    }
+}
+
+- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
+    NSLog(@"Got here");
+    return UIModalPresentationNone;
+}
+
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-    
-    self.containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 44, self.view.frame.size.width, self.view.frame.size.height)];
-    [self.view addSubview:self.containerView];
-    
-    UILabel *exerciseGuide = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 150, 300)];
-    Exercise *setsGuide = nil;
-    exerciseGuide.text = setsGuide.guide;
-    exerciseGuide.numberOfLines = 0;
-    
-    UIButton *dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [dismissButton setImage:[UIImage imageNamed:@"deletecircle"] forState:UIControlStateNormal];
-    dismissButton.frame = CGRectMake(CGRectGetMaxX(self.containerView.frame) - 40, 32, 30, 30);
-    [dismissButton addTarget:self action:@selector(dismissContainerView) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.containerView addSubview:dismissButton];
+    self.selectedIndexPath = indexPath;
+    [self performSegueWithIdentifier:@"Detail" sender:self];
+//    self.containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 44, self.view.frame.size.width, self.view.frame.size.height)];
+//    [self.view addSubview:self.containerView];
+//    
+//    UILabel *exerciseGuide = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 150, 300)];
+//    Exercise *setsGuide = nil;
+//    exerciseGuide.text = setsGuide.guide;
+//    exerciseGuide.numberOfLines = 0;
+//    
+//    UIButton *dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [dismissButton setImage:[UIImage imageNamed:@"deletecircle"] forState:UIControlStateNormal];
+//    dismissButton.frame = CGRectMake(CGRectGetMaxX(self.containerView.frame) - 40, 32, 30, 30);
+//    [dismissButton addTarget:self action:@selector(dismissContainerView) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    [self.containerView addSubview:dismissButton];
     
 }
 

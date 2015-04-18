@@ -439,6 +439,9 @@
                         <outlet property="searchBar" destination="Yxu-qH-vdi" id="hb1-rj-J14"/>
                         <outlet property="searchDisplayController" destination="NxK-1E-Vas" id="04M-Bv-mo0"/>
                         <outlet property="tableview" destination="2qW-k3-Uan" id="gsr-ey-s1X"/>
+                        <segue destination="hZ4-Lv-Drn" kind="popoverPresentation" identifier="Detail" popoverAnchorView="2qW-k3-Uan" id="2ni-de-6kY">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vZ8-W3-8QQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -468,6 +471,54 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1192" y="1779"/>
+        </scene>
+        <!--Exercise Detail View Controller-->
+        <scene sceneID="18l-vf-Qd8">
+            <objects>
+                <viewController id="hZ4-Lv-Drn" customClass="ExerciseDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z3u-6F-jqa"/>
+                        <viewControllerLayoutGuide type="bottom" id="qC4-XF-Vae"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iuq-Y7-7WM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Testing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEs-RS-HGS">
+                                <rect key="frame" x="228" y="290" width="145" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="L0Y-en-A7H"/>
+                                    <constraint firstAttribute="height" constant="21" id="zGZ-cF-ev1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEC-pp-OPh">
+                                <rect key="frame" x="244" y="487" width="30" height="30"/>
+                                <state key="normal" title="Link">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aKa-Sv-dhd">
+                                <rect key="frame" x="180" y="71" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="wEs-RS-HGS" secondAttribute="centerY" id="q78-7D-gwu"/>
+                            <constraint firstAttribute="centerX" secondItem="wEs-RS-HGS" secondAttribute="centerX" id="rDL-9N-lMc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="exerciseImage" destination="aKa-Sv-dhd" id="D3F-Mz-8D3"/>
+                        <outlet property="guideLabel" destination="wEs-RS-HGS" id="cp7-VN-6Mj"/>
+                        <outlet property="linkButton" destination="FEC-pp-OPh" id="CVE-4J-VpK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="es7-Lr-Tky" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1892" y="1779"/>
         </scene>
         <!--Performance View Controller-->
         <scene sceneID="U8Q-pL-dnt">

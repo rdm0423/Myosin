@@ -14,6 +14,7 @@
 		FF0CDEAC1ACF309300BA2FA6 /* AddExercisesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEAB1ACF309300BA2FA6 /* AddExercisesViewController.m */; };
 		FF0CDEAF1ACF464000BA2FA6 /* WorkoutModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEAE1ACF464000BA2FA6 /* WorkoutModeViewController.m */; };
 		FF0CDEE71AD32A6C00BA2FA6 /* HomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEE61AD32A6C00BA2FA6 /* HomePageTableViewCell.m */; };
+		FF35FA7B1AE202F50000706F /* ExerciseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF35FA7A1AE202F50000706F /* ExerciseDetailViewController.m */; };
 		FF90884C1ADE232300124C8B /* CustomDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9088431ADE232300124C8B /* CustomDatePickerView.m */; };
 		FF90884D1ADE232300124C8B /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9088451ADE232300124C8B /* Reminder.m */; };
 		FF90884E1ADE232300124C8B /* RemindersController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9088471ADE232300124C8B /* RemindersController.m */; };
@@ -91,6 +92,8 @@
 		FF0CDEAE1ACF464000BA2FA6 /* WorkoutModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutModeViewController.m; sourceTree = "<group>"; };
 		FF0CDEE51AD32A6C00BA2FA6 /* HomePageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageTableViewCell.h; sourceTree = "<group>"; };
 		FF0CDEE61AD32A6C00BA2FA6 /* HomePageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageTableViewCell.m; sourceTree = "<group>"; };
+		FF35FA791AE202F50000706F /* ExerciseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseDetailViewController.h; sourceTree = "<group>"; };
+		FF35FA7A1AE202F50000706F /* ExerciseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseDetailViewController.m; sourceTree = "<group>"; };
 		FF9088421ADE232300124C8B /* CustomDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDatePickerView.h; sourceTree = "<group>"; };
 		FF9088431ADE232300124C8B /* CustomDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDatePickerView.m; sourceTree = "<group>"; };
 		FF9088441ADE232300124C8B /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
@@ -437,6 +440,8 @@
 				FFF817821ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.m */,
 				FF0CDEAA1ACF309300BA2FA6 /* AddExercisesViewController.h */,
 				FF0CDEAB1ACF309300BA2FA6 /* AddExercisesViewController.m */,
+				FF35FA791AE202F50000706F /* ExerciseDetailViewController.h */,
+				FF35FA7A1AE202F50000706F /* ExerciseDetailViewController.m */,
 			);
 			name = "CreateWorkout Detail";
 			sourceTree = "<group>";
@@ -563,6 +568,7 @@
 				FFB8AB601AD5E17100BE6DE1 /* ExercisePlanned.m in Sources */,
 				FF0CDEAF1ACF464000BA2FA6 /* WorkoutModeViewController.m in Sources */,
 				FFC6225E1AC4A2DB00EDB26B /* AppDelegate.m in Sources */,
+				FF35FA7B1AE202F50000706F /* ExerciseDetailViewController.m in Sources */,
 				FFB8AB561AD5BDE800BE6DE1 /* ImportWorkoutsToCoreDataController.m in Sources */,
 				FF9088501ADE232300124C8B /* RemindersViewController.m in Sources */,
 				FFC6225B1AC4A2DA00EDB26B /* main.m in Sources */,
