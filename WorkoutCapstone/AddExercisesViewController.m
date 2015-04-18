@@ -18,6 +18,8 @@
 @property (nonatomic, strong) NSMutableArray *searchResults;
 @property (strong, nonatomic) NSFetchRequest *searchFetchRequest;
 @property (strong, nonatomic) NSArray *filteredList;
+@property (nonatomic, strong) UIView *containerView;
+//@property (nonatomic, strong) NSMutableArray *cellSelected;
 
 @end
 
@@ -30,6 +32,8 @@
     self.tableview.dataSource = self;
     self.tableview.delegate = self;
     self.searchBar.delegate = self;
+//    self.cellSelected = [NSMutableArray array];
+    
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
@@ -39,8 +43,8 @@
 
 
 
-- (void)searchForText:(NSString *)searchText
-{
+- (void)searchForText:(NSString *)searchText {
+    
     // search how to make a predicate if string = 0 and do an if/else to show the whole list of data
     
     NSString *predicateFormat = @"%K BEGINSWITH[cd] %@";
@@ -53,10 +57,8 @@
     self.filteredList = [self.managedObjectContext executeFetchRequest:self.searchFetchRequest error:&error];
 }
 
-- (NSFetchRequest *)searchFetchRequest
-{
-    if (_searchFetchRequest != nil)
-    {
+- (NSFetchRequest *)searchFetchRequest {
+    if (_searchFetchRequest != nil) {
         return _searchFetchRequest;
     }
     
@@ -73,21 +75,15 @@
 
 #pragma mark - Table view data source
 
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
-    
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.filteredList count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
@@ -95,15 +91,19 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    // Configure the cell...
+//    if ([self.cellSelected containsObject:indexPath]) {
+//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//    }
     
+    // Configure the cell
     Exercise *info = nil;
 
     info = [self.filteredList objectAtIndex:indexPath.row];
 
     cell.textLabel.text = info.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Muscle Target: %@, Level: %@",
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Muscle Target: %@  Level: %@",
                                  info.muscleWorked, info.level];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
     return cell;
 }
@@ -111,15 +111,32 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    
+    self.containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 44, self.view.frame.size.width, self.view.frame.size.height)];
+    [self.view addSubview:self.containerView];
+    
+    UILabel *exerciseGuide = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 150, 300)];
+    Exercise *setsGuide = nil;
+    exerciseGuide.text = setsGuide.guide;
+    exerciseGuide.numberOfLines = 0;
+    
+    UIButton *dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [dismissButton setImage:[UIImage imageNamed:@"deletecircle"] forState:UIControlStateNormal];
+    dismissButton.frame = CGRectMake(CGRectGetMaxX(self.containerView.frame) - 40, 32, 30, 30);
+    [dismissButton addTarget:self action:@selector(dismissContainerView) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.containerView addSubview:dismissButton];
+    
+}
+
+- (void)dismissContainerView {
+    [self.containerView removeFromSuperview];
 }
 
 @end
