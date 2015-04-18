@@ -23,6 +23,13 @@
     [super viewDidLoad];
     
     self.guideLabel.text = self.exercise.guide;
+    NSURL *pictureURL = [NSURL URLWithString:self.exercise.picture];
+    [[[NSURLSession sharedSession] dataTaskWithURL:pictureURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        UIImage *downloadImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:pictureURL]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.exerciseImage.image = downloadImage;
+        });
+    }] resume];
     
     
 //    self.exerciseImage.image =
