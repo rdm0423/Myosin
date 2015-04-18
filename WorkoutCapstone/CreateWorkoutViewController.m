@@ -9,6 +9,8 @@
 #import "CreateWorkoutViewController.h"
 #import "Exercise.h"
 #import "AddExercisesViewController.h"
+#import "Stack.h"
+#import "WorkoutController.h"
 
 
 @interface CreateWorkoutViewController () <UITextFieldDelegate, UIPickerViewDelegate, UITableViewDelegate, UITableViewDataSource,ExerciseSelectedDelegate>
@@ -31,6 +33,10 @@
 @end
 
 @implementation CreateWorkoutViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableview reloadData];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -63,12 +69,7 @@
     self.workoutSetsTextField.inputView = self.setsPicker;
     self.workoutRepsTextField.inputView = self.repsPicker;
     
-    
-    self.addExerciseCell = [UITableViewCell new];
-    self.addExerciseCell.textLabel.text = @"Add Exercise";
-    self.addExerciseCell.imageView.image = [UIImage imageNamed:@"add"];
-    self.addExerciseCell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
+    self.restTimeSegmentedControl.selectedSegmentIndex = 0;
 }
 
 -(void)didSelectExercise:(Exercise *)exercise
@@ -81,11 +82,11 @@
 - (IBAction)restTimeSegmentedSelected:(id)sender {
     
     if (self.restTimeSegmentedControl.selectedSegmentIndex == 0) {
-        
+        self.workout.restTime = @30;
     } else if (self.restTimeSegmentedControl.selectedSegmentIndex == 1) {
-        
-    } else if (self.restTimeSegmentedControl.selectedSegmentIndex ==2) {
-        
+        self.workout.restTime = @45;
+    } else if (self.restTimeSegmentedControl.selectedSegmentIndex == 2) {
+        self.workout.restTime = @60;
     }
 }
 
@@ -146,7 +147,7 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
-    return NO;
+    return YES;
 }
 
 #pragma mark - TableView Delegate
@@ -160,40 +161,45 @@
 #pragma mark - TableView DataSource
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    if (self.temporaryExercises.count == 0) {
-        return 1;
-    }
-    else
-    {
-        return self.temporaryExercises.count;
-    }
-    
+    return self.workout.exercises.count + 1;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    int addRowInt = (int)self.temporaryExercises.count+1;
-    
-    if (addRowInt == 1) {
-        return self.addExerciseCell;
+    if (indexPath.row == self.workout.exercises.count) {
+        UITableViewCell *addExerciseCell = [UITableViewCell new];
+        addExerciseCell.textLabel.text = @"Add Exercise";
+        addExerciseCell.imageView.image = [UIImage imageNamed:@"add"];
+        addExerciseCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return addExerciseCell;
     }
     else
     {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-        Exercise *exercise = [self.temporaryExercises objectAtIndex:indexPath.row];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+        Exercise *exercise = [self.workout.exercises objectAtIndex:indexPath.row];
         cell.textLabel.text = exercise.name;
         return cell;
     }
-    
 }
 
 - (IBAction)saveButton:(id)sender {
+    self.workout.name = self.workoutName.text;
+    self.workout.focusArea = self.workoutFocusAreaTextField.text;
+    self.workout.sets = [NSNumber numberWithInteger:[self.workoutSetsTextField.text integerValue]];
+    self.workout.reps =  [NSNumber numberWithInteger:[self.workoutRepsTextField.text integerValue]];
+//    self.workout.restTime  *REST TIME SET ON SEGMENT CHANGED*
+    
+    [[Stack sharedInstance] save];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
 - (IBAction)cancelButton:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    [[WorkoutController sharedInstance] removeWorkout:self.workout];
+    [[Stack sharedInstance] save];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -208,7 +214,8 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"detail"]) {
-        AddExercisesViewController *addExercisesViewController = [segue destinationViewController];
+        UINavigationController *navigationController = [segue destinationViewController];
+        AddExercisesViewController *addExercisesViewController = [navigationController.viewControllers firstObject];
         addExercisesViewController.workout = self.workout;
     }
 }

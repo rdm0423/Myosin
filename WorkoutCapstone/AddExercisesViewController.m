@@ -36,6 +36,7 @@
     self.tableview.delegate = self;
     self.searchBar.delegate = self;
     [self searchForText:@""];
+    self.temporaryExerciseSet = [NSMutableOrderedSet new];
 //    self.cellSelected = [NSMutableArray array];
     
 }
@@ -166,11 +167,15 @@
 }
 
 - (IBAction)cancelButton:(id)sender {
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)saveButton:(id)sender {
     
+    [self.temporaryExerciseSet unionOrderedSet:self.workout.exercises];
+    self.workout.exercises = [self.temporaryExerciseSet copy];
+    self.temporaryExerciseSet = nil;
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)dismissContainerView {

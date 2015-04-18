@@ -76,6 +76,7 @@
 // toolbar methods
 - (void)viewWillAppear:(BOOL)animated
 {
+    [self.tableview reloadData];
     [self.navigationController setToolbarHidden:NO animated:YES];
 }
 
@@ -95,7 +96,8 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"newWorkout"]) {
-        CreateWorkoutViewController *createNewWorkoutViewController = [segue destinationViewController];
+        UINavigationController *navigationController = [segue destinationViewController];
+        CreateWorkoutViewController *createNewWorkoutViewController = [[navigationController viewControllers] firstObject];
         createNewWorkoutViewController.workout = [[WorkoutController sharedInstance] createWorkout];
     }
 }
