@@ -60,6 +60,8 @@
         
         exercise.name = dictionary.allKeys[0];
         exercise.muscleWorked = exerciseDetails[MuscleWorkedKey];
+        exercise.picture = exerciseDetails[PictureKey];
+        exercise.level = exerciseDetails[LevelKey];
     }
     
     [[Stack sharedInstance].managedObjectContext save:&error];
