@@ -62,6 +62,11 @@
         exercise.muscleWorked = exerciseDetails[MuscleWorkedKey];
         exercise.picture = exerciseDetails[PictureKey];
         exercise.level = exerciseDetails[LevelKey];
+        exercise.guide = exerciseDetails[GuideKey];
+        exercise.equipment = exerciseDetails[EquipmentKey];
+        exercise.type = exerciseDetails[TypeKey];
+        exercise.mechanicsType = exerciseDetails[MechanicsTypeKey];
+        
     }
     
     [[Stack sharedInstance].managedObjectContext save:&error];

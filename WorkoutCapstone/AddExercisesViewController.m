@@ -92,7 +92,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (!cell) {
@@ -131,7 +130,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-
+    Exercise *exercise = [self.filteredList objectAtIndex:indexPath.row];
+    [self.delegate didSelectExercise:exercise];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -145,6 +147,11 @@
         controller.popoverPresentationController.sourceView = cell;
         controller.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionRight;
         controller.popoverPresentationController.sourceRect = CGRectMake(cell.frame.size.width - 40, 0, 240, cell.frame.size.height);
+    }
+    
+    if([segue.identifier isEqualToString:@"detail"])
+    {
+        
     }
 }
 

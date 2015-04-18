@@ -7,8 +7,9 @@
 //
 
 #import "CreateWorkoutViewController.h"
+#import "Exercise.h"
 
-@interface CreateWorkoutViewController () <UITextFieldDelegate, UIPickerViewDelegate>
+@interface CreateWorkoutViewController () <UITextFieldDelegate, UIPickerViewDelegate, UITableViewDelegate, UITableViewDataSource,ExerciseSelectedDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *workoutName;
 @property (weak, nonatomic) IBOutlet UITextField *workoutFocusAreaTextField;
@@ -19,7 +20,11 @@
 @property (nonatomic, strong) UIPickerView *setsPicker;
 @property (nonatomic, strong) UIPickerView *repsPicker;
 
+@property (nonatomic, strong) Exercise *selectedExercise;
+@property (nonatomic, strong) NSArray *temporaryExercises;
+
 @property (weak, nonatomic) IBOutlet UISegmentedControl *restTimeSegmentedControl;
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
 
 @end
 
@@ -27,6 +32,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.temporaryExercises = [[NSArray alloc]init];
+    
+    
+    AddExercisesViewController *exerciseVC = [self.storyboard instantiateViewControllerWithIdentifier:@"addExercise"];
+    exerciseVC.delegate = self;
+    
+    
+    self.tableview.delegate = self;
+    self.tableview.dataSource = self;
+    self.selectedExercise = [Exercise new];
     
     // sets pickerview
     self.workoutFocusAreaPicker = [UIPickerView new];
@@ -46,8 +61,19 @@
     self.workoutSetsTextField.inputView = self.setsPicker;
     self.workoutRepsTextField.inputView = self.repsPicker;
     
-
     
+    self.addExerciseCell = [UITableViewCell new];
+    self.addExerciseCell.textLabel.text = @"Add Exercise";
+    self.addExerciseCell.imageView.image = [UIImage imageNamed:@"add"];
+    self.addExerciseCell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+}
+
+-(void)didSelectExercise:(Exercise *)exercise
+{
+    self.selectedExercise = exercise;
+    self.temporaryExercises = [self.temporaryExercises arrayByAddingObject:exercise];
+    [self.tableview reloadData];
 }
 
 - (IBAction)restTimeSegmentedSelected:(id)sender {
@@ -61,13 +87,6 @@
     }
 }
 
-- (IBAction)cancel:(id)sender {
-    [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)addExercisesButton:(id)sender {
-    
-}
 
 // textfield picker
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
@@ -128,7 +147,52 @@
     return NO;
 }
 
+#pragma mark - TableView Delegate
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self performSegueWithIdentifier:@"detail" sender:self];
+    
+}
+
+#pragma mark - TableView DataSource
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    if (self.temporaryExercises.count == 0) {
+        return 1;
+    }
+    else
+    {
+        return self.temporaryExercises.count;
+    }
+    
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    int addRowInt = (int)self.temporaryExercises.count+1;
+    
+    if (addRowInt == 1) {
+        return self.addExerciseCell;
+    }
+    else
+    {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        Exercise *exercise = [self.temporaryExercises objectAtIndex:indexPath.row];
+        cell.textLabel.text = exercise.name;
+        return cell;
+    }
+    
+}
+
+- (IBAction)saveButton:(id)sender {
+    
+}
+
+- (IBAction)cancelButton:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 
 - (void)didReceiveMemoryWarning {

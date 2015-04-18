@@ -22,7 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.guideLabel.text = self.exercise.guide;
+    self.guideLabel.text = self.exercise.level;
+    
     NSURL *pictureURL = [NSURL URLWithString:self.exercise.picture];
     [[[NSURLSession sharedSession] dataTaskWithURL:pictureURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         UIImage *downloadImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:pictureURL]];

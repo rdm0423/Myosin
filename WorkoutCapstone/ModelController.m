@@ -27,6 +27,7 @@
     workoutAdded[@"reps"] = reps;
     workoutAdded[@"focusArea"] = focusArea;
     workoutAdded[@"restTime"] = restTime;
+    [workoutAdded saveInBackground];
     
 }
 
@@ -35,6 +36,12 @@
     exerciseAdded[@"name"] = name;
     exerciseAdded[@"workout"] = workout;
     [exerciseAdded saveInBackground];
+}
+
+-(void)createWorkout
+{
+    Workout *workout = [Workout alloc]init;
+    [workout ]
 }
 
 @end

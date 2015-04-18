@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddExercisesViewController.h"
 
 @interface CreateWorkoutViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+
+@property (nonatomic, strong) UITableViewCell *addExerciseCell;
 
 @end
