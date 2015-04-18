@@ -106,7 +106,7 @@
                                 <items>
                                     <barButtonItem image="add" id="EKu-mh-rbx">
                                         <connections>
-                                            <segue destination="RUf-Sl-MnY" kind="show" id="1vD-Hc-uqX"/>
+                                            <segue destination="RUf-Sl-MnY" kind="show" identifier="newWorkout" id="1vD-Hc-uqX"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Wg8-FK-cH8"/>
@@ -295,7 +295,7 @@
                         <outlet property="workoutName" destination="AC4-Qu-Qyt" id="CK0-sT-Teg"/>
                         <outlet property="workoutRepsTextField" destination="I16-OY-Hee" id="yDC-qz-PR2"/>
                         <outlet property="workoutSetsTextField" destination="1Xw-nt-8dh" id="rWE-yS-qlz"/>
-                        <segue destination="ZYC-Tt-440" kind="show" identifier="detail" id="o5b-Gd-N0O"/>
+                        <segue destination="S2o-kB-OXr" kind="presentation" identifier="detail" id="o5b-Gd-N0O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NEe-fd-dJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -416,6 +416,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Yxu-qH-vdi">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2qW-k3-Uan">
                                 <rect key="frame" x="0.0" y="108" width="600" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -424,10 +428,6 @@
                                     <outlet property="delegate" destination="ZYC-Tt-440" id="zX6-qE-sKV"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Yxu-qH-vdi">
-                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -440,6 +440,18 @@
                             <constraint firstItem="2qW-k3-Uan" firstAttribute="leading" secondItem="Yxu-qH-vdi" secondAttribute="leading" id="zIQ-Tu-sZe"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Add Exercise" id="QvU-Nn-Edu">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gmc-D3-de8">
+                            <connections>
+                                <action selector="cancelButton:" destination="ZYC-Tt-440" id="Zoj-w5-0fa"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="a6d-Fv-lvk">
+                            <connections>
+                                <action selector="saveButton:" destination="ZYC-Tt-440" id="f4R-ff-DMt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="Yxu-qH-vdi" id="hb1-rj-J14"/>
                         <outlet property="searchDisplayController" destination="NxK-1E-Vas" id="04M-Bv-mo0"/>
@@ -475,7 +487,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1181" y="1815"/>
+            <point key="canvasLocation" x="1993" y="1815"/>
         </scene>
         <!--Exercise Detail View Controller-->
         <scene sceneID="18l-vf-Qd8">
@@ -542,7 +554,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="es7-Lr-Tky" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1892" y="1779"/>
+            <point key="canvasLocation" x="2704" y="1779"/>
         </scene>
         <!--Performance View Controller-->
         <scene sceneID="U8Q-pL-dnt">
@@ -781,6 +793,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S3U-am-1ka" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="471" y="284"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ouw-sq-2an">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S2o-kB-OXr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lxj-fZ-5VX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZYC-Tt-440" kind="relationship" relationship="rootViewController" id="5ik-Dj-LRZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fc6-QH-khc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1181" y="1815"/>
         </scene>
     </scenes>
     <resources>

@@ -67,4 +67,8 @@
     return [[NSManagedObjectModel alloc] initWithContentsOfURL:self.modelURL];
 }
 
+- (void)save {
+    [[Stack sharedInstance].managedObjectContext save:nil];
+}
+
 @end

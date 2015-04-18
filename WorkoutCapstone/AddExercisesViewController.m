@@ -21,6 +21,7 @@
 @property (strong, nonatomic) NSArray *filteredList;
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;
+@property (nonatomic, strong) NSMutableOrderedSet *temporaryExerciseSet;
 //@property (nonatomic, strong) NSMutableArray *cellSelected;
 
 @end
@@ -98,10 +99,6 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-//    if ([self.cellSelected containsObject:indexPath]) {
-//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//    }
-    
     // Configure the cell
     Exercise *info = nil;
 
@@ -131,9 +128,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     Exercise *exercise = [self.filteredList objectAtIndex:indexPath.row];
-    [self.delegate didSelectExercise:exercise];
     
-    [self.navigationController popViewControllerAnimated:YES];
+    if ([self.temporaryExerciseSet containsObject:exercise]) {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        [self.temporaryExerciseSet removeObject:exercise];
+    } else {
+        [self.temporaryExerciseSet addObject:exercise];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -149,8 +150,7 @@
         controller.popoverPresentationController.sourceRect = CGRectMake(cell.frame.size.width - 40, 0, 240, cell.frame.size.height);
     }
     
-    if([segue.identifier isEqualToString:@"detail"])
-    {
+    if([segue.identifier isEqualToString:@"detail"]) {
         
     }
 }
@@ -163,20 +163,13 @@
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
     self.selectedIndexPath = indexPath;
     [self performSegueWithIdentifier:@"Detail" sender:self];
-//    self.containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 44, self.view.frame.size.width, self.view.frame.size.height)];
-//    [self.view addSubview:self.containerView];
-//    
-//    UILabel *exerciseGuide = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 150, 300)];
-//    Exercise *setsGuide = nil;
-//    exerciseGuide.text = setsGuide.guide;
-//    exerciseGuide.numberOfLines = 0;
-//    
-//    UIButton *dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [dismissButton setImage:[UIImage imageNamed:@"deletecircle"] forState:UIControlStateNormal];
-//    dismissButton.frame = CGRectMake(CGRectGetMaxX(self.containerView.frame) - 40, 32, 30, 30);
-//    [dismissButton addTarget:self action:@selector(dismissContainerView) forControlEvents:UIControlEventTouchUpInside];
-//    
-//    [self.containerView addSubview:dismissButton];
+}
+
+- (IBAction)cancelButton:(id)sender {
+    
+}
+
+- (IBAction)saveButton:(id)sender {
     
 }
 

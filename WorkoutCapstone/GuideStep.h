@@ -2,7 +2,7 @@
 //  GuideStep.h
 //  WorkoutCapstone
 //
-//  Created by Ross McIlwaine on 4/8/15.
+//  Created by Ross McIlwaine on 4/18/15.
 //  Copyright (c) 2015 Ross McIlwaine. All rights reserved.
 //
 

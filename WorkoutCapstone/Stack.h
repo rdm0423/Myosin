@@ -15,4 +15,6 @@
 
 @property (nonatomic, strong, readonly) NSManagedObjectContext *managedObjectContext;
 
+- (void)save;
+
 @end

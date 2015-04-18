@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Workout.h"
 @import CoreData;
 @class Exercise;
 
@@ -19,6 +20,7 @@ static NSString *CellIdentifier = @"Cell";
 @property (nonatomic,strong) NSManagedObjectContext* managedObjectContext;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, weak) id<ExerciseSelectedDelegate> delegate;
+@property (nonatomic, strong) Workout *workout;
 
 @end
 
