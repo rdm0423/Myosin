@@ -11,6 +11,7 @@
 @interface SettingsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableViewCell *advancedSettingsCell;
+@property (nonatomic, strong) UITableViewCell *circuitModeCell;
 @property (nonatomic, strong) UITableViewCell *supportCell;
 @property (nonatomic, strong) UITableViewCell *legalCell;
 

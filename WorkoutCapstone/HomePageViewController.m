@@ -9,6 +9,8 @@
 #import "HomePageViewController.h"
 #import "HomePageDatesource.h"
 #import "HomePageTableViewCell.h"
+#import "CreateWorkoutViewController.h"
+#import "WorkoutController.h"
 
 @interface HomePageViewController () <UITableViewDelegate>
 
@@ -74,6 +76,7 @@
 // toolbar methods
 - (void)viewWillAppear:(BOOL)animated
 {
+    [self.tableview reloadData];
     [self.navigationController setToolbarHidden:NO animated:YES];
 }
 
@@ -87,14 +90,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"newWorkout"]) {
+        UINavigationController *navigationController = [segue destinationViewController];
+        CreateWorkoutViewController *createNewWorkoutViewController = [[navigationController viewControllers] firstObject];
+        createNewWorkoutViewController.workout = [[WorkoutController sharedInstance] createWorkout];
+    }
 }
-*/
+
 
 @end

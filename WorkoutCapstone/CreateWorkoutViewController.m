@@ -7,8 +7,13 @@
 //
 
 #import "CreateWorkoutViewController.h"
+#import "Exercise.h"
+#import "AddExercisesViewController.h"
+#import "Stack.h"
+#import "WorkoutController.h"
 
-@interface CreateWorkoutViewController () <UITextFieldDelegate, UIPickerViewDelegate>
+
+@interface CreateWorkoutViewController () <UITextFieldDelegate, UIPickerViewDelegate, UITableViewDelegate, UITableViewDataSource,ExerciseSelectedDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *workoutName;
 @property (weak, nonatomic) IBOutlet UITextField *workoutFocusAreaTextField;
@@ -19,14 +24,32 @@
 @property (nonatomic, strong) UIPickerView *setsPicker;
 @property (nonatomic, strong) UIPickerView *repsPicker;
 
+@property (nonatomic, strong) Exercise *selectedExercise;
+@property (nonatomic, strong) NSArray *temporaryExercises;
+
 @property (weak, nonatomic) IBOutlet UISegmentedControl *restTimeSegmentedControl;
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
 
 @end
 
 @implementation CreateWorkoutViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableview reloadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.temporaryExercises = [[NSArray alloc]init];
+    
+    
+    AddExercisesViewController *exerciseVC = [self.storyboard instantiateViewControllerWithIdentifier:@"addExercise"];
+    exerciseVC.delegate = self;
+    
+    
+    self.tableview.delegate = self;
+    self.tableview.dataSource = self;
+    self.selectedExercise = [Exercise new];
     
     // sets pickerview
     self.workoutFocusAreaPicker = [UIPickerView new];
@@ -46,34 +69,37 @@
     self.workoutSetsTextField.inputView = self.setsPicker;
     self.workoutRepsTextField.inputView = self.repsPicker;
     
+    self.restTimeSegmentedControl.selectedSegmentIndex = 0;
+}
 
-    
+-(void)didSelectExercise:(Exercise *)exercise
+{
+    self.selectedExercise = exercise;
+    self.temporaryExercises = [self.temporaryExercises arrayByAddingObject:exercise];
+    [self.tableview reloadData];
 }
 
 - (IBAction)restTimeSegmentedSelected:(id)sender {
     
     if (self.restTimeSegmentedControl.selectedSegmentIndex == 0) {
-        
+        self.workout.restTime = @30;
     } else if (self.restTimeSegmentedControl.selectedSegmentIndex == 1) {
-        
-    } else if (self.restTimeSegmentedControl.selectedSegmentIndex ==2) {
-        
+        self.workout.restTime = @45;
+    } else if (self.restTimeSegmentedControl.selectedSegmentIndex == 2) {
+        self.workout.restTime = @60;
     }
 }
 
-- (IBAction)cancel:(id)sender {
-    [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)addExercisesButton:(id)sender {
-    
-}
 
 // textfield picker
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    self.workoutFocusAreaTextField.text = [self focusAreaArray][[pickerView selectedRowInComponent:0]];
-    self.workoutSetsTextField.text = [self setsArray][[pickerView selectedRowInComponent:0]];
-    self.workoutRepsTextField.text = [self repsArray][[pickerView selectedRowInComponent:0]];
+    if (pickerView == self.workoutFocusAreaPicker) {
+        self.workoutFocusAreaTextField.text = [self focusAreaArray][[pickerView selectedRowInComponent:0]];
+    } else if (pickerView == self.setsPicker) {
+        self.workoutSetsTextField.text = [self setsArray][[pickerView selectedRowInComponent:0]];
+    } else {
+        self.workoutRepsTextField.text = [self repsArray][[pickerView selectedRowInComponent:0]];
+    }
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
@@ -121,10 +147,60 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
-    return NO;
+    return YES;
 }
 
+#pragma mark - TableView Delegate
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self performSegueWithIdentifier:@"detail" sender:self];
+    
+}
+
+#pragma mark - TableView DataSource
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.workout.exercises.count + 1;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row == self.workout.exercises.count) {
+        UITableViewCell *addExerciseCell = [UITableViewCell new];
+        addExerciseCell.textLabel.text = @"Add Exercise";
+        addExerciseCell.imageView.image = [UIImage imageNamed:@"add"];
+        addExerciseCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return addExerciseCell;
+    }
+    else
+    {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+        Exercise *exercise = [self.workout.exercises objectAtIndex:indexPath.row];
+        cell.textLabel.text = exercise.name;
+        return cell;
+    }
+}
+
+- (IBAction)saveButton:(id)sender {
+    self.workout.name = self.workoutName.text;
+    self.workout.focusArea = self.workoutFocusAreaTextField.text;
+    self.workout.sets = [NSNumber numberWithInteger:[self.workoutSetsTextField.text integerValue]];
+    self.workout.reps =  [NSNumber numberWithInteger:[self.workoutRepsTextField.text integerValue]];
+//    self.workout.restTime  *REST TIME SET ON SEGMENT CHANGED*
+    
+    [[Stack sharedInstance] save];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+- (IBAction)cancelButton:(id)sender {
+    [[WorkoutController sharedInstance] removeWorkout:self.workout];
+    [[Stack sharedInstance] save];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 - (void)didReceiveMemoryWarning {
@@ -132,14 +208,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"detail"]) {
+        UINavigationController *navigationController = [segue destinationViewController];
+        AddExercisesViewController *addExercisesViewController = [navigationController.viewControllers firstObject];
+        addExercisesViewController.workout = self.workout;
+    }
 }
-*/
+
 
 @end
