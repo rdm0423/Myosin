@@ -53,21 +53,6 @@
     return 84;
 }
 
-- (IBAction)workoutTapped:(id)sender {
-    
-}
-
-- (IBAction)createWorkoutButtonPressed:(id)sender {
-    
-}
-
-- (IBAction)performanceButtonPressed:(id)sender {
-    
-}
-
-- (IBAction)settingsButtonPressed:(id)sender {
-    
-}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     

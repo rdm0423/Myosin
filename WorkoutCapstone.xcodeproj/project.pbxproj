@@ -40,9 +40,7 @@
 		FFC6225B1AC4A2DA00EDB26B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC6225A1AC4A2DA00EDB26B /* main.m */; };
 		FFC6225E1AC4A2DB00EDB26B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC6225D1AC4A2DB00EDB26B /* AppDelegate.m */; };
 		FFC622611AC4A2DB00EDB26B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC622601AC4A2DB00EDB26B /* ViewController.m */; };
-		FFC622641AC4A2DB00EDB26B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFC622621AC4A2DB00EDB26B /* Main.storyboard */; };
 		FFC622661AC4A2DB00EDB26B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFC622651AC4A2DB00EDB26B /* Images.xcassets */; };
-		FFC622691AC4A2DB00EDB26B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC622671AC4A2DB00EDB26B /* LaunchScreen.xib */; };
 		FFC622751AC4A2DB00EDB26B /* WorkoutCapstoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC622741AC4A2DB00EDB26B /* WorkoutCapstoneTests.m */; };
 		FFC6228C1AC4A52000EDB26B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC6228B1AC4A52000EDB26B /* AudioToolbox.framework */; };
 		FFC6228E1AC4A52D00EDB26B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC6228D1AC4A52D00EDB26B /* CFNetwork.framework */; };
@@ -57,13 +55,10 @@
 		FFC622A01AC4A5C000EDB26B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC6229F1AC4A5C000EDB26B /* libsqlite3.dylib */; };
 		FFC622A41AC4AA5100EDB26B /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC622A31AC4AA5100EDB26B /* NetworkController.m */; };
 		FFC622A71AC4AA6600EDB26B /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC622A61AC4AA6600EDB26B /* ModelController.m */; };
-		FFF1A9481ADC4AE200A96245 /* parse-library-1 in Resources */ = {isa = PBXBuildFile; fileRef = FFF1A9471ADC4AE200A96245 /* parse-library-1 */; };
-		FFF1A94F1ADC4EFA00A96245 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF1A9491ADC4EFA00A96245 /* Bolts.framework */; };
-		FFF1A9501ADC4EFA00A96245 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF1A94A1ADC4EFA00A96245 /* Parse.framework */; };
-		FFF1A9511ADC4EFA00A96245 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF1A94B1ADC4EFA00A96245 /* ParseCrashReporting.framework */; };
-		FFF1A9521ADC4EFA00A96245 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF1A94C1ADC4EFA00A96245 /* ParseFacebookUtils.framework */; };
-		FFF1A9531ADC4EFA00A96245 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF1A94D1ADC4EFA00A96245 /* ParseFacebookUtilsV4.framework */; };
-		FFF1A9541ADC4EFA00A96245 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF1A94E1ADC4EFA00A96245 /* ParseUI.framework */; };
+		FFEE15471AE55C2100E99467 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC622671AC4A2DB00EDB26B /* LaunchScreen.xib */; };
+		FFEE15481AE55C2400E99467 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFC622621AC4A2DB00EDB26B /* Main.storyboard */; };
+		FFEE15501AE55EC400E99467 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEE154C1AE55EA000E99467 /* Bolts.framework */; };
+		FFEE15511AE55EC400E99467 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEE154D1AE55EA000E99467 /* Parse.framework */; };
 		FFF817801ACC9D2A008E27E2 /* CreateWorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF8177F1ACC9D2A008E27E2 /* CreateWorkoutViewController.m */; };
 		FFF817831ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF817821ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.m */; };
 		FFF817861ACC9D51008E27E2 /* PerformanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF817851ACC9D51008E27E2 /* PerformanceViewController.m */; };
@@ -166,9 +161,8 @@
 		FFC622A31AC4AA5100EDB26B /* NetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkController.m; sourceTree = "<group>"; };
 		FFC622A51AC4AA6600EDB26B /* ModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
 		FFC622A61AC4AA6600EDB26B /* ModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
-		FFF1A9471ADC4AE200A96245 /* parse-library-1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "parse-library-1"; sourceTree = "<group>"; };
-		FFF1A9491ADC4EFA00A96245 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1/Bolts.framework"; sourceTree = "<group>"; };
-		FFF1A94A1ADC4EFA00A96245 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1/Parse.framework"; sourceTree = "<group>"; };
+		FFEE154C1AE55EA000E99467 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1/Bolts.framework"; sourceTree = "<group>"; };
+		FFEE154D1AE55EA000E99467 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1/Parse.framework"; sourceTree = "<group>"; };
 		FFF1A94B1ADC4EFA00A96245 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseCrashReporting.framework; path = "parse-library-1/ParseCrashReporting.framework"; sourceTree = "<group>"; };
 		FFF1A94C1ADC4EFA00A96245 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "parse-library-1/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
 		FFF1A94D1ADC4EFA00A96245 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "parse-library-1/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
@@ -188,12 +182,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFF1A94F1ADC4EFA00A96245 /* Bolts.framework in Frameworks */,
-				FFF1A9501ADC4EFA00A96245 /* Parse.framework in Frameworks */,
-				FFF1A9511ADC4EFA00A96245 /* ParseCrashReporting.framework in Frameworks */,
-				FFF1A9521ADC4EFA00A96245 /* ParseFacebookUtils.framework in Frameworks */,
-				FFF1A9531ADC4EFA00A96245 /* ParseFacebookUtilsV4.framework in Frameworks */,
-				FFF1A9541ADC4EFA00A96245 /* ParseUI.framework in Frameworks */,
+				FFEE15501AE55EC400E99467 /* Bolts.framework in Frameworks */,
+				FFEE15511AE55EC400E99467 /* Parse.framework in Frameworks */,
 				FFB8AB6B1AD5E17D00BE6DE1 /* CoreData.framework in Frameworks */,
 				FFC622A01AC4A5C000EDB26B /* libsqlite3.dylib in Frameworks */,
 				FFC6229E1AC4A5A500EDB26B /* libz.dylib in Frameworks */,
@@ -332,15 +322,10 @@
 		FFC6224C1AC4A2DA00EDB26B = {
 			isa = PBXGroup;
 			children = (
-				FF9088521ADE239900124C8B /* UIBarButtonItem+CustomButtons.h */,
-				FF9088531ADE239900124C8B /* UIBarButtonItem+CustomButtons.m */,
-				FF9088541ADE239900124C8B /* UIColor+Colors.h */,
-				FF9088551ADE239900124C8B /* UIColor+Colors.m */,
 				FFC622571AC4A2DA00EDB26B /* WorkoutCapstone */,
 				FFC622711AC4A2DB00EDB26B /* WorkoutCapstoneTests */,
 				FFF1A9551ADC4FFE00A96245 /* Frameworks */,
 				FFC622561AC4A2DA00EDB26B /* Products */,
-				FFF1A9471ADC4AE200A96245 /* parse-library-1 */,
 				FFC622A11AC4A66D00EDB26B /* Parse */,
 			);
 			sourceTree = "<group>";
@@ -361,6 +346,7 @@
 				FFC6225D1AC4A2DB00EDB26B /* AppDelegate.m */,
 				FFC6225F1AC4A2DB00EDB26B /* ViewController.h */,
 				FFC622601AC4A2DB00EDB26B /* ViewController.m */,
+				FFEE15521AE5666000E99467 /* Global Color/Buttons */,
 				FF93DBD51ACB32A000CEFC24 /* HomePageViewController */,
 				FFC622A21AC4AA5100EDB26B /* NetworkController.h */,
 				FFC622A31AC4AA5100EDB26B /* NetworkController.m */,
@@ -418,11 +404,23 @@
 			name = Parse;
 			sourceTree = "<group>";
 		};
+		FFEE15521AE5666000E99467 /* Global Color/Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				FF9088521ADE239900124C8B /* UIBarButtonItem+CustomButtons.h */,
+				FF9088531ADE239900124C8B /* UIBarButtonItem+CustomButtons.m */,
+				FF9088541ADE239900124C8B /* UIColor+Colors.h */,
+				FF9088551ADE239900124C8B /* UIColor+Colors.m */,
+			);
+			name = "Global Color/Buttons";
+			path = ..;
+			sourceTree = "<group>";
+		};
 		FFF1A9551ADC4FFE00A96245 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FFF1A9491ADC4EFA00A96245 /* Bolts.framework */,
-				FFF1A94A1ADC4EFA00A96245 /* Parse.framework */,
+				FFEE154C1AE55EA000E99467 /* Bolts.framework */,
+				FFEE154D1AE55EA000E99467 /* Parse.framework */,
 				FFF1A94B1ADC4EFA00A96245 /* ParseCrashReporting.framework */,
 				FFF1A94C1ADC4EFA00A96245 /* ParseFacebookUtils.framework */,
 				FFF1A94D1ADC4EFA00A96245 /* ParseFacebookUtilsV4.framework */,
@@ -542,11 +540,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFC622641AC4A2DB00EDB26B /* Main.storyboard in Resources */,
-				FFC622691AC4A2DB00EDB26B /* LaunchScreen.xib in Resources */,
+				FFEE15481AE55C2400E99467 /* Main.storyboard in Resources */,
+				FFEE15471AE55C2100E99467 /* LaunchScreen.xib in Resources */,
 				FFC622661AC4A2DB00EDB26B /* Images.xcassets in Resources */,
 				FFB8AB531AD5BC2D00BE6DE1 /* exercises.json in Resources */,
-				FFF1A9481ADC4AE200A96245 /* parse-library-1 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,7 +674,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -713,7 +710,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -734,6 +731,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -751,6 +749,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

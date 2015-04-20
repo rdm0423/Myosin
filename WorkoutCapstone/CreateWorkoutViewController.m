@@ -40,12 +40,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.temporaryExercises = [[NSArray alloc]init];
     
+    self.temporaryExercises = [[NSArray alloc]init];
     
     AddExercisesViewController *exerciseVC = [self.storyboard instantiateViewControllerWithIdentifier:@"addExercise"];
     exerciseVC.delegate = self;
-    
     
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
@@ -64,7 +63,6 @@
     self.repsPicker.dataSource = self;
     self.repsPicker.delegate = self;
     
-    
     self.workoutFocusAreaTextField.inputView = self.workoutFocusAreaPicker;
     self.workoutSetsTextField.inputView = self.setsPicker;
     self.workoutRepsTextField.inputView = self.repsPicker;
@@ -72,8 +70,7 @@
     self.restTimeSegmentedControl.selectedSegmentIndex = 0;
 }
 
--(void)didSelectExercise:(Exercise *)exercise
-{
+-(void)didSelectExercise:(Exercise *)exercise {
     self.selectedExercise = exercise;
     self.temporaryExercises = [self.temporaryExercises arrayByAddingObject:exercise];
     [self.tableview reloadData];
@@ -89,7 +86,6 @@
         self.workout.restTime = @60;
     }
 }
-
 
 // textfield picker
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
@@ -144,7 +140,6 @@
     return @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18"];
 }
 
-
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
@@ -153,9 +148,7 @@
 #pragma mark - TableView Delegate
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     [self performSegueWithIdentifier:@"detail" sender:self];
-    
 }
 
 #pragma mark - TableView DataSource
@@ -172,9 +165,7 @@
         addExerciseCell.imageView.image = [UIImage imageNamed:@"add"];
         addExerciseCell.selectionStyle = UITableViewCellSelectionStyleNone;
         return addExerciseCell;
-    }
-    else
-    {
+    } else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
         Exercise *exercise = [self.workout.exercises objectAtIndex:indexPath.row];
         cell.textLabel.text = exercise.name;
@@ -192,7 +183,6 @@
     [[Stack sharedInstance] save];
     
     [self dismissViewControllerAnimated:YES completion:nil];
-    
 }
 
 - (IBAction)cancelButton:(id)sender {
@@ -201,13 +191,6 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 #pragma mark - Navigation
 
