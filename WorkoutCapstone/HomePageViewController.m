@@ -9,19 +9,17 @@
 #import "HomePageViewController.h"
 #import "HomePageDatesource.h"
 #import "HomePageTableViewCell.h"
+#import "CreateWorkoutViewController.h"
+#import "WorkoutController.h"
+#import "WorkoutModeViewController.h"
+#import "Stack.h"
+#import "Workout.h"
 
 @interface HomePageViewController () <UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (nonatomic, strong) HomePageDatesource *datasource;
-@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
-
-
-@property (weak, nonatomic) IBOutlet UIButton *createWorkoutViewButton;
-@property (weak, nonatomic) IBOutlet UIButton *performanceViewButton;
-@property (weak, nonatomic) IBOutlet UIButton *settingsViewButton;
-
-
+@property (nonatomic, strong) Workout *workout;
 
 @end
 
@@ -46,39 +44,22 @@
     
 }
 
--(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 84;
 }
 
-- (IBAction)workoutTapped:(id)sender {
-    
-}
-
-- (IBAction)createWorkoutButtonPressed:(id)sender {
-    
-}
-
-- (IBAction)performanceButtonPressed:(id)sender {
-    
-}
-
-- (IBAction)settingsButtonPressed:(id)sender {
-    
-}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 }
 
 // toolbar methods
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableview reloadData];
     [self.navigationController setToolbarHidden:NO animated:YES];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillDisappear:(BOOL)animated {
     [self.navigationController setToolbarHidden:YES animated:YES];
 }
 
@@ -87,14 +68,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"newWorkout"]) {
+        UINavigationController *navigationController = [segue destinationViewController];
+        CreateWorkoutViewController *createNewWorkoutViewController = [[navigationController viewControllers] firstObject];
+        createNewWorkoutViewController.workout = [[WorkoutController sharedInstance] createWorkout];
+    } else if ([segue.identifier isEqualToString:@"workoutMode"]) {
+        UINavigationController *navigationController = [segue destinationViewController];
+        WorkoutModeViewController *workoutModeViewController = [navigationController.viewControllers firstObject];
+        workoutModeViewController.workout = self.workout;
+    }
 }
-*/
 
 @end

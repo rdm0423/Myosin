@@ -7,10 +7,20 @@
 //
 
 #import "WorkoutModeViewController.h"
+#import "WorkoutController.h"
+#import "Stack.h"
+#import "Exercise.h"
 
-@interface WorkoutModeViewController ()
+@interface WorkoutModeViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *setsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *repsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *focusAreaLabel;
+@property (weak, nonatomic) IBOutlet UILabel *weightLabel;
+
+@property (nonatomic, strong) Workout *workout;
 
 @end
 
@@ -18,8 +28,50 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
+    self.tableview.dataSource = self;
+    self.tableview.delegate = self;
+    
 }
+
+#pragma mark - Table view data source
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WorkoutMode"];
+    
+    Exercise *exercise = [self.workout.exercises objectAtIndex:indexPath.row];
+    cell.textLabel.text = exercise.name;
+    cell.detailTextLabel.text = @"Muscle: %@   Equipment: %@", exercise.muscleWorked, exercise.equipment;
+    
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.workout.exercises.count;
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+
+
+
+- (IBAction)subtractWeightButton:(id)sender {
+    
+}
+- (IBAction)addWeightButton:(id)sender {
+    
+}
+
 
 - (IBAction)cancel:(id)sender {
     [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];

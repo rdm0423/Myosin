@@ -8,6 +8,7 @@
 
 #import "HomePageDatesource.h"
 #import "HomePageTableViewCell.h"
+#import "WorkoutController.h"
 
 //static NSString * const CellID = @"cell";
 
@@ -39,12 +40,11 @@
     
     return 1;
 }
-# warning set to auto count based on workouts
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self workoutArray].count;
+    return [WorkoutController sharedInstance].workouts.count;
 }
 
-# warning get right array form for getting in the workout information
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     HomePageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"homeCell"];
@@ -54,14 +54,13 @@
     cell.workoutImageView.layer.cornerRadius = 8.0f;
     cell.workoutImageView.clipsToBounds = YES;
     
+    Workout *workout = [WorkoutController sharedInstance].workouts[indexPath.row];
     
-    cell.workoutNameLabel.text = @"name";
-    cell.focusAreaLabel.text = @"area";
-    cell.previousCompletedLabel.text = @"completed";
+    cell.workoutNameLabel.text = workout.name;
+    cell.focusAreaLabel.text = workout.focusArea;
+//    cell.previousCompletedLabel.text = @"completed";
     
     return cell;
-    
-    
 }
 
 #pragma mark - sets the tableview links to ViewControllers
@@ -69,18 +68,5 @@
     
 }
 
-- (NSArray *)workoutArray {
-    return @[@"Mike's Killer Biceps", @"Leg crunch", @"Cardio HIIT"];
-}
-
-#pragma mark - custom menu cell height
-//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    if (indexPath.row == 0) {
-//        return 54;
-//    } else {
-//        return 54;
-//    }
-//}
 
 @end
