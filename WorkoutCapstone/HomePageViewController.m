@@ -53,7 +53,6 @@
     
 }
 
-// toolbar methods
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableview reloadData];
     [self.navigationController setToolbarHidden:NO animated:YES];
@@ -80,7 +79,9 @@
     } else if ([segue.identifier isEqualToString:@"workoutMode"]) {
         UINavigationController *navigationController = [segue destinationViewController];
         WorkoutModeViewController *workoutModeViewController = [navigationController.viewControllers firstObject];
-//        workoutModeViewController.workout = self.workout;
+        NSIndexPath *indexPathCell = [self.tableview indexPathForCell:sender];
+        Workout *workout = [WorkoutController sharedInstance].workouts[indexPathCell.row];
+        workoutModeViewController.workout = workout;
     }
 }
 

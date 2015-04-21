@@ -87,7 +87,7 @@
                                             <outlet property="previousCompletedLabel" destination="fb3-GY-gWT" id="DR6-k2-OXu"/>
                                             <outlet property="workoutImageView" destination="lvU-yf-H68" id="Vi1-ch-uIh"/>
                                             <outlet property="workoutNameLabel" destination="dqa-PP-MYm" id="bdt-RJ-9Nx"/>
-                                            <segue destination="twy-t6-c5o" kind="presentation" id="aFB-um-Eha"/>
+                                            <segue destination="twy-t6-c5o" kind="presentation" identifier="workoutMode" id="aFB-um-Eha"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

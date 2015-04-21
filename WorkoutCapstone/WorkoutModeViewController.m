@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *focusAreaLabel;
 @property (weak, nonatomic) IBOutlet UILabel *weightLabel;
 
-@property (nonatomic, strong) Workout *workout;
+
 
 @end
 
@@ -29,10 +29,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     self.tableview.dataSource = self;
     self.tableview.delegate = self;
-    
+    [self.view addSubview:self.tableview];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableview reloadData];
+    [self.navigationController setToolbarHidden:NO animated:YES];
 }
 
 #pragma mark - Table view data source
@@ -43,7 +47,7 @@
     
     Exercise *exercise = [self.workout.exercises objectAtIndex:indexPath.row];
     cell.textLabel.text = exercise.name;
-    cell.detailTextLabel.text = @"Muscle: %@   Equipment: %@", exercise.muscleWorked, exercise.equipment;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Muscle: %@   Equipment: %@", exercise.muscleWorked, exercise.equipment];
     
     return cell;
 }
