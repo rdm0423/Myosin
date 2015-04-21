@@ -68,18 +68,5 @@
     
 }
 
-- (NSArray *)workoutArray {
-    return @[@"Mike's Killer Biceps", @"Leg crunch", @"Cardio HIIT"];
-}
-
-#pragma mark - custom menu cell height
-//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    if (indexPath.row == 0) {
-//        return 54;
-//    } else {
-//        return 54;
-//    }
-//}
 
 @end
