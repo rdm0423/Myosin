@@ -47,10 +47,7 @@
 }
 
 
-
 - (void)searchForText:(NSString *)searchText {
-    
-    // search how to make a predicate if string = 0 and do an if/else to show the whole list of data
     
     if (searchText.length > 0) {
         NSString *predicateFormat = @"%K BEGINSWITH[cd] %@";
@@ -157,7 +154,6 @@
 }
 
 - (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
-    NSLog(@"Got here");
     return UIModalPresentationNone;
 }
 
@@ -171,7 +167,6 @@
 }
 
 - (IBAction)saveButton:(id)sender {
-    
     [self.temporaryExerciseSet unionOrderedSet:self.workout.exercises];
     self.workout.exercises = [self.temporaryExerciseSet copy];
     self.temporaryExerciseSet = nil;
