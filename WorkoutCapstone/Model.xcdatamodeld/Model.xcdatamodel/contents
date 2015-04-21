@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D131" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Exercise" representedClassName="Exercise" syncable="YES">
         <attribute name="equipment" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="guide" optional="YES" attributeType="String" syncable="YES"/>
@@ -11,7 +11,7 @@
         <attribute name="picture" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="completedExercises" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExercisePlanned" inverseName="exercise" inverseEntity="ExercisePlanned" syncable="YES"/>
-        <relationship name="guideSteps" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GuideStep" inverseName="exercise" inverseEntity="GuideStep" syncable="YES"/>
+        <relationship name="guideSteps" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="GuideStep" inverseName="exercise" inverseEntity="GuideStep" syncable="YES"/>
         <relationship name="workouts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Workout" inverseName="exercises" inverseEntity="Workout" syncable="YES"/>
     </entity>
     <entity name="ExercisePlanned" representedClassName="ExercisePlanned" syncable="YES">
@@ -40,7 +40,7 @@
         <relationship name="plannedExercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExercisePlanned" inverseName="workout" inverseEntity="ExercisePlanned" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Exercise" positionX="61" positionY="-9" width="128" height="223"/>
+        <element name="Exercise" positionX="61" positionY="-9" width="128" height="225"/>
         <element name="ExercisePlanned" positionX="-272" positionY="324" width="128" height="133"/>
         <element name="GuideStep" positionX="-306" positionY="36" width="128" height="88"/>
         <element name="Workout" positionX="-477" positionY="39" width="128" height="195"/>

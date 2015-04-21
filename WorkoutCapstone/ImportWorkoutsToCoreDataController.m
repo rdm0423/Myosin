@@ -8,6 +8,7 @@
 
 #import "ImportWorkoutsToCoreDataController.h"
 #import "Exercise.h"
+#import "GuideStep.h"
 #import "Stack.h"
 
 @implementation ImportWorkoutsToCoreDataController
@@ -55,14 +56,24 @@
     
     for (NSDictionary *dictionary in allExercises) {
         Exercise *exercise = [NSEntityDescription insertNewObjectForEntityForName:@"Exercise" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
-        
         NSDictionary *exerciseDetails = [dictionary objectForKey:dictionary.allKeys[0]];
+        
+        NSMutableArray *guideArray = [[NSMutableArray alloc]init];
+        
+        for (NSString *details in exerciseDetails[GuideKey]) {
+            GuideStep *guide = [NSEntityDescription insertNewObjectForEntityForName:@"GuideStep" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
+            guide.details = details;
+            [guideArray addObject:guide];
+        }
+        
+        NSOrderedSet *guideSet = [[NSOrderedSet alloc]initWithArray:guideArray];
         
         exercise.name = dictionary.allKeys[0];
         exercise.muscleWorked = exerciseDetails[MuscleWorkedKey];
         exercise.picture = exerciseDetails[PictureKey];
         exercise.level = exerciseDetails[LevelKey];
         //TODO: Handle guide
+        exercise.guideSteps = guideSet;
 //        exercise.guide = exerciseDetails[GuideKey];
         exercise.equipment = exerciseDetails[EquipmentKey];
         exercise.type = exerciseDetails[TypeKey];

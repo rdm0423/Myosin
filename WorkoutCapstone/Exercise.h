@@ -34,7 +34,7 @@ static NSString * const GuideKey = @"guide";
 @property (nonatomic, retain) NSString * picture;
 @property (nonatomic, retain) NSString * type;
 @property (nonatomic, retain) ExercisePlanned *completedExercises;
-@property (nonatomic, retain) NSSet *guideSteps;
+@property (nonatomic, retain) NSOrderedSet *guideSteps;
 @property (nonatomic, retain) Workout *workout;
 @end
 

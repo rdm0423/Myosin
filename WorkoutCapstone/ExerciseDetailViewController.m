@@ -7,6 +7,7 @@
 //
 
 #import "ExerciseDetailViewController.h"
+#import "GuideStep.h"
 
 @interface ExerciseDetailViewController ()
 
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *mechanicsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *equipmentLabel;
+@property (nonatomic, weak) UIScrollView *scrollView;
 
 
 @end
@@ -25,12 +27,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.guideLabel.text = self.exercise.;
+    
+    int stepCount = 1;
+    
+    NSString *guideStepsText = [NSString stringWithFormat:@"Instructions: \n%d. %@",stepCount,[[self.exercise.guideSteps objectAtIndex:0] details]];
+    
+    for (GuideStep *step in self.exercise.guideSteps) {
+        stepCount++;
+        guideStepsText = [guideStepsText stringByAppendingString:[NSString stringWithFormat:@"\n%d. %@",stepCount,step.details]];
+    }
     
     self.typeLabel.text = self.exercise.type;
     self.mechanicsLabel.text = self.exercise.mechanicsType;
     self.equipmentLabel.text = self.exercise.equipment;
-    
+    self.guideLabel.text = guideStepsText;
+
     NSURL *pictureURL = [NSURL URLWithString:self.exercise.picture];
     [[[NSURLSession sharedSession] dataTaskWithURL:pictureURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         UIImage *downloadImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:pictureURL]];
@@ -39,7 +50,8 @@
         });
     }] resume];
     
-        
+    
+    
     
 }
 
