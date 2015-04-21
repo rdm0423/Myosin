@@ -80,7 +80,7 @@
     } else if ([segue.identifier isEqualToString:@"workoutMode"]) {
         UINavigationController *navigationController = [segue destinationViewController];
         WorkoutModeViewController *workoutModeViewController = [navigationController.viewControllers firstObject];
-        workoutModeViewController.workout = self.workout;
+//        workoutModeViewController.workout = self.workout;
     }
 }
 

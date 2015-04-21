@@ -67,6 +67,7 @@
         exercise.equipment = exerciseDetails[EquipmentKey];
         exercise.type = exerciseDetails[TypeKey];
         exercise.mechanicsType = exerciseDetails[MechanicsTypeKey];
+        exercise.link = exerciseDetails[LinkKey];
         
     }
     

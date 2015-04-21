@@ -138,7 +138,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"Detail"]) {
         ExerciseDetailViewController *controller = segue.destinationViewController;
-        controller.preferredContentSize = CGSizeMake(300, 400);
+        controller.preferredContentSize = CGSizeMake(300, 500);
         controller.popoverPresentationController.delegate = self;
         Exercise *info = [self.filteredList objectAtIndex:self.selectedIndexPath.row];
         controller.exercise = info;

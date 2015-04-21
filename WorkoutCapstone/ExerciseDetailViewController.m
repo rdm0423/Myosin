@@ -13,6 +13,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *guideLabel;
 @property (weak, nonatomic) IBOutlet UIButton *linkButton;
 @property (weak, nonatomic) IBOutlet UIImageView *exerciseImage;
+@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *mechanicsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *equipmentLabel;
 
 
 @end
@@ -22,7 +25,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.guideLabel.text = self.exercise.level;
+//    self.guideLabel.text = self.exercise.;
+    
+    self.typeLabel.text = self.exercise.type;
+    self.mechanicsLabel.text = self.exercise.mechanicsType;
+    self.equipmentLabel.text = self.exercise.equipment;
     
     NSURL *pictureURL = [NSURL URLWithString:self.exercise.picture];
     [[[NSURLSession sharedSession] dataTaskWithURL:pictureURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -32,9 +39,7 @@
         });
     }] resume];
     
-    
-//    self.exerciseImage.image =
-    
+        
     
 }
 

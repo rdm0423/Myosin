@@ -21,6 +21,7 @@ static NSString * const LinkKey = @"link";
 static NSString * const TypeKey = @"Type";
 static NSString * const GuideKey = @"guide";
 
+
 @interface Exercise : NSManagedObject
 
 @property (nonatomic, retain) NSString * equipment;
