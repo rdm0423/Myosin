@@ -11,19 +11,15 @@
 #import "HomePageTableViewCell.h"
 #import "CreateWorkoutViewController.h"
 #import "WorkoutController.h"
+#import "WorkoutModeViewController.h"
+#import "Stack.h"
+#import "Workout.h"
 
 @interface HomePageViewController () <UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (nonatomic, strong) HomePageDatesource *datasource;
-@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
-
-
-@property (weak, nonatomic) IBOutlet UIButton *createWorkoutViewButton;
-@property (weak, nonatomic) IBOutlet UIButton *performanceViewButton;
-@property (weak, nonatomic) IBOutlet UIButton *settingsViewButton;
-
-
+@property (nonatomic, strong) Workout *workout;
 
 @end
 
@@ -48,8 +44,7 @@
     
 }
 
--(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 84;
 }
 
@@ -59,14 +54,12 @@
 }
 
 // toolbar methods
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [self.tableview reloadData];
     [self.navigationController setToolbarHidden:NO animated:YES];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillDisappear:(BOOL)animated {
     [self.navigationController setToolbarHidden:YES animated:YES];
 }
 
@@ -84,8 +77,11 @@
         UINavigationController *navigationController = [segue destinationViewController];
         CreateWorkoutViewController *createNewWorkoutViewController = [[navigationController viewControllers] firstObject];
         createNewWorkoutViewController.workout = [[WorkoutController sharedInstance] createWorkout];
+    } else if ([segue.identifier isEqualToString:@"workoutMode"]) {
+        UINavigationController *navigationController = [segue destinationViewController];
+        WorkoutModeViewController *workoutModeViewController = [navigationController.viewControllers firstObject];
+        workoutModeViewController.workout = self.workout;
     }
 }
-
 
 @end
