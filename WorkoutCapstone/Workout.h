@@ -21,8 +21,7 @@
 @property (nonatomic, retain) NSNumber * reps;
 @property (nonatomic, retain) NSNumber * restTime;
 @property (nonatomic, retain) NSNumber * sets;
-@property (nonatomic, retain) NSSet *plannedExercises;
-@property (nonatomic, retain) NSOrderedSet *exercises;
+@property (nonatomic, retain) NSOrderedSet *plannedExercises;
 @end
 
 @interface Workout (CoreDataGeneratedAccessors)

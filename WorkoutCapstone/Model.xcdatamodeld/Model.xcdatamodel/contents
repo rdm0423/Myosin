@@ -12,7 +12,6 @@
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="completedExercises" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExercisePlanned" inverseName="exercise" inverseEntity="ExercisePlanned" syncable="YES"/>
         <relationship name="guideSteps" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="GuideStep" inverseName="exercise" inverseEntity="GuideStep" syncable="YES"/>
-        <relationship name="workouts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Workout" inverseName="exercises" inverseEntity="Workout" syncable="YES"/>
     </entity>
     <entity name="ExercisePlanned" representedClassName="ExercisePlanned" syncable="YES">
         <attribute name="completed" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -36,13 +35,12 @@
         <attribute name="reps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="restTime" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="sets" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="exercises" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Exercise" inverseName="workouts" inverseEntity="Exercise" syncable="YES"/>
-        <relationship name="plannedExercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExercisePlanned" inverseName="workout" inverseEntity="ExercisePlanned" syncable="YES"/>
+        <relationship name="plannedExercises" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ExercisePlanned" inverseName="workout" inverseEntity="ExercisePlanned" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Exercise" positionX="61" positionY="-9" width="128" height="225"/>
+        <element name="Exercise" positionX="61" positionY="-9" width="128" height="210"/>
         <element name="ExercisePlanned" positionX="-272" positionY="324" width="128" height="133"/>
         <element name="GuideStep" positionX="-306" positionY="36" width="128" height="88"/>
-        <element name="Workout" positionX="-477" positionY="39" width="128" height="195"/>
+        <element name="Workout" positionX="-477" positionY="39" width="128" height="180"/>
     </elements>
 </model>

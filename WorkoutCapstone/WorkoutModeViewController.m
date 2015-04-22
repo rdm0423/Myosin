@@ -8,6 +8,7 @@
 
 #import "WorkoutModeViewController.h"
 #import "WorkoutController.h"
+#import "ExercisePlanned.h"
 #import "Stack.h"
 #import "Exercise.h"
 
@@ -39,13 +40,23 @@
     [self.navigationController setToolbarHidden:NO animated:YES];
 }
 
+- (void)reloadData {
+    
+}
+
+- (void)reloadRowsAtIndexPaths:(NSArray *)indexpaths withRowAnimation:(UITableViewRowAnimation)animation {
+    
+}
+
 #pragma mark - Table view data source
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WorkoutMode"];
     
-    Exercise *exercise = [self.workout.exercises objectAtIndex:indexPath.row];
+    ExercisePlanned *planned = [self.workout.plannedExercises objectAtIndex:indexPath.row];
+    
+    Exercise *exercise = planned.exercise;
     cell.textLabel.text = exercise.name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Muscle: %@   Equipment: %@", exercise.muscleWorked, exercise.equipment];
     
@@ -58,7 +69,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.workout.exercises.count;
+    return self.workout.plannedExercises.count;
 }
 
 

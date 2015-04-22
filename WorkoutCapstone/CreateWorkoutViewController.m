@@ -11,6 +11,7 @@
 #import "AddExercisesViewController.h"
 #import "Stack.h"
 #import "WorkoutController.h"
+#import "ExercisePlanned.h"
 
 
 @interface CreateWorkoutViewController () <UITextFieldDelegate, UIPickerViewDelegate, UITableViewDelegate, UITableViewDataSource,ExerciseSelectedDelegate>
@@ -21,8 +22,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *workoutRepsTextField;
 
 @property (nonatomic, strong) UIPickerView *workoutFocusAreaPicker;
-@property (nonatomic, strong) UIPickerView *setsPicker;
-@property (nonatomic, strong) UIPickerView *repsPicker;
+//@property (nonatomic, strong) UIPickerView *setsPicker;
+//@property (nonatomic, strong) UIPickerView *repsPicker;
 
 @property (nonatomic, strong) Exercise *selectedExercise;
 @property (nonatomic, strong) NSArray *temporaryExercises;
@@ -55,17 +56,17 @@
     self.workoutFocusAreaPicker.dataSource = self;
     self.workoutFocusAreaPicker.delegate = self;
     
-    self.setsPicker = [UIPickerView new];
-    self.setsPicker.dataSource = self;
-    self.setsPicker.delegate = self;
-    
-    self.repsPicker = [UIPickerView new];
-    self.repsPicker.dataSource = self;
-    self.repsPicker.delegate = self;
+//    self.setsPicker = [UIPickerView new];
+//    self.setsPicker.dataSource = self;
+//    self.setsPicker.delegate = self;
+//    
+//    self.repsPicker = [UIPickerView new];
+//    self.repsPicker.dataSource = self;
+//    self.repsPicker.delegate = self;
     
     self.workoutFocusAreaTextField.inputView = self.workoutFocusAreaPicker;
-    self.workoutSetsTextField.inputView = self.setsPicker;
-    self.workoutRepsTextField.inputView = self.repsPicker;
+//    self.workoutSetsTextField.inputView = self.setsPicker;
+//    self.workoutRepsTextField.inputView = self.repsPicker;
     
     self.restTimeSegmentedControl.selectedSegmentIndex = 0;
 }
@@ -91,21 +92,21 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (pickerView == self.workoutFocusAreaPicker) {
         self.workoutFocusAreaTextField.text = [self focusAreaArray][[pickerView selectedRowInComponent:0]];
-    } else if (pickerView == self.setsPicker) {
-        self.workoutSetsTextField.text = [self setsArray][[pickerView selectedRowInComponent:0]];
-    } else {
-        self.workoutRepsTextField.text = [self repsArray][[pickerView selectedRowInComponent:0]];
-    }
+//    } else if (pickerView == self.setsPicker) {
+//        self.workoutSetsTextField.text = [self setsArray][[pickerView selectedRowInComponent:0]];
+//    } else {
+//        self.workoutRepsTextField.text = [self repsArray][[pickerView selectedRowInComponent:0]];
+//    }
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     
     if (pickerView == self.workoutFocusAreaPicker) {
         return [self focusAreaArray][row];
-    } else if (pickerView == self.setsPicker) {
-        return [self setsArray][row];
-    } else if (pickerView == self.repsPicker) {
-        return [self repsArray][row];
+//    } else if (pickerView == self.setsPicker) {
+//        return [self setsArray][row];
+//    } else if (pickerView == self.repsPicker) {
+//        return [self repsArray][row];
     } else {
         return nil;
     }
@@ -119,10 +120,10 @@
     
     if (pickerView == self.workoutFocusAreaPicker) {
         return [self focusAreaArray].count;
-    } else if (pickerView == self.setsPicker) {
-        return [self setsArray].count;
-    } else if (pickerView == self.repsPicker) {
-        return [self repsArray].count;
+//    } else if (pickerView == self.setsPicker) {
+//        return [self setsArray].count;
+//    } else if (pickerView == self.repsPicker) {
+//        return [self repsArray].count;
     } else {
         return 0;
     }
@@ -132,13 +133,13 @@
     return @[@"Bicep", @"Back", @"Shoulder", @"Legs", @"Core", @"Tricep", @"Upper Body", @"Cardio"];
 }
 
-- (NSArray *)setsArray {
-    return @[@"1", @"2", @"3", @"4", @"5", @"6"];
-}
-
-- (NSArray *)repsArray {
-    return @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18"];
-}
+//- (NSArray *)setsArray {
+//    return @[@"1", @"2", @"3", @"4", @"5", @"6"];
+//}
+//
+//- (NSArray *)repsArray {
+//    return @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18"];
+//}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
@@ -154,12 +155,12 @@
 #pragma mark - TableView DataSource
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.workout.exercises.count + 1;
+    return self.workout.plannedExercises.count + 1;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == self.workout.exercises.count) {
+    if (indexPath.row == self.workout.plannedExercises.count) {
         UITableViewCell *addExerciseCell = [UITableViewCell new];
         addExerciseCell.textLabel.text = @"Add Exercise";
         addExerciseCell.imageView.image = [UIImage imageNamed:@"add"];
@@ -167,7 +168,10 @@
         return addExerciseCell;
     } else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-        Exercise *exercise = [self.workout.exercises objectAtIndex:indexPath.row];
+        
+        ExercisePlanned *planned = [self.workout.plannedExercises objectAtIndex:indexPath.row];
+        
+        Exercise *exercise = planned.exercise;
         cell.textLabel.text = exercise.name;
         return cell;
     }
