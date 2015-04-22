@@ -36,7 +36,6 @@
     self.repsLabel.text = [NSString stringWithFormat:@"Reps: %@", self.workout.reps];
     self.focusAreaLabel.text = [NSString stringWithFormat:@"Focus Area: %@", self.workout.focusArea];
     
-    
     self.tableview.dataSource = self;
     self.tableview.delegate = self;
     [self.view addSubview:self.tableview];
