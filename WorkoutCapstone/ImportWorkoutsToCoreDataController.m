@@ -36,11 +36,11 @@
     }
     
     
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Exercise"];
+//    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Exercise"];
     
-    NSError *error;
+//    NSError *error;
     
-    NSArray *allExercises = [[Stack sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:&error];
+//    NSArray *allExercises = [[Stack sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:&error];
     
 }
 

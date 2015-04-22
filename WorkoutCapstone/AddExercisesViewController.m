@@ -13,7 +13,7 @@
 #import "ExercisePlanned.h"
 #import "Stack.h"
 
-@interface AddExercisesViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIPopoverPresentationControllerDelegate, NSURLSessionDownloadDelegate>
+@interface AddExercisesViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIPopoverPresentationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
@@ -108,8 +108,8 @@
                                  info.muscleWorked, info.level];
     cell.accessoryType = UITableViewCellAccessoryDetailButton;
     
-    NSURL *pictureURL = [NSURL URLWithString:info.picture];
-    cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+//    NSURL *pictureURL = [NSURL URLWithString:info.picture];
+//    cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
 //    [[[NSURLSession sharedSession] dataTaskWithURL:pictureURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 //        UIImage *downloadImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:pictureURL]];
 //        dispatch_async(dispatch_get_main_queue(), ^{

@@ -37,7 +37,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableview reloadData];
-    [self.navigationController setToolbarHidden:NO animated:YES];
 }
 
 - (void)reloadData {

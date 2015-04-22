@@ -59,9 +59,8 @@
     
     MFMailComposeViewController *mailComposeViewController = [[MFMailComposeViewController alloc] init];
     mailComposeViewController.mailComposeDelegate = self;
-#warning Change Email
-    [mailComposeViewController setToRecipients:@[@"weekendconcept@gmail.com"]];
-    [mailComposeViewController setSubject:@""];
+    [mailComposeViewController setToRecipients:@[@"fsboarder2003@icloud.com"]];
+    [mailComposeViewController setSubject:@"Myosin App Feedback"];
     [mailComposeViewController.navigationBar setTintColor:[UIColor whiteColor]];
     
     if ([MFMailComposeViewController canSendMail]) {
