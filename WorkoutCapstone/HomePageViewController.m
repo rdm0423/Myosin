@@ -58,7 +58,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Edit" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        NSLog(@"Edit");
+    }];
+    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"Delete" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        NSLog(@"Foo Delete");
+    }];
+    return @[editAction, deleteAction];
+}
 
 #pragma mark - Navigation
 
