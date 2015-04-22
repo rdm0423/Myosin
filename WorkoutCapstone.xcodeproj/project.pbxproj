@@ -22,6 +22,8 @@
 		FF29058D1AE2720500544CCA /* ExercisePlanned.m in Sources */ = {isa = PBXBuildFile; fileRef = FF29058C1AE2720500544CCA /* ExercisePlanned.m */; };
 		FF2905901AE2789500544CCA /* WorkoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF29058F1AE2789500544CCA /* WorkoutController.m */; };
 		FF35FA7B1AE202F50000706F /* ExerciseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF35FA7A1AE202F50000706F /* ExerciseDetailViewController.m */; };
+		FF56006C1AE83EAD000E6425 /* WorkoutModeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF56006A1AE83EAD000E6425 /* WorkoutModeCell.m */; };
+		FF56006D1AE83EAD000E6425 /* WorkoutModeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF56006B1AE83EAD000E6425 /* WorkoutModeCell.xib */; };
 		FF90884C1ADE232300124C8B /* CustomDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9088431ADE232300124C8B /* CustomDatePickerView.m */; };
 		FF90884D1ADE232300124C8B /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9088451ADE232300124C8B /* Reminder.m */; };
 		FF90884E1ADE232300124C8B /* RemindersController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9088471ADE232300124C8B /* RemindersController.m */; };
@@ -106,6 +108,9 @@
 		FF29058F1AE2789500544CCA /* WorkoutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutController.m; sourceTree = "<group>"; };
 		FF35FA791AE202F50000706F /* ExerciseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseDetailViewController.h; sourceTree = "<group>"; };
 		FF35FA7A1AE202F50000706F /* ExerciseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseDetailViewController.m; sourceTree = "<group>"; };
+		FF5600691AE83EAD000E6425 /* WorkoutModeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutModeCell.h; sourceTree = "<group>"; };
+		FF56006A1AE83EAD000E6425 /* WorkoutModeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutModeCell.m; sourceTree = "<group>"; };
+		FF56006B1AE83EAD000E6425 /* WorkoutModeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkoutModeCell.xib; sourceTree = "<group>"; };
 		FF9088421ADE232300124C8B /* CustomDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDatePickerView.h; sourceTree = "<group>"; };
 		FF9088431ADE232300124C8B /* CustomDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDatePickerView.m; sourceTree = "<group>"; };
 		FF9088441ADE232300124C8B /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
@@ -262,6 +267,16 @@
 				FFB8AB5D1AD5C69A00BE6DE1 /* Stack */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		FF56006E1AE83EB3000E6425 /* WorkoutModeCell */ = {
+			isa = PBXGroup;
+			children = (
+				FF5600691AE83EAD000E6425 /* WorkoutModeCell.h */,
+				FF56006A1AE83EAD000E6425 /* WorkoutModeCell.m */,
+				FF56006B1AE83EAD000E6425 /* WorkoutModeCell.xib */,
+			);
+			name = WorkoutModeCell;
 			sourceTree = "<group>";
 		};
 		FF9088511ADE232900124C8B /* Reminders */ = {
@@ -439,6 +454,7 @@
 				FFF817851ACC9D51008E27E2 /* PerformanceViewController.m */,
 				FF0CDEAD1ACF464000BA2FA6 /* WorkoutModeViewController.h */,
 				FF0CDEAE1ACF464000BA2FA6 /* WorkoutModeViewController.m */,
+				FF56006E1AE83EB3000E6425 /* WorkoutModeCell */,
 				FF91C9471ADEE86C000E0D0C /* Timer */,
 				FF0356A81AD83FED00C8CF13 /* Settings */,
 				FFF8178B1ACC9D8A008E27E2 /* CreateWorkout Detail */,
@@ -544,6 +560,7 @@
 				FFEE15471AE55C2100E99467 /* LaunchScreen.xib in Resources */,
 				FFC622661AC4A2DB00EDB26B /* Images.xcassets in Resources */,
 				FFB8AB531AD5BC2D00BE6DE1 /* exercises.json in Resources */,
+				FF56006D1AE83EAD000E6425 /* WorkoutModeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +600,7 @@
 				FF0CDEAF1ACF464000BA2FA6 /* WorkoutModeViewController.m in Sources */,
 				FFC6225E1AC4A2DB00EDB26B /* AppDelegate.m in Sources */,
 				FF35FA7B1AE202F50000706F /* ExerciseDetailViewController.m in Sources */,
+				FF56006C1AE83EAD000E6425 /* WorkoutModeCell.m in Sources */,
 				FFB8AB561AD5BDE800BE6DE1 /* ImportWorkoutsToCoreDataController.m in Sources */,
 				FF9088501ADE232300124C8B /* RemindersViewController.m in Sources */,
 				FFC6225B1AC4A2DA00EDB26B /* main.m in Sources */,

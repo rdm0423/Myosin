@@ -8,7 +8,7 @@
 
 #import <Parse/Parse.h>
 
-@interface ExerciseParse : PFObject <PFSubclassing>
+@interface ExerciseParse : PFObject 
 
 
 @end

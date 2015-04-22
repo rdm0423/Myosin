@@ -16,15 +16,9 @@
 
 @property (nonatomic, strong) UITableView *tableview;
 
-
 @end
 
 @implementation HomePageDatesource
-
-- (void)createCells {
-
-
-}
 
 - (void)registerTableView:(UITableView *)tableView {
     self.tableview = tableView;
@@ -61,6 +55,29 @@
 //    cell.previousCompletedLabel.text = @"completed";
     
     return cell;
+}
+
+#pragma Mark - swipe to delete Methods
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    return YES;
+}
+
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewRowAction *action = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"Delete" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        NSLog(@"Foo");
+    }];
+    return @[action];
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    //    [self setEditing:YES animated:YES];
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        
+        [tableView reloadData];
+    }
 }
 
 #pragma mark - sets the tableview links to ViewControllers

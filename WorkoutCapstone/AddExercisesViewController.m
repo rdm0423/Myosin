@@ -10,9 +10,10 @@
 #import "ImportWorkoutsToCoreDataController.h"
 #import "ExerciseDetailViewController.h"
 #import "Exercise.h"
+#import "ExercisePlanned.h"
 #import "Stack.h"
 
-@interface AddExercisesViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIPopoverPresentationControllerDelegate, NSURLSessionDownloadDelegate>
+@interface AddExercisesViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIPopoverPresentationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
@@ -107,8 +108,8 @@
                                  info.muscleWorked, info.level];
     cell.accessoryType = UITableViewCellAccessoryDetailButton;
     
-    NSURL *pictureURL = [NSURL URLWithString:info.picture];
-    cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+//    NSURL *pictureURL = [NSURL URLWithString:info.picture];
+//    cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
 //    [[[NSURLSession sharedSession] dataTaskWithURL:pictureURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 //        UIImage *downloadImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:pictureURL]];
 //        dispatch_async(dispatch_get_main_queue(), ^{
@@ -125,20 +126,26 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    ExercisePlanned *plannedExercise = [NSEntityDescription insertNewObjectForEntityForName:@"ExercisePlanned" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
+    
     Exercise *exercise = [self.filteredList objectAtIndex:indexPath.row];
     
-    if ([self.temporaryExerciseSet containsObject:exercise]) {
+    plannedExercise.exercise = exercise;
+    plannedExercise.workout = self.workout;
+    
+    if ([self.temporaryExerciseSet containsObject:plannedExercise]) {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        [self.temporaryExerciseSet removeObject:exercise];
+        [self.temporaryExerciseSet removeObject:plannedExercise];
+        [plannedExercise.managedObjectContext deleteObject:plannedExercise];
     } else {
-        [self.temporaryExerciseSet addObject:exercise];
+        [self.temporaryExerciseSet addObject:plannedExercise];
     }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"Detail"]) {
         ExerciseDetailViewController *controller = segue.destinationViewController;
-        controller.preferredContentSize = CGSizeMake(300, 400);
+        controller.preferredContentSize = CGSizeMake(300, 560);
         controller.popoverPresentationController.delegate = self;
         Exercise *info = [self.filteredList objectAtIndex:self.selectedIndexPath.row];
         controller.exercise = info;
@@ -167,8 +174,8 @@
 }
 
 - (IBAction)saveButton:(id)sender {
-    [self.temporaryExerciseSet unionOrderedSet:self.workout.exercises];
-    self.workout.exercises = [self.temporaryExerciseSet copy];
+    [self.temporaryExerciseSet unionOrderedSet:self.workout.plannedExercises];
+    self.workout.plannedExercises = [self.temporaryExerciseSet copy];
     self.temporaryExerciseSet = nil;
     [self dismissViewControllerAnimated:YES completion:nil];
 }

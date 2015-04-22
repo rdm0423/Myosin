@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Workout.h"
 @import CoreData;
 
 @interface WorkoutModeViewController : UIViewController
+
+@property (nonatomic, strong) Workout *workout;
 
 @end
