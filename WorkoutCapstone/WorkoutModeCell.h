@@ -10,4 +10,8 @@
 
 @interface WorkoutModeCell : UITableViewCell
 
+@property (nonatomic,assign) BOOL completed;
+@property (weak, nonatomic) IBOutlet UILabel *workoutNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *workoutDetailLabel;
+
 @end
