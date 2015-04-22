@@ -38,33 +38,28 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableview reloadData];
+    [self addDoneButton];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self addDoneButton];
     
     self.temporaryExercises = [[NSArray alloc]init];
     
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
     
+    self.tableview.allowsMultipleSelectionDuringEditing = NO;
+    
     // sets pickerview
     self.workoutFocusAreaPicker = [UIPickerView new];
     self.workoutFocusAreaPicker.dataSource = self;
     self.workoutFocusAreaPicker.delegate = self;
-    
-//    self.setsPicker = [UIPickerView new];
-//    self.setsPicker.dataSource = self;
-//    self.setsPicker.delegate = self;
-//    
-//    self.repsPicker = [UIPickerView new];
-//    self.repsPicker.dataSource = self;
-//    self.repsPicker.delegate = self;
-    
     self.workoutFocusAreaTextField.inputView = self.workoutFocusAreaPicker;
-//    self.workoutSetsTextField.inputView = self.setsPicker;
-//    self.workoutRepsTextField.inputView = self.repsPicker;
     
+    // Segmented Control
     self.restTimeSegmentedControl.selectedSegmentIndex = 0;
 }
 
@@ -83,11 +78,6 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (pickerView == self.workoutFocusAreaPicker) {
         self.workoutFocusAreaTextField.text = [self focusAreaArray][[pickerView selectedRowInComponent:0]];
-//    } else if (pickerView == self.setsPicker) {
-//        self.workoutSetsTextField.text = [self setsArray][[pickerView selectedRowInComponent:0]];
-//    } else {
-//        self.workoutRepsTextField.text = [self repsArray][[pickerView selectedRowInComponent:0]];
-//    }
     }
 }
 
@@ -95,10 +85,6 @@
     
     if (pickerView == self.workoutFocusAreaPicker) {
         return [self focusAreaArray][row];
-//    } else if (pickerView == self.setsPicker) {
-//        return [self setsArray][row];
-//    } else if (pickerView == self.repsPicker) {
-//        return [self repsArray][row];
     } else {
         return nil;
     }
@@ -112,10 +98,6 @@
     
     if (pickerView == self.workoutFocusAreaPicker) {
         return [self focusAreaArray].count;
-//    } else if (pickerView == self.setsPicker) {
-//        return [self setsArray].count;
-//    } else if (pickerView == self.repsPicker) {
-//        return [self repsArray].count;
     } else {
         return 0;
     }
@@ -123,19 +105,6 @@
 
 - (NSArray *)focusAreaArray {
     return @[@"Bicep", @"Back", @"Shoulder", @"Legs", @"Core", @"Tricep", @"Upper Body", @"Cardio"];
-}
-
-//- (NSArray *)setsArray {
-//    return @[@"1", @"2", @"3", @"4", @"5", @"6"];
-//}
-//
-//- (NSArray *)repsArray {
-//    return @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18"];
-//}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    return YES;
 }
 
 #pragma mark - TableView Delegate
@@ -186,6 +155,28 @@
     [[Stack sharedInstance] save];
     
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+# pragma Mark - Dismiss Keyboard (numberPad)
+
+//- (void)dismissKeyboard {
+//    [self.workoutFocusAreaTextField resignFirstResponder];
+//    [self.workoutSetsTextField resignFirstResponder];
+//    [self.workoutRepsTextField resignFirstResponder];
+//}
+
+- (void)addDoneButton {
+    UIToolbar* keyboardToolbar = [[UIToolbar alloc] init];
+    [keyboardToolbar sizeToFit];
+    UIBarButtonItem *flexBarButton = [[UIBarButtonItem alloc]
+                                      initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                      target:nil action:nil];
+    UIBarButtonItem *doneBarButton = [[UIBarButtonItem alloc]
+                                      initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                      target:self.view action:@selector(endEditing:)];
+    keyboardToolbar.items = @[flexBarButton, doneBarButton];
+    self.workoutRepsTextField.inputAccessoryView = keyboardToolbar;
+    self.workoutSetsTextField.inputAccessoryView = keyboardToolbar;
 }
 
 #pragma mark - Navigation
