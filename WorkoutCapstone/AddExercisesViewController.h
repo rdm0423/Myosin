@@ -23,11 +23,3 @@ static NSString *CellIdentifier = @"Cell";
 @property (nonatomic, strong) Workout *workout;
 
 @end
-
-@protocol ExerciseSelectedDelegate <NSObject>
-
-@optional
-
--(void)didSelectExercise:(Exercise *)exercise;
-
-@end

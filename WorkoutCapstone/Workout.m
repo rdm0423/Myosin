@@ -22,6 +22,5 @@
 @dynamic restTime;
 @dynamic sets;
 @dynamic plannedExercises;
-@dynamic exercises;
 
 @end
