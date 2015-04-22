@@ -58,7 +58,7 @@
                                                         <constraint firstAttribute="height" constant="66" id="d4c-qZ-tao"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="last time completed" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fb3-GY-gWT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fb3-GY-gWT">
                                                     <rect key="frame" x="382" y="27" width="152" height="29"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="152" id="w5f-UF-7hb"/>

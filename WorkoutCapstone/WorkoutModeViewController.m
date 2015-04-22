@@ -45,14 +45,6 @@
     [self.tableview reloadData];
 }
 
-- (void)reloadData {
-    
-}
-
-- (void)reloadRowsAtIndexPaths:(NSArray *)indexpaths withRowAnimation:(UITableViewRowAnimation)animation {
-    
-}
-
 #pragma mark - Table view data source
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

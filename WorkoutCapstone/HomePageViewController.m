@@ -35,13 +35,10 @@
 //    testObject[@"foo"] = @"bar";
 //    [testObject saveInBackground];
     
-    // Tableview
-//    self.tableview = [[UITableView alloc] initWithFrame:self.view.bounds];
- 
     self.datasource = [HomePageDatesource new];
     self.tableview.dataSource = self.datasource;
     self.tableview.delegate = self;
-    [self.view addSubview:self.tableview];
+    
     
 }
 
@@ -49,24 +46,18 @@
     return 84;
 }
 
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-}
-
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableview reloadData];
-//    [self.navigationController setToolbarHidden:NO animated:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-//    [self.navigationController setToolbarHidden:YES animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 #pragma mark - Navigation
