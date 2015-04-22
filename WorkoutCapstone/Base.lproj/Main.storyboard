@@ -194,7 +194,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="218" id="Ktd-Bt-GfP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Xw-nt-8dh">
@@ -203,7 +204,7 @@
                                     <constraint firstAttribute="width" constant="119" id="uRO-v9-K9P"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I16-OY-Hee">
                                 <rect key="frame" x="328" y="229" width="119" height="30"/>
@@ -211,7 +212,7 @@
                                     <constraint firstAttribute="width" constant="119" id="ij5-Nu-Kzl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7c4-q8-uMH">
                                 <rect key="frame" x="0.0" y="345" width="600" height="255"/>
@@ -220,12 +221,6 @@
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="5Fk-mg-Jjr">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Fk-mg-Jjr" id="mx7-zs-KC5">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="LA7-Uc-Cls">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LA7-Uc-Cls" id="UTl-Og-9ld">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -441,38 +436,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="es7-Lr-Tky" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1826" y="1794"/>
-        </scene>
-        <!--Performance View Controller-->
-        <scene sceneID="U8Q-pL-dnt">
-            <objects>
-                <viewController id="YdK-J3-Sq9" customClass="PerformanceViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="p7M-ji-2pg"/>
-                        <viewControllerLayoutGuide type="bottom" id="89a-zF-Iei"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="KBc-se-Hx9">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="56g-L2-pjq">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Stats" id="HJu-Xz-Hk7">
-                                        <barButtonItem key="leftBarButtonItem" image="deletecircle" id="qa2-VQ-FPD">
-                                            <connections>
-                                                <action selector="cancelButton:" destination="YdK-J3-Sq9" id="9jG-JA-mbB"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vf5-S6-6vJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3738" y="1073"/>
         </scene>
         <!--Settings-->
         <scene sceneID="urd-m6-aX9">
@@ -737,7 +700,6 @@
     </scenes>
     <resources>
         <image name="add" width="25" height="25"/>
-        <image name="deletecircle" width="22" height="22"/>
         <image name="list" width="25" height="25"/>
         <image name="settings" width="25" height="25"/>
     </resources>

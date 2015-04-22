@@ -97,6 +97,7 @@
 //    } else {
 //        self.workoutRepsTextField.text = [self repsArray][[pickerView selectedRowInComponent:0]];
 //    }
+    }
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
