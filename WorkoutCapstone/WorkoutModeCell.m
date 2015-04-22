@@ -20,4 +20,15 @@
     // Configure the view for the selected state
 }
 
+- (void)reloadRowsAtIndexPaths:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation {
+    
+    
+}
+
+- (void)updateWithPlannedExercise {
+    
+    
+}
+
+
 @end
