@@ -13,5 +13,7 @@
 @interface CreateWorkoutViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (nonatomic, strong) Workout *workout;
+@property (nonatomic, copy) void (^didFinish)();
+@property (nonatomic, strong) NSArray *temporaryExercises;
 
 @end

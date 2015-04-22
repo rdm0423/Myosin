@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (nonatomic, strong) HomePageDatesource *datasource;
 @property (nonatomic, strong) Workout *workout;
+@property (nonatomic, strong) NSArray *temporaryExercises;
 
 @end
 
@@ -29,18 +30,18 @@
     [super viewDidLoad];
     
 //    self.title = @"Myosin";
-    // Parse
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    testObject[@"foo"] = @"bar";
-    [testObject saveInBackground];
+//    // Parse
+//    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+//    testObject[@"foo"] = @"bar";
+//    [testObject saveInBackground];
     
     // Tableview
 //    self.tableview = [[UITableView alloc] initWithFrame:self.view.bounds];
+ 
     self.datasource = [HomePageDatesource new];
     self.tableview.dataSource = self.datasource;
     self.tableview.delegate = self;
     [self.view addSubview:self.tableview];
-    
     
 }
 
@@ -55,11 +56,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableview reloadData];
-    [self.navigationController setToolbarHidden:NO animated:YES];
+//    [self.navigationController setToolbarHidden:NO animated:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    [self.navigationController setToolbarHidden:YES animated:YES];
+//    [self.navigationController setToolbarHidden:YES animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,7 +76,16 @@
     if ([segue.identifier isEqualToString:@"newWorkout"]) {
         UINavigationController *navigationController = [segue destinationViewController];
         CreateWorkoutViewController *createNewWorkoutViewController = [[navigationController viewControllers] firstObject];
-        createNewWorkoutViewController.workout = [[WorkoutController sharedInstance] createWorkout];
+        self.workout = [[WorkoutController sharedInstance] createWorkout];
+        createNewWorkoutViewController.workout = self.workout;
+        __weak typeof(self) weakSelf = self;
+        __weak typeof(createNewWorkoutViewController) weakController = createNewWorkoutViewController;
+        createNewWorkoutViewController.didFinish = ^{
+            weakSelf.temporaryExercises = weakController.temporaryExercises;
+            [weakSelf dismissViewControllerAnimated:true completion:^{
+//                weakSelf.temporaryExercises = nil;
+            }];
+        };
     } else if ([segue.identifier isEqualToString:@"workoutMode"]) {
         UINavigationController *navigationController = [segue destinationViewController];
         WorkoutModeViewController *workoutModeViewController = [navigationController.viewControllers firstObject];

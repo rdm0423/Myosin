@@ -14,7 +14,7 @@
 #import "ExercisePlanned.h"
 
 
-@interface CreateWorkoutViewController () <UITextFieldDelegate, UIPickerViewDelegate, UITableViewDelegate, UITableViewDataSource,ExerciseSelectedDelegate>
+@interface CreateWorkoutViewController () <UITextFieldDelegate, UIPickerViewDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITextField *workoutName;
 @property (weak, nonatomic) IBOutlet UITextField *workoutFocusAreaTextField;
@@ -26,7 +26,8 @@
 //@property (nonatomic, strong) UIPickerView *repsPicker;
 
 @property (nonatomic, strong) Exercise *selectedExercise;
-@property (nonatomic, strong) NSArray *temporaryExercises;
+
+
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *restTimeSegmentedControl;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
@@ -44,12 +45,8 @@
     
     self.temporaryExercises = [[NSArray alloc]init];
     
-    AddExercisesViewController *exerciseVC = [self.storyboard instantiateViewControllerWithIdentifier:@"addExercise"];
-    exerciseVC.delegate = self;
-    
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
-    self.selectedExercise = [Exercise new];
     
     // sets pickerview
     self.workoutFocusAreaPicker = [UIPickerView new];
@@ -69,12 +66,6 @@
 //    self.workoutRepsTextField.inputView = self.repsPicker;
     
     self.restTimeSegmentedControl.selectedSegmentIndex = 0;
-}
-
--(void)didSelectExercise:(Exercise *)exercise {
-    self.selectedExercise = exercise;
-    self.temporaryExercises = [self.temporaryExercises arrayByAddingObject:exercise];
-    [self.tableview reloadData];
 }
 
 - (IBAction)restTimeSegmentedSelected:(id)sender {
@@ -184,10 +175,10 @@
     self.workout.sets = [NSNumber numberWithInteger:[self.workoutSetsTextField.text integerValue]];
     self.workout.reps =  [NSNumber numberWithInteger:[self.workoutRepsTextField.text integerValue]];
 //    self.workout.restTime  *REST TIME SET ON SEGMENT CHANGED*
+    self.didFinish();
     
     [[Stack sharedInstance] save];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)cancelButton:(id)sender {
