@@ -140,10 +140,13 @@
 }
 
 - (IBAction)cancelButton:(id)sender {
-    [[WorkoutController sharedInstance] removeWorkout:self.workout];
     [[Stack sharedInstance] save];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+            [[WorkoutController sharedInstance] removeWorkout:self.workout];
+        }];
 }
 
 # pragma Mark - Dismiss Keyboard (numberPad)

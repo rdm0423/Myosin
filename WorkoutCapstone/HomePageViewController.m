@@ -62,12 +62,17 @@
 - (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Edit" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         NSLog(@"Edit");
-//        CreateWorkoutViewController *createWVC = [CreateWorkoutViewController new];
-//        
-//        [self presentViewController:createWVC animated:YES completion:nil];
+        CreateWorkoutViewController *createWVC = [self.storyboard instantiateViewControllerWithIdentifier:@"createWorkout"];
+        createWVC.workout = [[WorkoutController sharedInstance].workouts objectAtIndex:indexPath.row];
+        NSLog(@"%@",createWVC);
+        [self.navigationController pushViewController:createWVC animated:YES];
     }];
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"Delete" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         NSLog(@"Foo Delete");
+        Workout *workout = [[WorkoutController sharedInstance].workouts objectAtIndex:indexPath.row];
+        [[WorkoutController sharedInstance] removeWorkout:workout];
+        
+        [tableView reloadData];
     }];
     return @[deleteAction, editAction];
 }
