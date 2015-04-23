@@ -104,7 +104,7 @@
 }
 
 - (NSArray *)focusAreaArray {
-    return @[@"Back", @"Bicep", @"Cardio", @"chest", @"Core", @"Legs", @"Shoulder", @"Tricep", @"Upper Body"];
+    return @[@"Back", @"Bicep", @"Cardio", @"Chest", @"Core", @"Legs", @"Shoulder", @"Tricep", @"Upper Body"];
 }
 
 #pragma mark - TableView Delegate

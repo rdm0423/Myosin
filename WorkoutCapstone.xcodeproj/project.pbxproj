@@ -62,7 +62,6 @@
 		FFEE15501AE55EC400E99467 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEE154C1AE55EA000E99467 /* Bolts.framework */; };
 		FFEE15511AE55EC400E99467 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEE154D1AE55EA000E99467 /* Parse.framework */; };
 		FFF817801ACC9D2A008E27E2 /* CreateWorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF8177F1ACC9D2A008E27E2 /* CreateWorkoutViewController.m */; };
-		FFF817831ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF817821ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.m */; };
 		FFF817861ACC9D51008E27E2 /* PerformanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF817851ACC9D51008E27E2 /* PerformanceViewController.m */; };
 		FFF817891ACC9D6A008E27E2 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF817881ACC9D6A008E27E2 /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
@@ -174,8 +173,6 @@
 		FFF1A94E1ADC4EFA00A96245 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "parse-library-1/ParseUI.framework"; sourceTree = "<group>"; };
 		FFF8177E1ACC9D2A008E27E2 /* CreateWorkoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateWorkoutViewController.h; sourceTree = "<group>"; };
 		FFF8177F1ACC9D2A008E27E2 /* CreateWorkoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateWorkoutViewController.m; sourceTree = "<group>"; };
-		FFF817811ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateWorkoutDetailViewController.h; sourceTree = "<group>"; };
-		FFF817821ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateWorkoutDetailViewController.m; sourceTree = "<group>"; };
 		FFF817841ACC9D51008E27E2 /* PerformanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerformanceViewController.h; sourceTree = "<group>"; };
 		FFF817851ACC9D51008E27E2 /* PerformanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerformanceViewController.m; sourceTree = "<group>"; };
 		FFF817871ACC9D6A008E27E2 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -465,8 +462,6 @@
 		FFF8178B1ACC9D8A008E27E2 /* CreateWorkout Detail */ = {
 			isa = PBXGroup;
 			children = (
-				FFF817811ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.h */,
-				FFF817821ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.m */,
 				FF0CDEAA1ACF309300BA2FA6 /* AddExercisesViewController.h */,
 				FF0CDEAB1ACF309300BA2FA6 /* AddExercisesViewController.m */,
 				FF35FA791AE202F50000706F /* ExerciseDetailViewController.h */,
@@ -582,7 +577,6 @@
 				FF2905811AE26D4100544CCA /* ExerciseParse.m in Sources */,
 				FF29058A1AE2720500544CCA /* Workout.m in Sources */,
 				FF29057E1AE2698700544CCA /* WorkoutParse.m in Sources */,
-				FFF817831ACC9D3C008E27E2 /* CreateWorkoutDetailViewController.m in Sources */,
 				FF0356B11AD8403600C8CF13 /* AdvancedSettingsViewController.m in Sources */,
 				FF2905871AE2720500544CCA /* Exercise.m in Sources */,
 				FF90884D1ADE232300124C8B /* Reminder.m in Sources */,
