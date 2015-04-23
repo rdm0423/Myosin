@@ -455,9 +455,9 @@
 				FF0CDEAD1ACF464000BA2FA6 /* WorkoutModeViewController.h */,
 				FF0CDEAE1ACF464000BA2FA6 /* WorkoutModeViewController.m */,
 				FF56006E1AE83EB3000E6425 /* WorkoutModeCell */,
+				FFF8178B1ACC9D8A008E27E2 /* CreateWorkout Detail */,
 				FF91C9471ADEE86C000E0D0C /* Timer */,
 				FF0356A81AD83FED00C8CF13 /* Settings */,
-				FFF8178B1ACC9D8A008E27E2 /* CreateWorkout Detail */,
 			);
 			name = "Menu View Controllers";
 			sourceTree = "<group>";

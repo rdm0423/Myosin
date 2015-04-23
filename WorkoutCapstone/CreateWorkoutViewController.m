@@ -104,7 +104,7 @@
 }
 
 - (NSArray *)focusAreaArray {
-    return @[@"Bicep", @"Back", @"Shoulder", @"Legs", @"Core", @"Tricep", @"Upper Body", @"Cardio"];
+    return @[@"Back", @"Bicep", @"Cardio", @"chest", @"Core", @"Legs", @"Shoulder", @"Tricep", @"Upper Body"];
 }
 
 #pragma mark - TableView Delegate
@@ -147,7 +147,6 @@
     self.didFinish();
     
     [[Stack sharedInstance] save];
-    
 }
 
 - (IBAction)cancelButton:(id)sender {
@@ -158,12 +157,6 @@
 }
 
 # pragma Mark - Dismiss Keyboard (numberPad)
-
-//- (void)dismissKeyboard {
-//    [self.workoutFocusAreaTextField resignFirstResponder];
-//    [self.workoutSetsTextField resignFirstResponder];
-//    [self.workoutRepsTextField resignFirstResponder];
-//}
 
 - (void)addDoneButton {
     UIToolbar* keyboardToolbar = [[UIToolbar alloc] init];
@@ -177,6 +170,7 @@
     keyboardToolbar.items = @[flexBarButton, doneBarButton];
     self.workoutRepsTextField.inputAccessoryView = keyboardToolbar;
     self.workoutSetsTextField.inputAccessoryView = keyboardToolbar;
+    self.workoutFocusAreaTextField.inputAccessoryView = keyboardToolbar;
 }
 
 #pragma mark - Navigation

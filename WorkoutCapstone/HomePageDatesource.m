@@ -66,11 +66,11 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     //    [self setEditing:YES animated:YES];
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        
-        
-        [tableView reloadData];
-    }
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        
+//        
+//        [tableView reloadData];
+//    }
 }
 
 #pragma mark - sets the tableview links to ViewControllers

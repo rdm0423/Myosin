@@ -29,7 +29,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.title = @"Myosin";
 //    // Parse
 //    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
 //    testObject[@"foo"] = @"bar";
@@ -58,14 +57,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma Mark - swipe to delete Methods
+
 - (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Edit" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         NSLog(@"Edit");
+//        CreateWorkoutViewController *createWVC = [CreateWorkoutViewController new];
+//        
+//        [self presentViewController:createWVC animated:YES completion:nil];
     }];
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"Delete" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         NSLog(@"Foo Delete");
     }];
-    return @[editAction, deleteAction];
+    return @[deleteAction, editAction];
 }
 
 #pragma mark - Navigation
