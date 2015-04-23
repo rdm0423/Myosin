@@ -121,9 +121,7 @@
         return addExerciseCell;
     } else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-        
         ExercisePlanned *planned = [self.workout.plannedExercises objectAtIndex:indexPath.row];
-        
         Exercise *exercise = planned.exercise;
         cell.textLabel.text = exercise.name;
         return cell;
@@ -168,12 +166,14 @@
 #pragma Mark - swipe to delete Methods
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return YES if you want the specified item to be editable.
-    if () {
-        <#statements#>
+    NSInteger totalRow = [tableView numberOfRowsInSection:indexPath.section];//first get total rows in that section by current indexPath.
+    if(indexPath.row == totalRow -1){
+        //this is the last row in section.
+        return NO;
+    } else {
+        // Return YES if you want the specified item to be editable.
+        return YES;
     }
-    
-    return YES;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -188,6 +188,12 @@
 - (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"Delete" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         NSLog(@"Foo Delete");
+        NSMutableArray *temporaryCopy =[[NSMutableArray alloc]initWithArray:[self.workout.plannedExercises array]];
+        [temporaryCopy removeObjectAtIndex:indexPath.row];
+        
+        self.workout.plannedExercises = [[NSOrderedSet alloc]initWithArray:temporaryCopy];
+        [tableView reloadData];
+        
     }];
     return @[deleteAction];
 }
