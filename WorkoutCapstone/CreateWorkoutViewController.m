@@ -20,15 +20,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *workoutFocusAreaTextField;
 @property (weak, nonatomic) IBOutlet UITextField *workoutSetsTextField;
 @property (weak, nonatomic) IBOutlet UITextField *workoutRepsTextField;
-
 @property (nonatomic, strong) UIPickerView *workoutFocusAreaPicker;
-//@property (nonatomic, strong) UIPickerView *setsPicker;
-//@property (nonatomic, strong) UIPickerView *repsPicker;
-
 @property (nonatomic, strong) Exercise *selectedExercise;
-
-
-
 @property (weak, nonatomic) IBOutlet UISegmentedControl *restTimeSegmentedControl;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 
@@ -50,7 +43,6 @@
     
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
-    
     self.tableview.allowsMultipleSelectionDuringEditing = NO;
     
     // sets pickerview
@@ -74,7 +66,7 @@
     }
 }
 
-// textfield picker
+#pragma Mark - Pickerview
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (pickerView == self.workoutFocusAreaPicker) {
         self.workoutFocusAreaTextField.text = [self focusAreaArray][[pickerView selectedRowInComponent:0]];
@@ -171,6 +163,33 @@
     self.workoutRepsTextField.inputAccessoryView = keyboardToolbar;
     self.workoutSetsTextField.inputAccessoryView = keyboardToolbar;
     self.workoutFocusAreaTextField.inputAccessoryView = keyboardToolbar;
+}
+
+#pragma Mark - swipe to delete Methods
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    if () {
+        <#statements#>
+    }
+    
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    //    [self setEditing:YES animated:YES];
+    //        if (editingStyle == UITableViewCellEditingStyleDelete) {
+    //
+    //
+    //            [tableView reloadData];
+    //        }
+}
+
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"Delete" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        NSLog(@"Foo Delete");
+    }];
+    return @[deleteAction];
 }
 
 #pragma mark - Navigation
