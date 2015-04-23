@@ -64,11 +64,10 @@
         NSLog(@"Edit");
         CreateWorkoutViewController *createWVC = [self.storyboard instantiateViewControllerWithIdentifier:@"createWorkout"];
         createWVC.workout = [[WorkoutController sharedInstance].workouts objectAtIndex:indexPath.row];
-        NSLog(@"%@",createWVC);
+        
         [self.navigationController pushViewController:createWVC animated:YES];
     }];
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"Delete" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-        NSLog(@"Foo Delete");
         Workout *workout = [[WorkoutController sharedInstance].workouts objectAtIndex:indexPath.row];
         [[WorkoutController sharedInstance] removeWorkout:workout];
         
