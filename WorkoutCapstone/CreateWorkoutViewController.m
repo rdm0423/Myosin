@@ -53,6 +53,8 @@
     
     // Segmented Control
     self.restTimeSegmentedControl.selectedSegmentIndex = 0;
+    
+    [self updateWithWorkout:self.workout];
 }
 
 - (IBAction)restTimeSegmentedSelected:(id)sender {
@@ -64,6 +66,15 @@
     } else if (self.restTimeSegmentedControl.selectedSegmentIndex == 2) {
         self.workout.restTime = @60;
     }
+}
+
+- (void)updateWithWorkout:(Workout *)workout {
+    self.workout = workout;
+    
+    self.workoutName.text = workout.name;
+    self.workoutFocusAreaTextField.text = workout.focusArea;
+    self.workoutSetsTextField.text = [NSString stringWithFormat:@"%@", workout.sets];
+    self.workoutRepsTextField.text = [NSString stringWithFormat:@"%@", workout.reps];
 }
 
 #pragma Mark - Pickerview

@@ -63,8 +63,18 @@
     UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Edit" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         NSLog(@"Edit");
         CreateWorkoutViewController *createWVC = [self.storyboard instantiateViewControllerWithIdentifier:@"createWorkout"];
-        createWVC.workout = [[WorkoutController sharedInstance].workouts objectAtIndex:indexPath.row];
         
+        self.workout = [WorkoutController sharedInstance].workouts[indexPath.row];
+        [createWVC updateWithWorkout:self.workout];
+        __weak typeof(self) weakSelf = self;
+        __weak typeof(createWVC) weakController = createWVC;
+        createWVC.didFinish = ^{
+            weakSelf.temporaryExercises = weakController.temporaryExercises;
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+//            weakSelf.temporaryExercises = nil;
+        };
+
+                
         [self.navigationController pushViewController:createWVC animated:YES];
     }];
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"Delete" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {

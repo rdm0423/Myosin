@@ -10,6 +10,7 @@
 #import "HomePageDatesource.h"
 @import Parse;
 
-@interface HomePageViewController : UIViewController 
+@interface HomePageViewController : UIViewController
+
 
 @end

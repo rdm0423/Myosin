@@ -22,8 +22,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *focusAreaLabel;
 @property (weak, nonatomic) IBOutlet UILabel *weightLabel;
 
-
-
 @end
 
 @implementation WorkoutModeViewController
