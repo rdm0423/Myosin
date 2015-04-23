@@ -20,15 +20,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *workoutFocusAreaTextField;
 @property (weak, nonatomic) IBOutlet UITextField *workoutSetsTextField;
 @property (weak, nonatomic) IBOutlet UITextField *workoutRepsTextField;
-
 @property (nonatomic, strong) UIPickerView *workoutFocusAreaPicker;
-//@property (nonatomic, strong) UIPickerView *setsPicker;
-//@property (nonatomic, strong) UIPickerView *repsPicker;
-
 @property (nonatomic, strong) Exercise *selectedExercise;
-
-
-
 @property (weak, nonatomic) IBOutlet UISegmentedControl *restTimeSegmentedControl;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 
@@ -50,7 +43,6 @@
     
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
-    
     self.tableview.allowsMultipleSelectionDuringEditing = NO;
     
     // sets pickerview
@@ -61,6 +53,8 @@
     
     // Segmented Control
     self.restTimeSegmentedControl.selectedSegmentIndex = 0;
+    
+    [self updateWithWorkout:self.workout];
 }
 
 - (IBAction)restTimeSegmentedSelected:(id)sender {
@@ -74,7 +68,16 @@
     }
 }
 
-// textfield picker
+- (void)updateWithWorkout:(Workout *)workout {
+    self.workout = workout;
+    
+    self.workoutName.text = workout.name;
+    self.workoutFocusAreaTextField.text = workout.focusArea;
+    self.workoutSetsTextField.text = [NSString stringWithFormat:@"%@", workout.sets];
+    self.workoutRepsTextField.text = [NSString stringWithFormat:@"%@", workout.reps];
+}
+
+#pragma Mark - Pickerview
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (pickerView == self.workoutFocusAreaPicker) {
         self.workoutFocusAreaTextField.text = [self focusAreaArray][[pickerView selectedRowInComponent:0]];
@@ -104,8 +107,9 @@
 }
 
 - (NSArray *)focusAreaArray {
-    return @[@"Bicep", @"Back", @"Shoulder", @"Legs", @"Core", @"Tricep", @"Upper Body", @"Cardio"];
+    return @[@"Back", @"Bicep", @"Cardio", @"Chest", @"Core", @"Legs", @"Shoulder", @"Tricep", @"Upper Body"];
 }
+
 
 #pragma mark - TableView Delegate
 
@@ -129,9 +133,7 @@
         return addExerciseCell;
     } else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-        
         ExercisePlanned *planned = [self.workout.plannedExercises objectAtIndex:indexPath.row];
-        
         Exercise *exercise = planned.exercise;
         cell.textLabel.text = exercise.name;
         return cell;
@@ -147,23 +149,19 @@
     self.didFinish();
     
     [[Stack sharedInstance] save];
-    
 }
 
 - (IBAction)cancelButton:(id)sender {
-    [[WorkoutController sharedInstance] removeWorkout:self.workout];
     [[Stack sharedInstance] save];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+            [[WorkoutController sharedInstance] removeWorkout:self.workout];
+        }];
 }
 
 # pragma Mark - Dismiss Keyboard (numberPad)
-
-//- (void)dismissKeyboard {
-//    [self.workoutFocusAreaTextField resignFirstResponder];
-//    [self.workoutSetsTextField resignFirstResponder];
-//    [self.workoutRepsTextField resignFirstResponder];
-//}
 
 - (void)addDoneButton {
     UIToolbar* keyboardToolbar = [[UIToolbar alloc] init];
@@ -177,6 +175,42 @@
     keyboardToolbar.items = @[flexBarButton, doneBarButton];
     self.workoutRepsTextField.inputAccessoryView = keyboardToolbar;
     self.workoutSetsTextField.inputAccessoryView = keyboardToolbar;
+    self.workoutFocusAreaTextField.inputAccessoryView = keyboardToolbar;
+}
+
+#pragma Mark - swipe to delete Methods
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger totalRow = [tableView numberOfRowsInSection:indexPath.section];//first get total rows in that section by current indexPath.
+    if(indexPath.row == totalRow -1){
+        //this is the last row in section.
+        return NO;
+    } else {
+        // Return YES if you want the specified item to be editable.
+        return YES;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    //    [self setEditing:YES animated:YES];
+    //        if (editingStyle == UITableViewCellEditingStyleDelete) {
+    //
+    //
+    //            [tableView reloadData];
+    //        }
+}
+
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"Delete" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        NSLog(@"Foo Delete");
+        NSMutableArray *temporaryCopy =[[NSMutableArray alloc]initWithArray:[self.workout.plannedExercises array]];
+        [temporaryCopy removeObjectAtIndex:indexPath.row];
+        
+        self.workout.plannedExercises = [[NSOrderedSet alloc]initWithArray:temporaryCopy];
+        [tableView reloadData];
+        
+    }];
+    return @[deleteAction];
 }
 
 #pragma mark - Navigation

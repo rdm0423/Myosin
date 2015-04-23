@@ -128,7 +128,7 @@
         <!--Create Workout-->
         <scene sceneID="qqz-Vd-BJX">
             <objects>
-                <viewController id="RUf-Sl-MnY" customClass="CreateWorkoutViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="createWorkout" id="RUf-Sl-MnY" customClass="CreateWorkoutViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JuN-y2-3HH"/>
                         <viewControllerLayoutGuide type="bottom" id="k4E-oV-DAf"/>

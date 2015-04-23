@@ -21,6 +21,7 @@
 @property (nonatomic, strong) HomePageDatesource *datasource;
 @property (nonatomic, strong) Workout *workout;
 @property (nonatomic, strong) NSArray *temporaryExercises;
+@property (nonatomic, strong) NSDictionary *focusAreaImageArray;
 
 @end
 
@@ -29,7 +30,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.title = @"Myosin";
 //    // Parse
 //    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
 //    testObject[@"foo"] = @"bar";
@@ -39,8 +39,8 @@
     self.tableview.dataSource = self.datasource;
     self.tableview.delegate = self;
     
-    
 }
+
 
 -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 84;
@@ -58,7 +58,34 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma Mark - swipe to delete Methods
 
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Edit" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        NSLog(@"Edit");
+        CreateWorkoutViewController *createWVC = [self.storyboard instantiateViewControllerWithIdentifier:@"createWorkout"];
+        
+        self.workout = [WorkoutController sharedInstance].workouts[indexPath.row];
+        [createWVC updateWithWorkout:self.workout];
+        __weak typeof(self) weakSelf = self;
+        __weak typeof(createWVC) weakController = createWVC;
+        createWVC.didFinish = ^{
+            weakSelf.temporaryExercises = weakController.temporaryExercises;
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+//            weakSelf.temporaryExercises = nil;
+        };
+
+                
+        [self.navigationController pushViewController:createWVC animated:YES];
+    }];
+    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"Delete" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        Workout *workout = [[WorkoutController sharedInstance].workouts objectAtIndex:indexPath.row];
+        [[WorkoutController sharedInstance] removeWorkout:workout];
+        
+        [tableView reloadData];
+    }];
+    return @[deleteAction, editAction];
+}
 
 #pragma mark - Navigation
 

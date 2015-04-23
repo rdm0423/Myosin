@@ -22,8 +22,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *focusAreaLabel;
 @property (weak, nonatomic) IBOutlet UILabel *weightLabel;
 
-
-
 @end
 
 @implementation WorkoutModeViewController
@@ -91,41 +89,49 @@
             [completedWorkout addObject:planned];
         }
     };
-    
     if (completedWorkout.count  == self.workout.plannedExercises.count) {
-        NSLog(@"You've Completed the workout!!!!");
         
+        [self workoutCompleteAlert];
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ExercisePlanned *planned = [self.workout.plannedExercises objectAtIndex:indexPath.row];
+
+    if (planned.completed == nil) {
+        planned.completed = @1;
+    } else {
+        planned.completed = nil;
+    }
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+}
+
+#pragma Mark - Alert
+
+- (void)workoutCompleteAlert {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Workout Complete!" message:@"How did this workout feel today?" preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Kicked my butt" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSLog(@"kicked my butt");
         [self dismissViewControllerAnimated:YES completion:^{
-            
-            
             for (ExercisePlanned * planned in self.workout.plannedExercises) {
                 if ([planned.completed  isEqual: @1]) {
                     planned.completed = nil;
                 }
             };
-            [completedWorkout removeAllObjects];
         }];
-    }
+    }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"I rocked my workout" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSLog(@"I rocked my workout");
+        [self dismissViewControllerAnimated:YES completion:^{
+            for (ExercisePlanned * planned in self.workout.plannedExercises) {
+                if ([planned.completed  isEqual: @1]) {
+                    planned.completed = nil;
+                }
+            };
+        }];
+    }]];
+    [self.navigationController presentViewController:alertController animated:YES completion:nil];
 }
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
-    ExercisePlanned *planned = [self.workout.plannedExercises objectAtIndex:indexPath.row];
-    
-
-    
-    if (planned.completed == nil) {
-        planned.completed = @1;
-        
-    } else {
-        planned.completed = nil;
-    }
-    
-    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
-}
-
-
 
 
 - (IBAction)subtractWeightButton:(id)sender {
@@ -137,6 +143,12 @@
 
 
 - (IBAction)cancel:(id)sender {
+    
+    for (ExercisePlanned * planned in self.workout.plannedExercises) {
+        if ([planned.completed  isEqual: @1]) {
+            planned.completed = nil;
+        }
+    };
     [self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
 

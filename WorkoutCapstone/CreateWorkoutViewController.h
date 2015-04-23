@@ -16,4 +16,6 @@
 @property (nonatomic, copy) void (^didFinish)();
 @property (nonatomic, strong) NSArray *temporaryExercises;
 
+- (void)updateWithWorkout:(Workout *)workout;
+
 @end
