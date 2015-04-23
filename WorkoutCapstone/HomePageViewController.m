@@ -21,6 +21,7 @@
 @property (nonatomic, strong) HomePageDatesource *datasource;
 @property (nonatomic, strong) Workout *workout;
 @property (nonatomic, strong) NSArray *temporaryExercises;
+@property (nonatomic, strong) NSDictionary *focusAreaImageArray;
 
 @end
 
@@ -38,8 +39,8 @@
     self.tableview.dataSource = self.datasource;
     self.tableview.delegate = self;
     
-    
 }
+
 
 -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 84;

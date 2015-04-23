@@ -15,10 +15,29 @@
 @interface HomePageDatesource ()
 
 @property (nonatomic, strong) UITableView *tableview;
+@property (nonatomic, strong) NSDictionary *focusAreaImageArray;
 
 @end
 
 @implementation HomePageDatesource
+
+-(instancetype)init {
+    self = [super init];
+    if (self) {
+        self.focusAreaImageArray = @{
+                                     @"Back": @"back",
+                                     @"Bicep": @"bicep",
+                                     @"Cardio": @"cardio",
+                                     @"Chest": @"chest",
+                                     @"Core": @"core",
+                                     @"Legs": @"legs",
+                                     @"Shoulder": @"shoulders",
+                                     @"Tricep": @"tricep",
+                                     @"Upper Body": @"upperBody"
+                                     };
+    }
+    return self;
+}
 
 - (void)registerTableView:(UITableView *)tableView {
     self.tableview = tableView;
@@ -42,13 +61,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     HomePageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"homeCell"];
-    
+
+    Workout *workout = [WorkoutController sharedInstance].workouts[indexPath.row];
     // customize image
-    cell.workoutImageView.image = [UIImage imageNamed:@"tempblue"];
+    cell.workoutImageView.image = [UIImage imageNamed:self.focusAreaImageArray[workout.focusArea]];
     cell.workoutImageView.layer.cornerRadius = 8.0f;
     cell.workoutImageView.clipsToBounds = YES;
-    
-    Workout *workout = [WorkoutController sharedInstance].workouts[indexPath.row];
     
     cell.workoutNameLabel.text = workout.name;
     cell.focusAreaLabel.text = workout.focusArea;
