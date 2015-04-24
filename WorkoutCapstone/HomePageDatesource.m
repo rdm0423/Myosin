@@ -69,7 +69,8 @@
     cell.workoutImageView.clipsToBounds = YES;
     
     cell.workoutNameLabel.text = workout.name;
-    cell.focusAreaLabel.text = workout.focusArea;
+    cell.focusAreaLabel.text = [NSString stringWithFormat:@"Focus Area:  %@", workout.focusArea];
+    
 //    cell.previousCompletedLabel.text = @"completed";
     
     return cell;

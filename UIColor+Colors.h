@@ -15,5 +15,6 @@
 + (UIColor *)customOrangeColor;
 + (UIColor *)customGrayColor;
 + (UIColor *)backgroundGrayColor;
++ (UIColor *)customRedColor;
 
 @end

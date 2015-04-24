@@ -14,6 +14,7 @@
 #import "WorkoutModeViewController.h"
 #import "Stack.h"
 #import "Workout.h"
+#import "UIColor+Colors.h"
 
 @interface HomePageViewController () <UITableViewDelegate>
 
@@ -38,6 +39,10 @@
     self.datasource = [HomePageDatesource new];
     self.tableview.dataSource = self.datasource;
     self.tableview.delegate = self;
+    
+//    [UINavigationBar appearance] setTitleTextAttributes:[UIFont ]
+//    [[UINavigationBar appearance] setTintColor:[UIColor customRedColor]];
+    
     
 }
 

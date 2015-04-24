@@ -77,7 +77,7 @@ static NSString * const circuitModeKey = @"circuitKey";
     self.versionCell.selectionStyle = UITableViewCellSelectionStyleNone;
     [self.versionCell addSubview:self.versionLabel];
     UILabel *versionNumber = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-    versionNumber.text = @"1.0";
+    versionNumber.text = @"0.1";
     versionNumber.textColor = [UIColor lightGrayColor];
     self.versionCell.accessoryView = versionNumber;
     

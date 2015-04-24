@@ -29,4 +29,9 @@
 + (UIColor *)backgroundGrayColor {
     return [UIColor colorWithHue:0.0 saturation:0.0 brightness:.91 alpha:1];
 }
+
++ (UIColor *)customRedColor {
+    return [UIColor colorWithRed:0.98 green:0.53 blue:0.53 alpha:1];
+}
+
 @end
