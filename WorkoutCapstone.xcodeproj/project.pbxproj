@@ -14,6 +14,7 @@
 		FF0CDEAC1ACF309300BA2FA6 /* AddExercisesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEAB1ACF309300BA2FA6 /* AddExercisesViewController.m */; };
 		FF0CDEAF1ACF464000BA2FA6 /* WorkoutModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEAE1ACF464000BA2FA6 /* WorkoutModeViewController.m */; };
 		FF0CDEE71AD32A6C00BA2FA6 /* HomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEE61AD32A6C00BA2FA6 /* HomePageTableViewCell.m */; };
+		FF0F0F321BFABD0900A4FCE5 /* InfoPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0F0F311BFABD0900A4FCE5 /* InfoPageViewController.m */; };
 		FF29057E1AE2698700544CCA /* WorkoutParse.m in Sources */ = {isa = PBXBuildFile; fileRef = FF29057D1AE2698700544CCA /* WorkoutParse.m */; };
 		FF2905811AE26D4100544CCA /* ExerciseParse.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2905801AE26D4100544CCA /* ExerciseParse.m */; };
 		FF2905841AE2720400544CCA /* GuideStep.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2905831AE2720400544CCA /* GuideStep.m */; };
@@ -91,6 +92,8 @@
 		FF0CDEAE1ACF464000BA2FA6 /* WorkoutModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutModeViewController.m; sourceTree = "<group>"; };
 		FF0CDEE51AD32A6C00BA2FA6 /* HomePageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageTableViewCell.h; sourceTree = "<group>"; };
 		FF0CDEE61AD32A6C00BA2FA6 /* HomePageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageTableViewCell.m; sourceTree = "<group>"; };
+		FF0F0F301BFABD0800A4FCE5 /* InfoPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoPageViewController.h; sourceTree = "<group>"; };
+		FF0F0F311BFABD0900A4FCE5 /* InfoPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoPageViewController.m; sourceTree = "<group>"; };
 		FF29057C1AE2698700544CCA /* WorkoutParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutParse.h; sourceTree = "<group>"; };
 		FF29057D1AE2698700544CCA /* WorkoutParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutParse.m; sourceTree = "<group>"; };
 		FF29057F1AE26D4100544CCA /* ExerciseParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseParse.h; sourceTree = "<group>"; };
@@ -307,6 +310,8 @@
 			children = (
 				FF93DBBA1ACB2CA400CEFC24 /* HomePageViewController.h */,
 				FF93DBBB1ACB2CA400CEFC24 /* HomePageViewController.m */,
+				FF0F0F301BFABD0800A4FCE5 /* InfoPageViewController.h */,
+				FF0F0F311BFABD0900A4FCE5 /* InfoPageViewController.m */,
 				FF93DBD61ACB32B900CEFC24 /* Datasource */,
 			);
 			name = HomePageViewController;
@@ -514,7 +519,7 @@
 		FFC6224D1AC4A2DA00EDB26B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Ross McIlwaine";
 				TargetAttributes = {
 					FFC622541AC4A2DA00EDB26B = {
@@ -576,6 +581,7 @@
 				FF0356B41AD8404100C8CF13 /* FAQViewController.m in Sources */,
 				FF2905811AE26D4100544CCA /* ExerciseParse.m in Sources */,
 				FF29058A1AE2720500544CCA /* Workout.m in Sources */,
+				FF0F0F321BFABD0900A4FCE5 /* InfoPageViewController.m in Sources */,
 				FF29057E1AE2698700544CCA /* WorkoutParse.m in Sources */,
 				FF0356B11AD8403600C8CF13 /* AdvancedSettingsViewController.m in Sources */,
 				FF2905871AE2720500544CCA /* Exercise.m in Sources */,
@@ -672,6 +678,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -686,7 +693,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -722,7 +729,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -740,7 +747,9 @@
 					"$(PROJECT_DIR)/parse-library-1",
 				);
 				INFOPLIST_FILE = WorkoutCapstone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RossMcIlwaine.WorkoutCapstone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -758,7 +767,9 @@
 					"$(PROJECT_DIR)/parse-library-1",
 				);
 				INFOPLIST_FILE = WorkoutCapstone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RossMcIlwaine.WorkoutCapstone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -779,6 +790,7 @@
 				);
 				INFOPLIST_FILE = WorkoutCapstoneTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RossMcIlwaine.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorkoutCapstone.app/WorkoutCapstone";
 			};
@@ -794,6 +806,7 @@
 				);
 				INFOPLIST_FILE = WorkoutCapstoneTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RossMcIlwaine.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorkoutCapstone.app/WorkoutCapstone";
 			};
