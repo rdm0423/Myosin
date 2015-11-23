@@ -14,7 +14,6 @@
 		FF0CDEAC1ACF309300BA2FA6 /* AddExercisesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEAB1ACF309300BA2FA6 /* AddExercisesViewController.m */; };
 		FF0CDEAF1ACF464000BA2FA6 /* WorkoutModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEAE1ACF464000BA2FA6 /* WorkoutModeViewController.m */; };
 		FF0CDEE71AD32A6C00BA2FA6 /* HomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0CDEE61AD32A6C00BA2FA6 /* HomePageTableViewCell.m */; };
-		FF0F0F321BFABD0900A4FCE5 /* InfoPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0F0F311BFABD0900A4FCE5 /* InfoPageViewController.m */; };
 		FF29057E1AE2698700544CCA /* WorkoutParse.m in Sources */ = {isa = PBXBuildFile; fileRef = FF29057D1AE2698700544CCA /* WorkoutParse.m */; };
 		FF2905811AE26D4100544CCA /* ExerciseParse.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2905801AE26D4100544CCA /* ExerciseParse.m */; };
 		FF2905841AE2720400544CCA /* GuideStep.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2905831AE2720400544CCA /* GuideStep.m */; };
@@ -25,6 +24,7 @@
 		FF35FA7B1AE202F50000706F /* ExerciseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF35FA7A1AE202F50000706F /* ExerciseDetailViewController.m */; };
 		FF56006C1AE83EAD000E6425 /* WorkoutModeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF56006A1AE83EAD000E6425 /* WorkoutModeCell.m */; };
 		FF56006D1AE83EAD000E6425 /* WorkoutModeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF56006B1AE83EAD000E6425 /* WorkoutModeCell.xib */; };
+		FF8B00F71C03821000FE9412 /* InfoTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8B00F61C03821000FE9412 /* InfoTipsViewController.swift */; };
 		FF90884C1ADE232300124C8B /* CustomDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9088431ADE232300124C8B /* CustomDatePickerView.m */; };
 		FF90884D1ADE232300124C8B /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9088451ADE232300124C8B /* Reminder.m */; };
 		FF90884E1ADE232300124C8B /* RemindersController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9088471ADE232300124C8B /* RemindersController.m */; };
@@ -92,8 +92,6 @@
 		FF0CDEAE1ACF464000BA2FA6 /* WorkoutModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutModeViewController.m; sourceTree = "<group>"; };
 		FF0CDEE51AD32A6C00BA2FA6 /* HomePageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageTableViewCell.h; sourceTree = "<group>"; };
 		FF0CDEE61AD32A6C00BA2FA6 /* HomePageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageTableViewCell.m; sourceTree = "<group>"; };
-		FF0F0F301BFABD0800A4FCE5 /* InfoPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoPageViewController.h; sourceTree = "<group>"; };
-		FF0F0F311BFABD0900A4FCE5 /* InfoPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoPageViewController.m; sourceTree = "<group>"; };
 		FF29057C1AE2698700544CCA /* WorkoutParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutParse.h; sourceTree = "<group>"; };
 		FF29057D1AE2698700544CCA /* WorkoutParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutParse.m; sourceTree = "<group>"; };
 		FF29057F1AE26D4100544CCA /* ExerciseParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseParse.h; sourceTree = "<group>"; };
@@ -113,6 +111,8 @@
 		FF5600691AE83EAD000E6425 /* WorkoutModeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutModeCell.h; sourceTree = "<group>"; };
 		FF56006A1AE83EAD000E6425 /* WorkoutModeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutModeCell.m; sourceTree = "<group>"; };
 		FF56006B1AE83EAD000E6425 /* WorkoutModeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkoutModeCell.xib; sourceTree = "<group>"; };
+		FF8B00F51C03821000FE9412 /* WorkoutCapstone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WorkoutCapstone-Bridging-Header.h"; sourceTree = "<group>"; };
+		FF8B00F61C03821000FE9412 /* InfoTipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTipsViewController.swift; sourceTree = "<group>"; };
 		FF9088421ADE232300124C8B /* CustomDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDatePickerView.h; sourceTree = "<group>"; };
 		FF9088431ADE232300124C8B /* CustomDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDatePickerView.m; sourceTree = "<group>"; };
 		FF9088441ADE232300124C8B /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
@@ -279,6 +279,15 @@
 			name = WorkoutModeCell;
 			sourceTree = "<group>";
 		};
+		FF8B00F81C0391F900FE9412 /* Info-Tips Guide */ = {
+			isa = PBXGroup;
+			children = (
+				FF8B00F61C03821000FE9412 /* InfoTipsViewController.swift */,
+				FF8B00F51C03821000FE9412 /* WorkoutCapstone-Bridging-Header.h */,
+			);
+			name = "Info-Tips Guide";
+			sourceTree = "<group>";
+		};
 		FF9088511ADE232900124C8B /* Reminders */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,8 +319,7 @@
 			children = (
 				FF93DBBA1ACB2CA400CEFC24 /* HomePageViewController.h */,
 				FF93DBBB1ACB2CA400CEFC24 /* HomePageViewController.m */,
-				FF0F0F301BFABD0800A4FCE5 /* InfoPageViewController.h */,
-				FF0F0F311BFABD0900A4FCE5 /* InfoPageViewController.m */,
+				FF8B00F81C0391F900FE9412 /* Info-Tips Guide */,
 				FF93DBD61ACB32B900CEFC24 /* Datasource */,
 			);
 			name = HomePageViewController;
@@ -581,7 +589,6 @@
 				FF0356B41AD8404100C8CF13 /* FAQViewController.m in Sources */,
 				FF2905811AE26D4100544CCA /* ExerciseParse.m in Sources */,
 				FF29058A1AE2720500544CCA /* Workout.m in Sources */,
-				FF0F0F321BFABD0900A4FCE5 /* InfoPageViewController.m in Sources */,
 				FF29057E1AE2698700544CCA /* WorkoutParse.m in Sources */,
 				FF0356B11AD8403600C8CF13 /* AdvancedSettingsViewController.m in Sources */,
 				FF2905871AE2720500544CCA /* Exercise.m in Sources */,
@@ -598,6 +605,7 @@
 				FF2905841AE2720400544CCA /* GuideStep.m in Sources */,
 				FFF817801ACC9D2A008E27E2 /* CreateWorkoutViewController.m in Sources */,
 				FF0CDEAF1ACF464000BA2FA6 /* WorkoutModeViewController.m in Sources */,
+				FF8B00F71C03821000FE9412 /* InfoTipsViewController.swift in Sources */,
 				FFC6225E1AC4A2DB00EDB26B /* AppDelegate.m in Sources */,
 				FF35FA7B1AE202F50000706F /* ExerciseDetailViewController.m in Sources */,
 				FF56006C1AE83EAD000E6425 /* WorkoutModeCell.m in Sources */,
@@ -740,6 +748,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -752,6 +761,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.RossMcIlwaine.WorkoutCapstone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WorkoutCapstone/WorkoutCapstone-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -760,6 +771,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -772,6 +784,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.RossMcIlwaine.WorkoutCapstone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WorkoutCapstone/WorkoutCapstone-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
