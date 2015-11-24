@@ -24,6 +24,7 @@
 		FF35FA7B1AE202F50000706F /* ExerciseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF35FA7A1AE202F50000706F /* ExerciseDetailViewController.m */; };
 		FF56006C1AE83EAD000E6425 /* WorkoutModeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF56006A1AE83EAD000E6425 /* WorkoutModeCell.m */; };
 		FF56006D1AE83EAD000E6425 /* WorkoutModeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF56006B1AE83EAD000E6425 /* WorkoutModeCell.xib */; };
+		FF8B00F71C03821000FE9412 /* InfoTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8B00F61C03821000FE9412 /* InfoTipsViewController.swift */; };
 		FF90884C1ADE232300124C8B /* CustomDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9088431ADE232300124C8B /* CustomDatePickerView.m */; };
 		FF90884D1ADE232300124C8B /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9088451ADE232300124C8B /* Reminder.m */; };
 		FF90884E1ADE232300124C8B /* RemindersController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9088471ADE232300124C8B /* RemindersController.m */; };
@@ -110,6 +111,8 @@
 		FF5600691AE83EAD000E6425 /* WorkoutModeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutModeCell.h; sourceTree = "<group>"; };
 		FF56006A1AE83EAD000E6425 /* WorkoutModeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutModeCell.m; sourceTree = "<group>"; };
 		FF56006B1AE83EAD000E6425 /* WorkoutModeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkoutModeCell.xib; sourceTree = "<group>"; };
+		FF8B00F51C03821000FE9412 /* WorkoutCapstone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WorkoutCapstone-Bridging-Header.h"; sourceTree = "<group>"; };
+		FF8B00F61C03821000FE9412 /* InfoTipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTipsViewController.swift; sourceTree = "<group>"; };
 		FF9088421ADE232300124C8B /* CustomDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDatePickerView.h; sourceTree = "<group>"; };
 		FF9088431ADE232300124C8B /* CustomDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDatePickerView.m; sourceTree = "<group>"; };
 		FF9088441ADE232300124C8B /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
@@ -137,7 +140,7 @@
 		FFB8AB5A1AD5C69600BE6DE1 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
 		FFB8AB5B1AD5C69600BE6DE1 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 		FFB8AB6A1AD5E17D00BE6DE1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		FFC622551AC4A2DA00EDB26B /* WorkoutCapstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutCapstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFC622551AC4A2DA00EDB26B /* Myosin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Myosin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC622591AC4A2DA00EDB26B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFC6225A1AC4A2DA00EDB26B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FFC6225C1AC4A2DA00EDB26B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -147,7 +150,7 @@
 		FFC622631AC4A2DB00EDB26B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFC622651AC4A2DB00EDB26B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FFC622681AC4A2DB00EDB26B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		FFC6226E1AC4A2DB00EDB26B /* WorkoutCapstoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkoutCapstoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFC6226E1AC4A2DB00EDB26B /* Myosin.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Myosin.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC622731AC4A2DB00EDB26B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFC622741AC4A2DB00EDB26B /* WorkoutCapstoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkoutCapstoneTests.m; sourceTree = "<group>"; };
 		FFC6228B1AC4A52000EDB26B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -276,6 +279,15 @@
 			name = WorkoutModeCell;
 			sourceTree = "<group>";
 		};
+		FF8B00F81C0391F900FE9412 /* Info-Tips Guide */ = {
+			isa = PBXGroup;
+			children = (
+				FF8B00F61C03821000FE9412 /* InfoTipsViewController.swift */,
+				FF8B00F51C03821000FE9412 /* WorkoutCapstone-Bridging-Header.h */,
+			);
+			name = "Info-Tips Guide";
+			sourceTree = "<group>";
+		};
 		FF9088511ADE232900124C8B /* Reminders */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +319,7 @@
 			children = (
 				FF93DBBA1ACB2CA400CEFC24 /* HomePageViewController.h */,
 				FF93DBBB1ACB2CA400CEFC24 /* HomePageViewController.m */,
+				FF8B00F81C0391F900FE9412 /* Info-Tips Guide */,
 				FF93DBD61ACB32B900CEFC24 /* Datasource */,
 			);
 			name = HomePageViewController;
@@ -345,8 +358,8 @@
 		FFC622561AC4A2DA00EDB26B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FFC622551AC4A2DA00EDB26B /* WorkoutCapstone.app */,
-				FFC6226E1AC4A2DB00EDB26B /* WorkoutCapstoneTests.xctest */,
+				FFC622551AC4A2DA00EDB26B /* Myosin.app */,
+				FFC6226E1AC4A2DB00EDB26B /* Myosin.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -473,9 +486,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FFC622541AC4A2DA00EDB26B /* WorkoutCapstone */ = {
+		FFC622541AC4A2DA00EDB26B /* Myosin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FFC622781AC4A2DB00EDB26B /* Build configuration list for PBXNativeTarget "WorkoutCapstone" */;
+			buildConfigurationList = FFC622781AC4A2DB00EDB26B /* Build configuration list for PBXNativeTarget "Myosin" */;
 			buildPhases = (
 				FFC622511AC4A2DA00EDB26B /* Sources */,
 				FFC622521AC4A2DA00EDB26B /* Frameworks */,
@@ -485,14 +498,14 @@
 			);
 			dependencies = (
 			);
-			name = WorkoutCapstone;
+			name = Myosin;
 			productName = WorkoutCapstone;
-			productReference = FFC622551AC4A2DA00EDB26B /* WorkoutCapstone.app */;
+			productReference = FFC622551AC4A2DA00EDB26B /* Myosin.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FFC6226D1AC4A2DB00EDB26B /* WorkoutCapstoneTests */ = {
+		FFC6226D1AC4A2DB00EDB26B /* MyosinTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FFC6227B1AC4A2DB00EDB26B /* Build configuration list for PBXNativeTarget "WorkoutCapstoneTests" */;
+			buildConfigurationList = FFC6227B1AC4A2DB00EDB26B /* Build configuration list for PBXNativeTarget "MyosinTests" */;
 			buildPhases = (
 				FFC6226A1AC4A2DB00EDB26B /* Sources */,
 				FFC6226B1AC4A2DB00EDB26B /* Frameworks */,
@@ -503,9 +516,9 @@
 			dependencies = (
 				FFC622701AC4A2DB00EDB26B /* PBXTargetDependency */,
 			);
-			name = WorkoutCapstoneTests;
+			name = MyosinTests;
 			productName = WorkoutCapstoneTests;
-			productReference = FFC6226E1AC4A2DB00EDB26B /* WorkoutCapstoneTests.xctest */;
+			productReference = FFC6226E1AC4A2DB00EDB26B /* Myosin.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -514,7 +527,7 @@
 		FFC6224D1AC4A2DA00EDB26B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Ross McIlwaine";
 				TargetAttributes = {
 					FFC622541AC4A2DA00EDB26B = {
@@ -527,7 +540,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FFC622501AC4A2DA00EDB26B /* Build configuration list for PBXProject "WorkoutCapstone" */;
+			buildConfigurationList = FFC622501AC4A2DA00EDB26B /* Build configuration list for PBXProject "Myosin" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -540,8 +553,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FFC622541AC4A2DA00EDB26B /* WorkoutCapstone */,
-				FFC6226D1AC4A2DB00EDB26B /* WorkoutCapstoneTests */,
+				FFC622541AC4A2DA00EDB26B /* Myosin */,
+				FFC6226D1AC4A2DB00EDB26B /* MyosinTests */,
 			);
 		};
 /* End PBXProject section */
@@ -592,6 +605,7 @@
 				FF2905841AE2720400544CCA /* GuideStep.m in Sources */,
 				FFF817801ACC9D2A008E27E2 /* CreateWorkoutViewController.m in Sources */,
 				FF0CDEAF1ACF464000BA2FA6 /* WorkoutModeViewController.m in Sources */,
+				FF8B00F71C03821000FE9412 /* InfoTipsViewController.swift in Sources */,
 				FFC6225E1AC4A2DB00EDB26B /* AppDelegate.m in Sources */,
 				FF35FA7B1AE202F50000706F /* ExerciseDetailViewController.m in Sources */,
 				FF56006C1AE83EAD000E6425 /* WorkoutModeCell.m in Sources */,
@@ -626,7 +640,7 @@
 /* Begin PBXTargetDependency section */
 		FFC622701AC4A2DB00EDB26B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FFC622541AC4A2DA00EDB26B /* WorkoutCapstone */;
+			target = FFC622541AC4A2DA00EDB26B /* Myosin */;
 			targetProxy = FFC6226F1AC4A2DB00EDB26B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -672,6 +686,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -686,7 +701,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -722,7 +737,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -733,6 +748,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -740,9 +756,13 @@
 					"$(PROJECT_DIR)/parse-library-1",
 				);
 				INFOPLIST_FILE = WorkoutCapstone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RossMcIlwaine.WorkoutCapstone;
+				PRODUCT_NAME = Myosin;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WorkoutCapstone/WorkoutCapstone-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -751,6 +771,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -758,9 +779,12 @@
 					"$(PROJECT_DIR)/parse-library-1",
 				);
 				INFOPLIST_FILE = WorkoutCapstone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RossMcIlwaine.WorkoutCapstone;
+				PRODUCT_NAME = Myosin;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WorkoutCapstone/WorkoutCapstone-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -779,8 +803,9 @@
 				);
 				INFOPLIST_FILE = WorkoutCapstoneTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorkoutCapstone.app/WorkoutCapstone";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RossMcIlwaine.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = Myosin;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Myosin.app/Myosin";
 			};
 			name = Debug;
 		};
@@ -794,15 +819,16 @@
 				);
 				INFOPLIST_FILE = WorkoutCapstoneTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorkoutCapstone.app/WorkoutCapstone";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RossMcIlwaine.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = Myosin;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Myosin.app/Myosin";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FFC622501AC4A2DA00EDB26B /* Build configuration list for PBXProject "WorkoutCapstone" */ = {
+		FFC622501AC4A2DA00EDB26B /* Build configuration list for PBXProject "Myosin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FFC622761AC4A2DB00EDB26B /* Debug */,
@@ -811,7 +837,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FFC622781AC4A2DB00EDB26B /* Build configuration list for PBXNativeTarget "WorkoutCapstone" */ = {
+		FFC622781AC4A2DB00EDB26B /* Build configuration list for PBXNativeTarget "Myosin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FFC622791AC4A2DB00EDB26B /* Debug */,
@@ -820,7 +846,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FFC6227B1AC4A2DB00EDB26B /* Build configuration list for PBXNativeTarget "WorkoutCapstoneTests" */ = {
+		FFC6227B1AC4A2DB00EDB26B /* Build configuration list for PBXNativeTarget "MyosinTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FFC6227C1AC4A2DB00EDB26B /* Debug */,

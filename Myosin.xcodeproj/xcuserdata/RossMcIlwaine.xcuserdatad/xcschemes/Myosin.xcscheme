@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0620"
+   LastUpgradeVersion = "0710"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,95 +15,69 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FFC622541AC4A2DA00EDB26B"
-               BuildableName = "WorkoutCapstone.app"
-               BlueprintName = "WorkoutCapstone"
-               ReferencedContainer = "container:WorkoutCapstone.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FFC6226D1AC4A2DB00EDB26B"
-               BuildableName = "WorkoutCapstoneTests.xctest"
-               BlueprintName = "WorkoutCapstoneTests"
-               ReferencedContainer = "container:WorkoutCapstone.xcodeproj">
+               BuildableName = "Myosin.app"
+               BlueprintName = "Myosin"
+               ReferencedContainer = "container:Myosin.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FFC6226D1AC4A2DB00EDB26B"
-               BuildableName = "WorkoutCapstoneTests.xctest"
-               BlueprintName = "WorkoutCapstoneTests"
-               ReferencedContainer = "container:WorkoutCapstone.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FFC622541AC4A2DA00EDB26B"
-            BuildableName = "WorkoutCapstone.app"
-            BlueprintName = "WorkoutCapstone"
-            ReferencedContainer = "container:WorkoutCapstone.xcodeproj">
+            BuildableName = "Myosin.app"
+            BlueprintName = "Myosin"
+            ReferencedContainer = "container:Myosin.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FFC622541AC4A2DA00EDB26B"
-            BuildableName = "WorkoutCapstone.app"
-            BlueprintName = "WorkoutCapstone"
-            ReferencedContainer = "container:WorkoutCapstone.xcodeproj">
+            BuildableName = "Myosin.app"
+            BlueprintName = "Myosin"
+            ReferencedContainer = "container:Myosin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
-         <AdditionalOption
-            key = "NSZombieEnabled"
-            value = "YES"
-            isEnabled = "YES">
-         </AdditionalOption>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FFC622541AC4A2DA00EDB26B"
-            BuildableName = "WorkoutCapstone.app"
-            BlueprintName = "WorkoutCapstone"
-            ReferencedContainer = "container:WorkoutCapstone.xcodeproj">
+            BuildableName = "Myosin.app"
+            BlueprintName = "Myosin"
+            ReferencedContainer = "container:Myosin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

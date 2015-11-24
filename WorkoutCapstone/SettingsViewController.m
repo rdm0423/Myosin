@@ -140,7 +140,8 @@ static NSString * const circuitModeKey = @"circuitKey";
             UINavigationController *advancedSettingNavController = [[UINavigationController alloc] initWithRootViewController:advancedSettingVC];
             [self presentViewController:advancedSettingNavController animated:YES completion:nil];
         } else if (indexPath.row == 2) {
-# warning code for toggle?
+            
+//# warning code for toggle?
             
         } else if (indexPath.row == 3) {
             RemindersViewController *reminderVC = [RemindersViewController new];
