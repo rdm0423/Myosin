@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FFC622541AC4A2DA00EDB26B"
-               BuildableName = "WorkoutCapstone.app"
-               BlueprintName = "WorkoutCapstone"
-               ReferencedContainer = "container:WorkoutCapstone.xcodeproj">
+               BuildableName = "Myosin.app"
+               BlueprintName = "Myosin"
+               ReferencedContainer = "container:Myosin.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FFC6226D1AC4A2DB00EDB26B"
-               BuildableName = "WorkoutCapstoneTests.xctest"
-               BlueprintName = "WorkoutCapstoneTests"
-               ReferencedContainer = "container:WorkoutCapstone.xcodeproj">
+               BuildableName = "Myosin.xctest"
+               BlueprintName = "MyosinTests"
+               ReferencedContainer = "container:Myosin.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FFC6226D1AC4A2DB00EDB26B"
-               BuildableName = "WorkoutCapstoneTests.xctest"
-               BlueprintName = "WorkoutCapstoneTests"
-               ReferencedContainer = "container:WorkoutCapstone.xcodeproj">
+               BuildableName = "Myosin.xctest"
+               BlueprintName = "MyosinTests"
+               ReferencedContainer = "container:Myosin.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FFC622541AC4A2DA00EDB26B"
-            BuildableName = "WorkoutCapstone.app"
-            BlueprintName = "WorkoutCapstone"
-            ReferencedContainer = "container:WorkoutCapstone.xcodeproj">
+            BuildableName = "Myosin.app"
+            BlueprintName = "Myosin"
+            ReferencedContainer = "container:Myosin.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FFC622541AC4A2DA00EDB26B"
-            BuildableName = "WorkoutCapstone.app"
-            BlueprintName = "WorkoutCapstone"
-            ReferencedContainer = "container:WorkoutCapstone.xcodeproj">
+            BuildableName = "Myosin.app"
+            BlueprintName = "Myosin"
+            ReferencedContainer = "container:Myosin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -104,9 +104,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FFC622541AC4A2DA00EDB26B"
-            BuildableName = "WorkoutCapstone.app"
-            BlueprintName = "WorkoutCapstone"
-            ReferencedContainer = "container:WorkoutCapstone.xcodeproj">
+            BuildableName = "Myosin.app"
+            BlueprintName = "Myosin"
+            ReferencedContainer = "container:Myosin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
